@@ -17,7 +17,19 @@ async function main() {
 
   // keep-alive / uptime ping target
   app.get('/', (req, res) => res.send('ok'));
-  app.get('/health', (req, res) => res.json({ ok: true, whatsapp: wa.state.ready, lastPoll: engine.stats.lastPoll }));
+  // public, for keep-alive + automated health checks: no secrets, no personal data. Always HTTP 200.
+  app.get('/health', async (req, res) => {
+    try {
+      res.json(await engine.healthReport());
+    } catch (e) {
+      res.json({ ok: false, waConnected: !!wa.state.ready, error: 'health check failed' });
+    }
+  });
+  // JSON backup of posts/kv/dedup/health (never the WhatsApp login). Download: /backup?key=ADMIN_KEY
+  app.get('/backup', guard, async (req, res) => {
+    res.setHeader('Content-Disposition', `attachment; filename="wa-job-bot-backup-${new Date().toISOString().slice(0, 10)}.json"`);
+    res.json(await db.backup());
+  });
 
   // first-time setup: shows the WhatsApp pairing code
   app.get('/pair', guard, (req, res) => {

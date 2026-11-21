@@ -46,6 +46,10 @@ async function start() {
     shouldSyncHistoryMessage: () => false, // never download personal chat history
     generateHighQualityLinkPreview: false,
     getMessage: async () => undefined,
+    // low RAM (Render free 512 MB) + privacy: no app-state/contacts/chats kept in memory or DB
+    fireInitQueries: false,
+    emitOwnEvents: false,
+    linkPreviewImageThumbnailWidth: 0,
   });
   state.sock = sock;
   sock.ev.on('creds.update', auth.saveCreds);
@@ -104,5 +108,7 @@ async function send(jid, text) {
 }
 
 const sendToChannel = (key, text) => send(state.channelJids[key], text);
+// owner alerts go ONLY to the bot number's own self-chat
+const sendSelf = (text) => send(state.selfJid, text);
 
-module.exports = { start, state, sendToChannel };
+module.exports = { start, state, sendToChannel, sendSelf };

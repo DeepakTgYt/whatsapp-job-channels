@@ -4,7 +4,7 @@
   "description": "Auto job notifications to WhatsApp Channels",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node --max-old-space-size=380 src/index.js"
   },
   "author": "",
   "license": "ISC",
