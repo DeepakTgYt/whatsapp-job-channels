@@ -131,6 +131,25 @@ async function weekly() {
   }
 }
 
+// ---- 6. one-time welcome post per channel (sent once, first time the bot is live) ----
+const EXAMS = {
+  ssc: 'SSC GD, CGL, CHSL, MTS, CPO',
+  railway: 'RRB NTPC, Group D, ALP, JE, RPF',
+  bihar: 'BPSC, BSSC, Bihar Police, Daroga, Teacher',
+  army: 'Agniveer Army, Navy, Airforce, TA Rally',
+};
+async function welcome() {
+  for (const ch of cfg.CHANNELS) {
+    if (await getKV(`welcome:${ch.key}`)) continue;
+    const t = `🙏 *स्वागत है | Welcome!*\n━━━━━━━━━━━━━━\n📢 *${ch.name} Job Notification* channel में आपका स्वागत है।\n\n` +
+      `यहाँ आपको मिलेगा, सबसे पहले:\n🆕 नई भर्ती (${EXAMS[ch.key]})\n🎫 एडमिट कार्ड\n🏆 रिजल्ट\n🔑 आंसर की\n🗓️ परीक्षा तिथि\n\n` +
+      `☀️ हर सुबह 8 बजे दिन का Job Digest\n⏰ फॉर्म की Last Date से पहले Reminder\n📊 हर रविवार Weekly Roundup\n\n` +
+      `✅ सिर्फ ऑफिशियल जानकारी, कोई फालतू मैसेज नहीं।\n📲 दोस्तों के साथ शेयर करें, किसी का फॉर्म न छूटे।\n${footer(ch.key)}`;
+    await enqueue(ch.key, t, 'welcome');
+    await setKV(`welcome:${ch.key}`, true);
+  }
+}
+
 // ---- scheduler: runs every minute, fires each job once per slot ----
 async function onceFor(slot, fn) {
   if ((await getKV(`ran:${slot}`)) ) return;
@@ -145,6 +164,7 @@ async function tick() {
     if (h === cfg.DIGEST_HOUR) await onceFor(`digest:${day}`, digest);
     if (h === cfg.REMINDER_HOUR) await onceFor(`remind:${day}`, reminders);
     if (now.getUTCDay() === cfg.WEEKLY_DAY && h === cfg.WEEKLY_HOUR) await onceFor(`weekly:${day}`, weekly);
+    if (wa.state.ready) await welcome();
     await sendNext();
   } catch (e) {
     logErr('tick', e);
