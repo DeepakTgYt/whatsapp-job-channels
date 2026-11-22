@@ -1,0 +1,1657 @@
+{
+ "channel": "ssc",
+ "note": "answer = index of the correct option; options are shuffled at send time",
+ "questions": [
+  {
+   "id": "ss001",
+   "tag": "Polity",
+   "hi": "भारत का संविधान कब लागू हुआ?",
+   "en": "When did the Constitution of India come into force?",
+   "options": [
+    "26 January 1950",
+    "26 November 1949",
+    "15 August 1947",
+    "30 January 1948"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss002",
+   "tag": "Polity",
+   "hi": "संविधान सभा ने संविधान को कब अपनाया?",
+   "en": "When was the Constitution adopted by the Constituent Assembly?",
+   "options": [
+    "26 November 1949",
+    "26 January 1950",
+    "15 August 1949",
+    "9 December 1946"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss003",
+   "tag": "Polity",
+   "hi": "संविधान की प्रारूप (ड्राफ्टिंग) समिति के अध्यक्ष कौन थे?",
+   "en": "Who was the Chairman of the Drafting Committee of the Constitution?",
+   "options": [
+    "B. R. Ambedkar / बी. आर. अंबेडकर",
+    "Rajendra Prasad / राजेंद्र प्रसाद",
+    "Jawaharlal Nehru / जवाहरलाल नेहरू",
+    "Sardar Patel / सरदार पटेल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss004",
+   "tag": "Polity",
+   "hi": "संविधान सभा के स्थायी अध्यक्ष कौन थे?",
+   "en": "Who was the permanent President of the Constituent Assembly?",
+   "options": [
+    "Dr. Rajendra Prasad / डॉ. राजेंद्र प्रसाद",
+    "B. R. Ambedkar / बी. आर. अंबेडकर",
+    "Sachchidananda Sinha / सच्चिदानंद सिन्हा",
+    "C. Rajagopalachari / सी. राजगोपालाचारी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss005",
+   "tag": "Polity",
+   "hi": "मौलिक अधिकार संविधान के किस भाग में हैं?",
+   "en": "Fundamental Rights are in which Part of the Constitution?",
+   "options": [
+    "Part III / भाग III",
+    "Part IV / भाग IV",
+    "Part II / भाग II",
+    "Part V / भाग V"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss006",
+   "tag": "Polity",
+   "hi": "राज्य के नीति निदेशक तत्व (DPSP) किस भाग में हैं?",
+   "en": "Directive Principles of State Policy are in which Part?",
+   "options": [
+    "Part IV / भाग IV",
+    "Part III / भाग III",
+    "Part IV-A / भाग IV-A",
+    "Part VI / भाग VI"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss007",
+   "tag": "Polity",
+   "hi": "मौलिक कर्तव्य किस संविधान संशोधन द्वारा जोड़े गए?",
+   "en": "Fundamental Duties were added by which Constitutional Amendment?",
+   "options": [
+    "42nd / 42वाँ",
+    "44th / 44वाँ",
+    "24th / 24वाँ",
+    "52nd / 52वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss008",
+   "tag": "Polity",
+   "hi": "कौन-सा अनुच्छेद अस्पृश्यता (छुआछूत) का अंत करता है?",
+   "en": "Which Article abolishes untouchability?",
+   "options": [
+    "Article 17",
+    "Article 14",
+    "Article 19",
+    "Article 21"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss009",
+   "tag": "Polity",
+   "hi": "संवैधानिक उपचारों का अधिकार किस अनुच्छेद में है?",
+   "en": "Right to Constitutional Remedies is under which Article?",
+   "options": [
+    "Article 32",
+    "Article 21",
+    "Article 226",
+    "Article 19"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss010",
+   "tag": "Polity",
+   "hi": "भारत का राष्ट्रपति बनने के लिए न्यूनतम आयु कितनी है?",
+   "en": "What is the minimum age to become President of India?",
+   "options": [
+    "35 years / 35 वर्ष",
+    "30 years / 30 वर्ष",
+    "25 years / 25 वर्ष",
+    "40 years / 40 वर्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss011",
+   "tag": "Polity",
+   "hi": "लोकसभा सदस्य बनने के लिए न्यूनतम आयु कितनी है?",
+   "en": "What is the minimum age to become a Lok Sabha member?",
+   "options": [
+    "25 years / 25 वर्ष",
+    "21 years / 21 वर्ष",
+    "30 years / 30 वर्ष",
+    "35 years / 35 वर्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss012",
+   "tag": "Polity",
+   "hi": "राज्यसभा सदस्य बनने के लिए न्यूनतम आयु कितनी है?",
+   "en": "What is the minimum age to become a Rajya Sabha member?",
+   "options": [
+    "30 years / 30 वर्ष",
+    "25 years / 25 वर्ष",
+    "35 years / 35 वर्ष",
+    "21 years / 21 वर्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss013",
+   "tag": "Polity",
+   "hi": "भारत के प्रधानमंत्री की नियुक्ति कौन करता है?",
+   "en": "Who appoints the Prime Minister of India?",
+   "options": [
+    "President / राष्ट्रपति",
+    "Vice-President / उपराष्ट्रपति",
+    "Chief Justice / मुख्य न्यायाधीश",
+    "Lok Sabha Speaker / लोकसभा अध्यक्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss014",
+   "tag": "Polity",
+   "hi": "संसद की संयुक्त बैठक की अध्यक्षता कौन करता है?",
+   "en": "Who presides over a joint sitting of Parliament?",
+   "options": [
+    "Lok Sabha Speaker / लोकसभा अध्यक्ष",
+    "President / राष्ट्रपति",
+    "Vice-President / उपराष्ट्रपति",
+    "Prime Minister / प्रधानमंत्री"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss015",
+   "tag": "Polity",
+   "hi": "राज्यसभा का पदेन सभापति कौन होता है?",
+   "en": "Who is the ex-officio Chairman of the Rajya Sabha?",
+   "options": [
+    "Vice-President / उपराष्ट्रपति",
+    "President / राष्ट्रपति",
+    "Prime Minister / प्रधानमंत्री",
+    "Lok Sabha Speaker / लोकसभा अध्यक्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss016",
+   "tag": "Polity",
+   "hi": "धन विधेयक (Money Bill) की परिभाषा किस अनुच्छेद में है?",
+   "en": "Money Bill is defined in which Article?",
+   "options": [
+    "Article 110",
+    "Article 112",
+    "Article 108",
+    "Article 123"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss017",
+   "tag": "Polity",
+   "hi": "युद्ध या बाहरी आक्रमण पर राष्ट्रीय आपातकाल किस अनुच्छेद में है?",
+   "en": "National Emergency (war/external aggression) is under which Article?",
+   "options": [
+    "Article 352",
+    "Article 356",
+    "Article 360",
+    "Article 365"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss018",
+   "tag": "Polity",
+   "hi": "राज्यों में राष्ट्रपति शासन किस अनुच्छेद के तहत लगता है?",
+   "en": "President's Rule in a State is imposed under which Article?",
+   "options": [
+    "Article 356",
+    "Article 352",
+    "Article 360",
+    "Article 370"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss019",
+   "tag": "Polity",
+   "hi": "वित्तीय आपातकाल किस अनुच्छेद में है?",
+   "en": "Financial Emergency is under which Article?",
+   "options": [
+    "Article 360",
+    "Article 352",
+    "Article 356",
+    "Article 280"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss020",
+   "tag": "Polity",
+   "hi": "शिक्षा का अधिकार (6-14 वर्ष) किस अनुच्छेद में है?",
+   "en": "Right to Education (age 6-14) is in which Article?",
+   "options": [
+    "Article 21A",
+    "Article 45",
+    "Article 19",
+    "Article 29"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss021",
+   "tag": "Polity",
+   "hi": "मतदान की आयु 21 से 18 वर्ष किस संशोधन से हुई?",
+   "en": "Voting age was reduced from 21 to 18 by which Amendment?",
+   "options": [
+    "61st / 61वाँ",
+    "42nd / 42वाँ",
+    "73rd / 73वाँ",
+    "52nd / 52वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss022",
+   "tag": "Polity",
+   "hi": "प्रस्तावना में 'समाजवादी' और 'पंथनिरपेक्ष' शब्द किस संशोधन से जुड़े?",
+   "en": "'Socialist' and 'Secular' were added to the Preamble by which Amendment?",
+   "options": [
+    "42nd / 42वाँ",
+    "44th / 44वाँ",
+    "1st / पहला",
+    "86th / 86वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss023",
+   "tag": "Polity",
+   "hi": "भारतीय संविधान में नीति निदेशक तत्व किस देश से लिए गए?",
+   "en": "Directive Principles in the Indian Constitution were borrowed from which country?",
+   "options": [
+    "Ireland / आयरलैंड",
+    "USA / अमेरिका",
+    "UK / ब्रिटेन",
+    "Canada / कनाडा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss024",
+   "tag": "Polity",
+   "hi": "राज्यसभा सदस्य का कार्यकाल कितना होता है?",
+   "en": "What is the term of a Rajya Sabha member?",
+   "options": [
+    "6 years / 6 वर्ष",
+    "5 years / 5 वर्ष",
+    "4 years / 4 वर्ष",
+    "Permanent / स्थायी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss025",
+   "tag": "Polity",
+   "hi": "भारत के नियंत्रक एवं महालेखा परीक्षक (CAG) की नियुक्ति कौन करता है?",
+   "en": "Who appoints the Comptroller and Auditor General (CAG) of India?",
+   "options": [
+    "President / राष्ट्रपति",
+    "Prime Minister / प्रधानमंत्री",
+    "Parliament / संसद",
+    "Finance Minister / वित्त मंत्री"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss026",
+   "tag": "Polity",
+   "hi": "GST किस संविधान संशोधन से लागू हुआ?",
+   "en": "GST was introduced by which Constitutional Amendment?",
+   "options": [
+    "101st / 101वाँ",
+    "100th / 100वाँ",
+    "99th / 99वाँ",
+    "102nd / 102वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss027",
+   "tag": "Polity",
+   "hi": "पंचायती राज को संवैधानिक दर्जा किस संशोधन से मिला?",
+   "en": "Panchayati Raj got constitutional status by which Amendment?",
+   "options": [
+    "73rd / 73वाँ",
+    "74th / 74वाँ",
+    "42nd / 42वाँ",
+    "61st / 61वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss028",
+   "tag": "Polity",
+   "hi": "शहरी स्थानीय निकायों (नगरपालिका) को संवैधानिक दर्जा किस संशोधन से मिला?",
+   "en": "Urban local bodies got constitutional status by which Amendment?",
+   "options": [
+    "74th / 74वाँ",
+    "73rd / 73वाँ",
+    "86th / 86वाँ",
+    "44th / 44वाँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss029",
+   "tag": "Polity",
+   "hi": "मौलिक कर्तव्य किस अनुच्छेद में दिए गए हैं?",
+   "en": "Fundamental Duties are listed in which Article?",
+   "options": [
+    "Article 51A",
+    "Article 51",
+    "Article 48A",
+    "Article 32"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss030",
+   "tag": "Polity",
+   "hi": "चुनाव आयोग का प्रावधान किस अनुच्छेद में है?",
+   "en": "The Election Commission is provided under which Article?",
+   "options": [
+    "Article 324",
+    "Article 315",
+    "Article 280",
+    "Article 148"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss031",
+   "tag": "Polity",
+   "hi": "राष्ट्रपति को पद की शपथ कौन दिलाता है?",
+   "en": "Who administers the oath of office to the President?",
+   "options": [
+    "Chief Justice of India / भारत के मुख्य न्यायाधीश",
+    "Vice-President / उपराष्ट्रपति",
+    "Prime Minister / प्रधानमंत्री",
+    "Lok Sabha Speaker / लोकसभा अध्यक्ष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss032",
+   "tag": "History",
+   "hi": "प्लासी का युद्ध कब हुआ?",
+   "en": "When was the Battle of Plassey fought?",
+   "options": [
+    "1757",
+    "1764",
+    "1857",
+    "1761"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss033",
+   "tag": "History",
+   "hi": "पानीपत का पहला युद्ध (बाबर बनाम इब्राहिम लोदी) कब हुआ?",
+   "en": "When was the First Battle of Panipat (Babur vs Ibrahim Lodi)?",
+   "options": [
+    "1526",
+    "1556",
+    "1761",
+    "1576"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss034",
+   "tag": "History",
+   "hi": "भारत में मुगल साम्राज्य की स्थापना किसने की?",
+   "en": "Who founded the Mughal Empire in India?",
+   "options": [
+    "Babur / बाबर",
+    "Akbar / अकबर",
+    "Humayun / हुमायूँ",
+    "Sher Shah Suri / शेरशाह सूरी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss035",
+   "tag": "History",
+   "hi": "पानीपत का तीसरा युद्ध कब हुआ?",
+   "en": "When was the Third Battle of Panipat fought?",
+   "options": [
+    "1761",
+    "1526",
+    "1556",
+    "1757"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss036",
+   "tag": "History",
+   "hi": "भारतीय राष्ट्रीय कांग्रेस की स्थापना कब हुई?",
+   "en": "When was the Indian National Congress founded?",
+   "options": [
+    "1885",
+    "1857",
+    "1905",
+    "1906"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss037",
+   "tag": "History",
+   "hi": "भारतीय राष्ट्रीय कांग्रेस के पहले अध्यक्ष कौन थे?",
+   "en": "Who was the first President of the Indian National Congress?",
+   "options": [
+    "W. C. Bonnerjee / डब्ल्यू. सी. बनर्जी",
+    "A. O. Hume / ए. ओ. ह्यूम",
+    "Dadabhai Naoroji / दादाभाई नौरोजी",
+    "Surendranath Banerjee / सुरेंद्रनाथ बनर्जी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss038",
+   "tag": "History",
+   "hi": "जलियांवाला बाग हत्याकांड किस वर्ष हुआ?",
+   "en": "In which year did the Jallianwala Bagh massacre take place?",
+   "options": [
+    "1919",
+    "1920",
+    "1917",
+    "1922"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss039",
+   "tag": "History",
+   "hi": "दांडी मार्च (नमक सत्याग्रह) किस वर्ष हुआ?",
+   "en": "In which year was the Dandi March (Salt Satyagraha)?",
+   "options": [
+    "1930",
+    "1920",
+    "1942",
+    "1928"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss040",
+   "tag": "History",
+   "hi": "भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?",
+   "en": "In which year did the Quit India Movement begin?",
+   "options": [
+    "1942",
+    "1930",
+    "1920",
+    "1947"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss041",
+   "tag": "History",
+   "hi": "असहयोग आंदोलन किस वर्ष शुरू हुआ?",
+   "en": "In which year did the Non-Cooperation Movement start?",
+   "options": [
+    "1920",
+    "1919",
+    "1930",
+    "1942"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss042",
+   "tag": "History",
+   "hi": "बंगाल विभाजन (1905) किस वायसराय ने किया?",
+   "en": "Which Viceroy partitioned Bengal in 1905?",
+   "options": [
+    "Lord Curzon / लॉर्ड कर्जन",
+    "Lord Minto / लॉर्ड मिंटो",
+    "Lord Ripon / लॉर्ड रिपन",
+    "Lord Lytton / लॉर्ड लिटन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss043",
+   "tag": "History",
+   "hi": "साइमन कमीशन भारत किस वर्ष आया?",
+   "en": "In which year did the Simon Commission arrive in India?",
+   "options": [
+    "1928",
+    "1927",
+    "1930",
+    "1919"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss044",
+   "tag": "History",
+   "hi": "'करो या मरो' का नारा किसने दिया?",
+   "en": "Who gave the slogan 'Do or Die'?",
+   "options": [
+    "Mahatma Gandhi / महात्मा गांधी",
+    "Subhas Chandra Bose / सुभाष चंद्र बोस",
+    "Bhagat Singh / भगत सिंह",
+    "Bal Gangadhar Tilak / बाल गंगाधर तिलक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss045",
+   "tag": "History",
+   "hi": "'स्वराज मेरा जन्मसिद्ध अधिकार है' किसने कहा?",
+   "en": "Who said 'Swaraj is my birthright'?",
+   "options": [
+    "Bal Gangadhar Tilak / बाल गंगाधर तिलक",
+    "Mahatma Gandhi / महात्मा गांधी",
+    "Lala Lajpat Rai / लाला लाजपत राय",
+    "Gopal Krishna Gokhale / गोपाल कृष्ण गोखले"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss046",
+   "tag": "History",
+   "hi": "'तुम मुझे खून दो, मैं तुम्हें आज़ादी दूँगा' किसने कहा?",
+   "en": "Who said 'Give me blood, and I will give you freedom'?",
+   "options": [
+    "Subhas Chandra Bose / सुभाष चंद्र बोस",
+    "Bhagat Singh / भगत सिंह",
+    "Chandrashekhar Azad / चंद्रशेखर आज़ाद",
+    "Mahatma Gandhi / महात्मा गांधी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss047",
+   "tag": "History",
+   "hi": "'जय जवान जय किसान' का नारा किसने दिया?",
+   "en": "Who gave the slogan 'Jai Jawan Jai Kisan'?",
+   "options": [
+    "Lal Bahadur Shastri / लाल बहादुर शास्त्री",
+    "Jawaharlal Nehru / जवाहरलाल नेहरू",
+    "Indira Gandhi / इंदिरा गांधी",
+    "Atal Bihari Vajpayee / अटल बिहारी वाजपेयी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss048",
+   "tag": "History",
+   "hi": "स्वतंत्र भारत के पहले भारतीय गवर्नर-जनरल कौन थे?",
+   "en": "Who was the first Indian Governor-General of independent India?",
+   "options": [
+    "C. Rajagopalachari / सी. राजगोपालाचारी",
+    "Lord Mountbatten / लॉर्ड माउंटबेटन",
+    "Rajendra Prasad / राजेंद्र प्रसाद",
+    "Sardar Patel / सरदार पटेल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss049",
+   "tag": "History",
+   "hi": "बंगाल के पहले गवर्नर-जनरल कौन थे?",
+   "en": "Who was the first Governor-General of Bengal?",
+   "options": [
+    "Warren Hastings / वॉरेन हेस्टिंग्स",
+    "Robert Clive / रॉबर्ट क्लाइव",
+    "Lord Cornwallis / लॉर्ड कॉर्नवालिस",
+    "Lord Wellesley / लॉर्ड वेलेजली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss050",
+   "tag": "History",
+   "hi": "'व्यपगत का सिद्धांत' (Doctrine of Lapse) किसने लागू किया?",
+   "en": "Who introduced the Doctrine of Lapse?",
+   "options": [
+    "Lord Dalhousie / लॉर्ड डलहौजी",
+    "Lord Wellesley / लॉर्ड वेलेजली",
+    "Lord Curzon / लॉर्ड कर्जन",
+    "Lord Canning / लॉर्ड कैनिंग"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss051",
+   "tag": "History",
+   "hi": "'सहायक संधि' (Subsidiary Alliance) किसने शुरू की?",
+   "en": "Who started the Subsidiary Alliance system?",
+   "options": [
+    "Lord Wellesley / लॉर्ड वेलेजली",
+    "Lord Dalhousie / लॉर्ड डलहौजी",
+    "Warren Hastings / वॉरेन हेस्टिंग्स",
+    "Lord Bentinck / लॉर्ड बेंटिंक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss052",
+   "tag": "History",
+   "hi": "सती प्रथा पर 1829 में किसने रोक लगाई?",
+   "en": "Who banned Sati in 1829?",
+   "options": [
+    "Lord William Bentinck / लॉर्ड विलियम बेंटिंक",
+    "Lord Dalhousie / लॉर्ड डलहौजी",
+    "Lord Ripon / लॉर्ड रिपन",
+    "Lord Canning / लॉर्ड कैनिंग"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss053",
+   "tag": "History",
+   "hi": "आर्य समाज की स्थापना किसने की?",
+   "en": "Who founded the Arya Samaj?",
+   "options": [
+    "Swami Dayanand Saraswati / स्वामी दयानंद सरस्वती",
+    "Swami Vivekananda / स्वामी विवेकानंद",
+    "Raja Ram Mohan Roy / राजा राम मोहन राय",
+    "Keshab Chandra Sen / केशव चंद्र सेन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss054",
+   "tag": "History",
+   "hi": "ब्रह्म समाज की स्थापना किसने की?",
+   "en": "Who founded the Brahmo Samaj?",
+   "options": [
+    "Raja Ram Mohan Roy / राजा राम मोहन राय",
+    "Swami Dayanand Saraswati / स्वामी दयानंद सरस्वती",
+    "Ishwar Chandra Vidyasagar / ईश्वर चंद्र विद्यासागर",
+    "Jyotiba Phule / ज्योतिबा फुले"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss055",
+   "tag": "History",
+   "hi": "गौतम बुद्ध का जन्म कहाँ हुआ था?",
+   "en": "Where was Gautama Buddha born?",
+   "options": [
+    "Lumbini / लुम्बिनी",
+    "Sarnath / सारनाथ",
+    "Kushinagar / कुशीनगर",
+    "Bodh Gaya / बोधगया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss056",
+   "tag": "History",
+   "hi": "गौतम बुद्ध ने पहला उपदेश कहाँ दिया?",
+   "en": "Where did Gautama Buddha give his first sermon?",
+   "options": [
+    "Sarnath / सारनाथ",
+    "Bodh Gaya / बोधगया",
+    "Lumbini / लुम्बिनी",
+    "Rajgir / राजगीर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss057",
+   "tag": "History",
+   "hi": "महावीर जैन धर्म के कौन-से तीर्थंकर थे?",
+   "en": "Mahavira was which Tirthankara of Jainism?",
+   "options": [
+    "24th / 24वें",
+    "23rd / 23वें",
+    "1st / पहले",
+    "22nd / 22वें"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss058",
+   "tag": "History",
+   "hi": "मोहनजोदड़ो में कौन-सी प्रसिद्ध संरचना मिली?",
+   "en": "Which famous structure was found at Mohenjo-daro?",
+   "options": [
+    "Great Bath / विशाल स्नानागार",
+    "Dockyard / गोदीवाड़ा",
+    "Fire altars / अग्निकुंड",
+    "Ploughed field / जुता हुआ खेत"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss059",
+   "tag": "History",
+   "hi": "मौर्य वंश की स्थापना किसने की?",
+   "en": "Who founded the Maurya dynasty?",
+   "options": [
+    "Chandragupta Maurya / चंद्रगुप्त मौर्य",
+    "Ashoka / अशोक",
+    "Bindusara / बिंदुसार",
+    "Chanakya / चाणक्य"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss060",
+   "tag": "History",
+   "hi": "संगीतकार तानसेन किस मुगल शासक के दरबार में थे?",
+   "en": "Musician Tansen was in the court of which Mughal ruler?",
+   "options": [
+    "Akbar / अकबर",
+    "Jahangir / जहाँगीर",
+    "Shah Jahan / शाहजहाँ",
+    "Babur / बाबर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss061",
+   "tag": "History",
+   "hi": "ताजमहल किसने बनवाया?",
+   "en": "Who built the Taj Mahal?",
+   "options": [
+    "Shah Jahan / शाहजहाँ",
+    "Akbar / अकबर",
+    "Jahangir / जहाँगीर",
+    "Aurangzeb / औरंगज़ेब"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss062",
+   "tag": "History",
+   "hi": "कुतुब मीनार का निर्माण किसने शुरू करवाया?",
+   "en": "Who started the construction of the Qutub Minar?",
+   "options": [
+    "Qutb-ud-din Aibak / कुतुबुद्दीन ऐबक",
+    "Iltutmish / इल्तुतमिश",
+    "Alauddin Khilji / अलाउद्दीन खिलजी",
+    "Balban / बलबन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss063",
+   "tag": "History",
+   "hi": "विजयनगर साम्राज्य की स्थापना किसने की?",
+   "en": "Who founded the Vijayanagara Empire?",
+   "options": [
+    "Harihara and Bukka / हरिहर और बुक्का",
+    "Krishnadevaraya / कृष्णदेवराय",
+    "Pulakeshin II / पुलकेशिन द्वितीय",
+    "Rajendra Chola / राजेंद्र चोल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss064",
+   "tag": "History",
+   "hi": "1857 की क्रांति कहाँ से शुरू हुई (10 मई 1857)?",
+   "en": "Where did the Revolt of 1857 begin (10 May 1857)?",
+   "options": [
+    "Meerut / मेरठ",
+    "Delhi / दिल्ली",
+    "Kanpur / कानपुर",
+    "Lucknow / लखनऊ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss065",
+   "tag": "History",
+   "hi": "महात्मा गांधी दक्षिण अफ्रीका से भारत कब लौटे?",
+   "en": "When did Mahatma Gandhi return to India from South Africa?",
+   "options": [
+    "1915",
+    "1917",
+    "1919",
+    "1909"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss066",
+   "tag": "History",
+   "hi": "कांग्रेस और मुस्लिम लीग के बीच लखनऊ समझौता कब हुआ?",
+   "en": "When was the Lucknow Pact between Congress and Muslim League signed?",
+   "options": [
+    "1916",
+    "1906",
+    "1919",
+    "1929"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss067",
+   "tag": "History",
+   "hi": "अखिल भारतीय मुस्लिम लीग की स्थापना कहाँ हुई (1906)?",
+   "en": "Where was the All-India Muslim League founded (1906)?",
+   "options": [
+    "Dhaka / ढाका",
+    "Lahore / लाहौर",
+    "Aligarh / अलीगढ़",
+    "Lucknow / लखनऊ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss068",
+   "tag": "Economy",
+   "hi": "भारतीय रिज़र्व बैंक (RBI) की स्थापना कब हुई?",
+   "en": "When was the Reserve Bank of India established?",
+   "options": [
+    "1935",
+    "1949",
+    "1947",
+    "1969"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss069",
+   "tag": "Economy",
+   "hi": "RBI का राष्ट्रीयकरण कब हुआ?",
+   "en": "When was the RBI nationalised?",
+   "options": [
+    "1949",
+    "1935",
+    "1969",
+    "1951"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss070",
+   "tag": "Economy",
+   "hi": "भारत की पहली पंचवर्षीय योजना की अवधि क्या थी?",
+   "en": "What was the period of India's First Five Year Plan?",
+   "options": [
+    "1951-56",
+    "1947-52",
+    "1956-61",
+    "1950-55"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss071",
+   "tag": "Economy",
+   "hi": "नीति आयोग ने किसकी जगह ली?",
+   "en": "NITI Aayog replaced which body?",
+   "options": [
+    "Planning Commission / योजना आयोग",
+    "Finance Commission / वित्त आयोग",
+    "National Development Council / राष्ट्रीय विकास परिषद",
+    "Election Commission / चुनाव आयोग"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss072",
+   "tag": "Economy",
+   "hi": "भारत में GST कब लागू हुआ?",
+   "en": "When did GST come into force in India?",
+   "options": [
+    "1 July 2017",
+    "1 April 2017",
+    "1 January 2016",
+    "8 November 2016"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss073",
+   "tag": "Economy",
+   "hi": "रुपये का प्रतीक '₹' किसने डिज़ाइन किया?",
+   "en": "Who designed the Rupee symbol '₹'?",
+   "options": [
+    "D. Udaya Kumar / डी. उदय कुमार",
+    "Raghuram Rajan / रघुराम राजन",
+    "Urjit Patel / उर्जित पटेल",
+    "Bimal Jalan / बिमल जालान"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss074",
+   "tag": "Economy",
+   "hi": "1969 में कितने प्रमुख बैंकों का राष्ट्रीयकरण हुआ?",
+   "en": "How many major banks were nationalised in 1969?",
+   "options": [
+    "14",
+    "6",
+    "10",
+    "20"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss075",
+   "tag": "GK",
+   "hi": "'वंदे मातरम्' किसने लिखा?",
+   "en": "Who wrote 'Vande Mataram'?",
+   "options": [
+    "Bankim Chandra Chattopadhyay / बंकिम चंद्र चट्टोपाध्याय",
+    "Rabindranath Tagore / रवीन्द्रनाथ टैगोर",
+    "Sarojini Naidu / सरोजिनी नायडू",
+    "Muhammad Iqbal / मुहम्मद इकबाल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss076",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रगान 'जन गण मन' किसने लिखा?",
+   "en": "Who wrote India's National Anthem 'Jana Gana Mana'?",
+   "options": [
+    "Rabindranath Tagore / रवीन्द्रनाथ टैगोर",
+    "Bankim Chandra Chattopadhyay / बंकिम चंद्र चट्टोपाध्याय",
+    "Muhammad Iqbal / मुहम्मद इकबाल",
+    "Sarojini Naidu / सरोजिनी नायडू"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss077",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय जलीय जीव कौन-सा है?",
+   "en": "What is India's National Aquatic Animal?",
+   "options": [
+    "Ganges River Dolphin / गंगा डॉल्फिन",
+    "Crocodile / मगरमच्छ",
+    "Blue Whale / ब्लू व्हेल",
+    "Turtle / कछुआ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss078",
+   "tag": "GK",
+   "hi": "राष्ट्रीय खेल दिवस (29 अगस्त) किसकी जयंती पर मनाया जाता है?",
+   "en": "National Sports Day (29 August) marks the birth anniversary of?",
+   "options": [
+    "Major Dhyan Chand / मेजर ध्यानचंद",
+    "Milkha Singh / मिल्खा सिंह",
+    "Sachin Tendulkar / सचिन तेंदुलकर",
+    "P. T. Usha / पी. टी. उषा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss079",
+   "tag": "GK",
+   "hi": "शिक्षक दिवस (5 सितंबर) किसकी जयंती है?",
+   "en": "Teachers' Day (5 September) is the birth anniversary of?",
+   "options": [
+    "Dr. S. Radhakrishnan / डॉ. एस. राधाकृष्णन",
+    "Dr. Zakir Husain / डॉ. ज़ाकिर हुसैन",
+    "A. P. J. Abdul Kalam / ए. पी. जे. अब्दुल कलाम",
+    "Savitribai Phule / सावित्रीबाई फुले"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss080",
+   "tag": "GK",
+   "hi": "राष्ट्रीय युवा दिवस (12 जनवरी) किसकी जयंती पर मनाया जाता है?",
+   "en": "National Youth Day (12 January) marks whose birth anniversary?",
+   "options": [
+    "Swami Vivekananda / स्वामी विवेकानंद",
+    "Subhas Chandra Bose / सुभाष चंद्र बोस",
+    "Bhagat Singh / भगत सिंह",
+    "Mahatma Gandhi / महात्मा गांधी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss081",
+   "tag": "GK",
+   "hi": "अंतरराष्ट्रीय योग दिवस कब मनाया जाता है?",
+   "en": "When is International Yoga Day observed?",
+   "options": [
+    "21 June",
+    "5 June",
+    "21 March",
+    "7 April"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss082",
+   "tag": "GK",
+   "hi": "विश्व पर्यावरण दिवस कब मनाया जाता है?",
+   "en": "When is World Environment Day observed?",
+   "options": [
+    "5 June",
+    "22 April",
+    "21 June",
+    "16 September"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss083",
+   "tag": "GK",
+   "hi": "'गीतांजलि' के लेखक कौन हैं?",
+   "en": "Who is the author of 'Gitanjali'?",
+   "options": [
+    "Rabindranath Tagore / रवीन्द्रनाथ टैगोर",
+    "Premchand / प्रेमचंद",
+    "Sarojini Naidu / सरोजिनी नायडू",
+    "Bankim Chandra / बंकिम चंद्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss084",
+   "tag": "GK",
+   "hi": "'द डिस्कवरी ऑफ इंडिया' किसने लिखी?",
+   "en": "Who wrote 'The Discovery of India'?",
+   "options": [
+    "Jawaharlal Nehru / जवाहरलाल नेहरू",
+    "Mahatma Gandhi / महात्मा गांधी",
+    "B. R. Ambedkar / बी. आर. अंबेडकर",
+    "Abul Kalam Azad / अबुल कलाम आज़ाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss085",
+   "tag": "GK",
+   "hi": "'अर्थशास्त्र' ग्रंथ के रचयिता कौन हैं?",
+   "en": "Who wrote the 'Arthashastra'?",
+   "options": [
+    "Kautilya (Chanakya) / कौटिल्य (चाणक्य)",
+    "Kalidasa / कालिदास",
+    "Banabhatta / बाणभट्ट",
+    "Megasthenes / मेगस्थनीज़"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss086",
+   "tag": "GK",
+   "hi": "'विंग्स ऑफ फायर' किसकी आत्मकथा है?",
+   "en": "'Wings of Fire' is the autobiography of?",
+   "options": [
+    "A. P. J. Abdul Kalam / ए. पी. जे. अब्दुल कलाम",
+    "Vikram Sarabhai / विक्रम साराभाई",
+    "Homi Bhabha / होमी भाभा",
+    "C. V. Raman / सी. वी. रमन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss087",
+   "tag": "GK",
+   "hi": "'गोदान' उपन्यास के लेखक कौन हैं?",
+   "en": "Who wrote the novel 'Godan'?",
+   "options": [
+    "Munshi Premchand / मुंशी प्रेमचंद",
+    "Jaishankar Prasad / जयशंकर प्रसाद",
+    "Harivansh Rai Bachchan / हरिवंश राय बच्चन",
+    "Mahadevi Verma / महादेवी वर्मा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss088",
+   "tag": "GK",
+   "hi": "कथकली नृत्य किस राज्य से है?",
+   "en": "Kathakali dance belongs to which state?",
+   "options": [
+    "Kerala / केरल",
+    "Tamil Nadu / तमिलनाडु",
+    "Karnataka / कर्नाटक",
+    "Odisha / ओडिशा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss089",
+   "tag": "GK",
+   "hi": "भरतनाट्यम किस राज्य का शास्त्रीय नृत्य है?",
+   "en": "Bharatanatyam is the classical dance of which state?",
+   "options": [
+    "Tamil Nadu / तमिलनाडु",
+    "Kerala / केरल",
+    "Andhra Pradesh / आंध्र प्रदेश",
+    "Manipur / मणिपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss090",
+   "tag": "GK",
+   "hi": "बिहू किस राज्य का प्रमुख त्योहार/नृत्य है?",
+   "en": "Bihu is the main festival/dance of which state?",
+   "options": [
+    "Assam / असम",
+    "West Bengal / पश्चिम बंगाल",
+    "Odisha / ओडिशा",
+    "Manipur / मणिपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss091",
+   "tag": "GK",
+   "hi": "भारत की पहली महिला प्रधानमंत्री कौन थीं?",
+   "en": "Who was India's first woman Prime Minister?",
+   "options": [
+    "Indira Gandhi / इंदिरा गांधी",
+    "Pratibha Patil / प्रतिभा पाटिल",
+    "Sarojini Naidu / सरोजिनी नायडू",
+    "Sucheta Kripalani / सुचेता कृपलानी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss092",
+   "tag": "GK",
+   "hi": "नोबेल पुरस्कार पाने वाले पहले भारतीय कौन थे?",
+   "en": "Who was the first Indian to win a Nobel Prize?",
+   "options": [
+    "Rabindranath Tagore / रवीन्द्रनाथ टैगोर",
+    "C. V. Raman / सी. वी. रमन",
+    "Mother Teresa / मदर टेरेसा",
+    "Amartya Sen / अमर्त्य सेन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss093",
+   "tag": "GK",
+   "hi": "चंद्रमा पर कदम रखने वाले पहले व्यक्ति कौन थे?",
+   "en": "Who was the first person to walk on the Moon?",
+   "options": [
+    "Neil Armstrong / नील आर्मस्ट्रांग",
+    "Yuri Gagarin / यूरी गागरिन",
+    "Buzz Aldrin / बज़ एल्ड्रिन",
+    "Rakesh Sharma / राकेश शर्मा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss094",
+   "tag": "GK",
+   "hi": "ओलंपिक ध्वज में कितने छल्ले (रिंग) होते हैं?",
+   "en": "How many rings are there on the Olympic flag?",
+   "options": [
+    "5",
+    "4",
+    "6",
+    "7"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss095",
+   "tag": "GK",
+   "hi": "कबड्डी में एक टीम के कितने खिलाड़ी मैदान पर होते हैं?",
+   "en": "How many players of a team are on the court in Kabaddi?",
+   "options": [
+    "7",
+    "6",
+    "9",
+    "11"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss096",
+   "tag": "GK",
+   "hi": "रणजी ट्रॉफी किस खेल से संबंधित है?",
+   "en": "Ranji Trophy is associated with which sport?",
+   "options": [
+    "Cricket / क्रिकेट",
+    "Football / फुटबॉल",
+    "Hockey / हॉकी",
+    "Badminton / बैडमिंटन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss097",
+   "tag": "GK",
+   "hi": "डूरंड कप किस खेल से संबंधित है?",
+   "en": "Durand Cup is associated with which sport?",
+   "options": [
+    "Football / फुटबॉल",
+    "Cricket / क्रिकेट",
+    "Hockey / हॉकी",
+    "Polo / पोलो"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss098",
+   "tag": "GK",
+   "hi": "भारत का पहला राष्ट्रपति कौन था?",
+   "en": "Who was the first President of India?",
+   "options": [
+    "Dr. Rajendra Prasad / डॉ. राजेंद्र प्रसाद",
+    "Dr. S. Radhakrishnan / डॉ. एस. राधाकृष्णन",
+    "Zakir Husain / ज़ाकिर हुसैन",
+    "V. V. Giri / वी. वी. गिरि"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss099",
+   "tag": "GK",
+   "hi": "कुचिपुड़ी नृत्य किस राज्य से है?",
+   "en": "Kuchipudi dance is from which state?",
+   "options": [
+    "Andhra Pradesh / आंध्र प्रदेश",
+    "Kerala / केरल",
+    "Odisha / ओडिशा",
+    "Gujarat / गुजरात"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss100",
+   "tag": "GK",
+   "hi": "मानवाधिकार दिवस कब मनाया जाता है?",
+   "en": "When is Human Rights Day observed?",
+   "options": [
+    "10 December",
+    "1 December",
+    "24 October",
+    "2 October"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss101",
+   "tag": "Maths",
+   "hi": "240 का 15% कितना है?",
+   "en": "What is 15% of 240?",
+   "options": [
+    "36",
+    "41",
+    "33",
+    "72"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss102",
+   "tag": "Maths",
+   "hi": "360 का 35% कितना है?",
+   "en": "What is 35% of 360?",
+   "options": [
+    "126",
+    "131",
+    "123",
+    "252"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss103",
+   "tag": "Maths",
+   "hi": "₹5000 पर 8% वार्षिक दर से 3 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹5000 at 8% per annum for 3 years?",
+   "options": [
+    "1200",
+    "1450",
+    "1000",
+    "2400"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss104",
+   "tag": "Maths",
+   "hi": "₹10000 पर 10% वार्षिक चक्रवृद्धि ब्याज (2 वर्ष) कितना होगा?",
+   "en": "Compound interest on ₹10000 at 10% per annum for 2 years (compounded yearly)?",
+   "options": [
+    "2100",
+    "2000",
+    "2150",
+    "2075"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss105",
+   "tag": "Maths",
+   "hi": "12 और 18 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 12 and 18?",
+   "options": [
+    "36",
+    "216",
+    "18",
+    "42"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss106",
+   "tag": "Maths",
+   "hi": "36 और 48 का HCF (महत्तम समापवर्तक) क्या है?",
+   "en": "What is the HCF of 36 and 48?",
+   "options": [
+    "12",
+    "24",
+    "6",
+    "13"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss107",
+   "tag": "Maths",
+   "hi": "72 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "72 km/h = how many m/s?",
+   "options": [
+    "20 m/s",
+    "25 m/s",
+    "40 m/s",
+    "259.2 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss108",
+   "tag": "Maths",
+   "hi": "200 मीटर लंबी ट्रेन 72 किमी/घंटा की चाल से एक खंभे को कितने समय में पार करेगी?",
+   "en": "A 200 m long train at 72 km/h crosses a pole in how much time?",
+   "options": [
+    "10 s",
+    "14 s",
+    "20 s",
+    "8 s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss109",
+   "tag": "Maths",
+   "hi": "क्रय मूल्य ₹400 और विक्रय मूल्य ₹500 है। लाभ प्रतिशत कितना है?",
+   "en": "Cost price ₹400, selling price ₹500. Profit percent?",
+   "options": [
+    "25%",
+    "20%",
+    "30%",
+    "50%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss110",
+   "tag": "Maths",
+   "hi": "पहली 10 प्राकृत संख्याओं का औसत क्या है?",
+   "en": "Average of the first 10 natural numbers?",
+   "options": [
+    "5.5",
+    "5",
+    "6.5",
+    "55"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss111",
+   "tag": "Maths",
+   "hi": "√1764 का मान क्या है?",
+   "en": "What is the value of √1764?",
+   "options": [
+    "42",
+    "44",
+    "40",
+    "46"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss112",
+   "tag": "Maths",
+   "hi": "12 का घन (cube) क्या है?",
+   "en": "What is the cube of 12?",
+   "options": [
+    "1728",
+    "1584",
+    "1740",
+    "144"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss113",
+   "tag": "Maths",
+   "hi": "A किसी काम को 10 दिन में और B 15 दिन में करता है। दोनों मिलकर कितने दिन में करेंगे?",
+   "en": "A does a work in 10 days and B in 15 days. Together they finish it in?",
+   "options": [
+    "6 days",
+    "12.5 days",
+    "8 days",
+    "7 days"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss114",
+   "tag": "Maths",
+   "hi": "64 को 3:5 के अनुपात में बाँटने पर बड़ा भाग कितना होगा?",
+   "en": "64 is divided in the ratio 3:5. What is the larger part?",
+   "options": [
+    "40",
+    "24",
+    "44",
+    "38"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss115",
+   "tag": "Maths",
+   "hi": "10% और 20% की दो क्रमिक छूट के बराबर एकल छूट कितनी है?",
+   "en": "Two successive discounts of 10% and 20% equal a single discount of?",
+   "options": [
+    "28%",
+    "30%",
+    "26%",
+    "31%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss116",
+   "tag": "Maths",
+   "hi": "एक षट्भुज के सभी अंतः कोणों का योग कितना होता है?",
+   "en": "Sum of all interior angles of a hexagon?",
+   "options": [
+    "720°",
+    "540°",
+    "900°",
+    "1080°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss117",
+   "tag": "Maths",
+   "hi": "त्रिज्या 7 सेमी वाले वृत्त का क्षेत्रफल (π = 22/7) कितना है?",
+   "en": "Area of a circle of radius 7 cm (π = 22/7)?",
+   "options": [
+    "154 cm²",
+    "44 cm²",
+    "308 cm²",
+    "176 cm²"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss118",
+   "tag": "Maths",
+   "hi": "1/8 को प्रतिशत में लिखें।",
+   "en": "Express 1/8 as a percentage.",
+   "options": [
+    "12.5%",
+    "17.5%",
+    "6.25%",
+    "25%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss119",
+   "tag": "Maths",
+   "hi": "5 संख्याओं का औसत 20 है। एक संख्या हटाने पर औसत 18 हो जाता है। हटाई गई संख्या कौन-सी है?",
+   "en": "The average of 5 numbers is 20. Removing one number makes the average 18. The removed number is?",
+   "options": [
+    "28",
+    "33",
+    "26",
+    "38"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss120",
+   "tag": "Reasoning",
+   "hi": "3:30 बजे घड़ी की सुइयों के बीच कितना कोण होता है?",
+   "en": "What is the angle between the clock hands at 3:30?",
+   "options": [
+    "75°",
+    "90°",
+    "45°",
+    "105°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss121",
+   "tag": "Reasoning",
+   "hi": "आज सोमवार है। 61 दिन बाद कौन-सा दिन होगा?",
+   "en": "Today is Monday. What day will it be after 61 days?",
+   "options": [
+    "Saturday / शनिवार",
+    "Sunday / रविवार",
+    "Friday / शुक्रवार",
+    "Monday / सोमवार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss122",
+   "tag": "Reasoning",
+   "hi": "किसी कूट भाषा में CAT को DBU लिखा जाता है। उसी भाषा में DOG को कैसे लिखेंगे?",
+   "en": "In a code, CAT is written as DBU. How is DOG written?",
+   "options": [
+    "EPH",
+    "FQI",
+    "CNF",
+    "HPE"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss123",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 2, 6, 12, 20, 30, ?",
+   "en": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+   "options": [
+    "42",
+    "40",
+    "36",
+    "44"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss124",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 3, 9, 27, 81, ?",
+   "en": "Find the next number in the series: 3, 9, 27, 81, ?",
+   "options": [
+    "243",
+    "162",
+    "108",
+    "729"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss125",
+   "tag": "Reasoning",
+   "hi": "अंग्रेज़ी वर्णमाला में बाएँ से 10वें अक्षर के दाएँ 7वाँ अक्षर कौन-सा है?",
+   "en": "In the English alphabet, which letter is 7th to the right of the 10th letter from the left?",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "C"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss126",
+   "tag": "Reasoning",
+   "hi": "विषम (अलग) संख्या चुनें: 2, 3, 5, 9, 11",
+   "en": "Find the odd one out: 2, 3, 5, 9, 11",
+   "options": [
+    "9",
+    "2",
+    "3",
+    "5"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ss127",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 1, 4, 9, 16, 25, ?",
+   "en": "Find the next number in the series: 1, 4, 9, 16, 25, ?",
+   "options": [
+    "36",
+    "30",
+    "35",
+    "49"
+   ],
+   "answer": 0
+  }
+ ]
+}

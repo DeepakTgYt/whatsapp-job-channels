@@ -9,6 +9,7 @@ const tp = require('./thirdparty');
 const { buildCard, buildOfficialCard, renderCard, footer, fmtDate, normTitle, hashTitle, parseDate } = require('./format');
 const health = require('./health');
 const wa = require('./whatsapp');
+const quiz = require('./quiz');
 
 // ---- time helpers (IST) ----
 const ist = (d = new Date()) => new Date(d.getTime() + 5.5 * 3600e3); // shifted clock, read with getUTC*
@@ -241,20 +242,50 @@ async function sendNext() {
   sending = true;
   try {
     const hourAgo = new Date(Date.now() - 3600e3);
-    const pending = await col('queue').find({ status: 'pending' }).sort({ createdAt: 1 }).limit(20).toArray();
+    // job posts first; our own quizzes only go out when no job post is waiting for that channel
+    const jobs = await col('queue').find({ status: 'pending', kind: { $ne: 'quiz' } }).sort({ createdAt: 1 }).limit(20).toArray();
+    const quizzes = await col('queue').find({ status: 'pending', kind: 'quiz' }).sort({ createdAt: 1 }).limit(8).toArray();
+    const pending = jobs.concat(quizzes);
     for (const item of pending) {
+      if (item.kind === 'quiz') {
+        if (jobs.some((j) => j.channel === item.channel)) continue; // job waiting in this channel -> it goes first
+        if (await quiz.isOff()) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'skipped' } }); continue; }
+        if (Date.now() - new Date(item.createdAt).getTime() > quiz.QUIZ_EXPIRE_MS()) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'expired' } }); continue; }
+      }
       const sentLastHour = await col('queue').countDocuments({ channel: item.channel, status: 'sent', sentAt: { $gte: hourAgo } });
       if (sentLastHour >= cfg.MAX_POSTS_PER_HOUR) continue;
       try {
-        await wa.sendToChannel(item.channel, item.text);
-        await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date() } });
+        if (item.kind === 'quiz') {
+          const q = quiz.bank(item.channel).find((x) => x.id === item.qid);
+          if (!q) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'failed' } }); continue; }
+          const r = await wa.sendQuiz(item.channel, quiz.encodeQuizMessage(quiz.buildPoll(q, item.channel)));
+          await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date(), serverId: r.serverId, acked: r.acked } });
+          await quiz.recordResult(true, { channel: item.channel, ...r });
+        } else {
+          await wa.sendToChannel(item.channel, item.text);
+          await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date() } });
+          await setKV('lastPostAt', new Date());
+        }
         stats.lastSend = Date.now();
-        await setKV('lastPostAt', new Date());
       } catch (e) {
-        const tries = (item.tries || 0) + 1;
-        await col('queue').updateOne({ _id: item._id }, { $set: { tries, status: tries >= 5 ? 'failed' : 'pending' } });
-        logErr(`send ${item.channel}`, e);
+        logErr(`send ${item.kind === 'quiz' ? 'quiz ' : ''}${item.channel}`, e);
         stats.lastSend = Date.now(); // back off one gap
+        if (item.kind === 'quiz') {
+          // a rejected quiz is never retried (no spam); connection errors get 2 more tries
+          const rejected = /rejected|BLOCKED|quiz:/.test(e.message || '');
+          const tries = (item.tries || 0) + 1;
+          await col('queue').updateOne({ _id: item._id }, { $set: { tries, status: rejected || tries >= 3 ? 'failed' : 'pending' } });
+          if (rejected) {
+            const st = await quiz.recordResult(false, { channel: item.channel, error: health.clean(e.message) });
+            if (st.fails >= cfg.QUIZ_AUTO_OFF_AFTER && !(await getKV('quizOff', false))) {
+              await setKV('quizOff', true); await setKV('quizAutoOff', true);
+              await alertSelf('quiz', `WhatsApp ne ${st.fails} quiz lagatar reject kiye, quiz auto-OFF kar diya.\nError: ${health.clean(e.message)}\nJob posting normal chal rahi hai. Dobara try: /quiz on`);
+            }
+          }
+        } else {
+          const tries = (item.tries || 0) + 1;
+          await col('queue').updateOne({ _id: item._id }, { $set: { tries, status: tries >= 5 ? 'failed' : 'pending' } });
+        }
       }
       if (pending.length > 1) kick(cfg.MIN_GAP_SECONDS * 1000 + 50); // next one right after the gap
       return; // one message per gap
@@ -367,6 +398,7 @@ async function tick() {
     if (h === cfg.REMINDER_HOUR) await onceFor(`remind:${day}`, reminders);
     if (now.getUTCDay() === cfg.WEEKLY_DAY && h === cfg.WEEKLY_HOUR) await onceFor(`weekly:${day}`, weekly);
     if (h === 3) await onceFor(`housekeeping:${day}`, housekeeping);
+    if (cfg.QUIZ_HOURS.includes(h) && !isQuiet() && !(await quiz.isOff())) await onceFor(`quiz:${day}:${h}`, () => quiz.enqueueQuiz());
     if (wa.state.ready) await welcome();
     await sendNext();
   } catch (e) {
@@ -377,8 +409,9 @@ async function tick() {
 }
 
 async function healthReport() {
-  const [paused, queueLength, lastPostAt, dbSizeMB, list] = await Promise.all([
+  const [paused, queueLength, lastPostAt, dbSizeMB, list, qs] = await Promise.all([
     getKV('paused', false), col('queue').countDocuments({ status: 'pending' }), getKV('lastPostAt'), db.dbSizeMB().catch(() => null), health.list(),
+    quiz.status().catch(() => null),
   ]);
   const sources = list.map((s) => ({ name: s._id, lastSuccessAt: s.lastSuccessAt || null, consecutiveFails: s.consecutiveFails || 0, lastError: s.consecutiveFails ? s.lastError || null : null }));
   // Telegram is optional/secondary: a channel is healthy when ANY of its non-Telegram sources works
@@ -389,8 +422,45 @@ async function healthReport() {
     ok: !!wa.state.ready && !paused && (tpOk || offOk || !sources.length),
     sourcesOk: sources.filter((s) => !s.name.startsWith('telegram:')).every((s) => s.consecutiveFails < cfg.ALERT_AFTER_FAILS),
     waConnected: !!wa.state.ready, paused, lastPostAt, queueLength, dbSizeMB, sources,
+    quiz: qs && { enabled: qs.enabled, hoursIST: qs.hoursIST, sent24h: qs.sent24h, lastSentAt: qs.lastSentAt, consecutiveFails: qs.consecutiveFails, lastError: qs.lastError },
     lastError: stats.errors[0] ? health.clean(stats.errors[0].replace(/^\S+\s/, '')) : null,
   };
+}
+
+// ---- quiz: status line + owner commands ----
+async function quizLine() {
+  const q = await quiz.status().catch(() => null);
+  if (!q) return 'Quiz: ?';
+  const t = (d) => (d ? new Date(d).toLocaleString('en-IN', { timeZone: cfg.TZ, day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-');
+  return `Quiz: ${q.enabled ? 'ON' : q.autoDisabled ? 'OFF (auto, WhatsApp ne reject kiya)' : 'OFF'} | ${q.hoursIST.map((h) => `${h}:00`).join(', ')} IST | 24h: ${q.sent24h} | last: ${t(q.lastSentAt)} ${q.lastChannel || ''}${q.consecutiveFails ? ` | fail x${q.consecutiveFails}: ${q.lastError}` : ''}\nQuiz bank (used/total): ${q.banks.map((b) => `${b.channel} ${b.used}/${b.bank}`).join(', ')}`;
+}
+async function quizCommand(arg) {
+  const [sub, key] = arg.split(/\s+/);
+  const keys = cfg.CHANNELS.map((c) => c.key);
+  if (sub === 'off') { await setKV('quizOff', true); return '⏸️ Quiz band. Job posts normal chalenge. /quiz on se chalu.'; }
+  if (sub === 'on') {
+    if (!cfg.QUIZ_ENABLED) return 'Quiz server setting (QUIZ_ENABLED) se band hai.';
+    await setKV('quizOff', false); await setKV('quizAutoOff', false);
+    const st = (await getKV('quizState')) || {}; st.fails = 0; await setKV('quizState', st);
+    return `▶️ Quiz chalu: roz ${cfg.QUIZ_HOURS.map((h) => `${h}:00`).join(' & ')} IST.`;
+  }
+  if (sub === 'now') {
+    if (await quiz.isOff()) return 'Quiz abhi OFF hai. Pehle /quiz on.';
+    const list = key === 'all' ? keys : keys.includes(key) ? [key] : null;
+    if (!list) return 'Format: /quiz now ssc|railway|bihar|army|all';
+    const q = await quiz.enqueueQuiz(list, 'manual');
+    kick();
+    return `🧠 Quiz queue mein (${q.join(', ')}). Job posts pehle jayenge; quiet hours (${cfg.QUIET_START}:00-${cfg.QUIET_END}:00) mein subah jayega.`;
+  }
+  if (sub === 'verify') { // read back the newest quiz WhatsApp stored in our channel
+    if (!keys.includes(key)) return 'Format: /quiz verify ssc|railway|bihar|army';
+    const posts = await wa.fetchChannelPosts(key, 10);
+    const found = posts.map((p) => ({ p, q: p.bytes ? quiz.decodeQuizMessage(p.bytes) : null })).filter((x) => x.q).pop();
+    if (!found) return `Channel ${key}: pichhle ${posts.length} posts mein koi quiz nahi mila.`;
+    const { p, q } = found;
+    return `✅ ${key} quiz server_id ${p.serverId}: pollType=${q.pollType === 1 ? 'QUIZ' : q.pollType}, correct answer set: ${q.correct ? 'haan' : 'NAHI'}, options ${q.options.length}\n${q.name.split('\n').slice(0, 3).join(' ')}`;
+  }
+  return quizLine();
 }
 
 // ---- owner commands (typed in the bot number's own "Message yourself" chat) ----
@@ -404,7 +474,7 @@ async function command(text) {
       const hs = await health.list();
       const t = (d) => (d ? new Date(d).toLocaleString('en-IN', { timeZone: cfg.TZ, day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-');
       const src = hs.map((x) => `${(x.consecutiveFails || 0) >= cfg.ALERT_AFTER_FAILS ? '🔴' : x.consecutiveFails ? '🟠' : '🟢'} ${x._id} | ok ${t(x.lastSuccessAt)} | fail x${x.consecutiveFails || 0}${x.consecutiveFails && x.lastError ? ` | ${x.lastError}` : ''}`).join('\n');
-      return `✅ Bot chal raha hai\nPaused: ${(await getKV('paused', false)) ? 'haan' : 'nahi'}\nQueue: ${pend}\nPichhle 24 ghante mein post: ${today}\nTelegram check: ${t(stats.lastPoll)} (har ${cfg.POLL_MINUTES} min)\nOfficial check: ${t(stats.lastOfficialPoll)} (har ${cfg.OFFICIAL_POLL_MINUTES} min)\nWeb sources check: ${cfg.THIRDPARTY_ENABLED ? `${t(stats.lastThirdPartyPoll)} (har ${cfg.THIRDPARTY_POLL_MINUTES} min)` : 'off'}\nTelegram: ${cfg.TELEGRAM_ENABLED ? 'on (optional)' : 'off'}\nQuiet: ${isQuiet() ? 'haan' : 'nahi'}\nDB: ${await db.dbSizeMB().catch(() => '?')} MB / 512 MB\n\n*Sources:*\n${src || '-'}`;
+      return `✅ Bot chal raha hai\nPaused: ${(await getKV('paused', false)) ? 'haan' : 'nahi'}\nQueue: ${pend}\nPichhle 24 ghante mein post: ${today}\nTelegram check: ${t(stats.lastPoll)} (har ${cfg.POLL_MINUTES} min)\nOfficial check: ${t(stats.lastOfficialPoll)} (har ${cfg.OFFICIAL_POLL_MINUTES} min)\nWeb sources check: ${cfg.THIRDPARTY_ENABLED ? `${t(stats.lastThirdPartyPoll)} (har ${cfg.THIRDPARTY_POLL_MINUTES} min)` : 'off'}\nTelegram: ${cfg.TELEGRAM_ENABLED ? 'on (optional)' : 'off'}\nQuiet: ${isQuiet() ? 'haan' : 'nahi'}\n${await quizLine()}\nDB: ${await db.dbSizeMB().catch(() => '?')} MB / 512 MB\n\n*Sources:*\n${src || '-'}`;
     }
     case '/pause': await setKV('paused', true); return '⏸️ Posting ruk gayi. /resume se chalu karein.';
     case '/resume': await setKV('paused', false); return '▶️ Posting chalu.';
@@ -418,10 +488,11 @@ async function command(text) {
       await enqueue(key, msg.join(' '), 'manual');
       return '📝 Queue mein daal diya.';
     }
+    case '/quiz': return quizCommand(arg.trim().toLowerCase());
     case '/errors': return stats.errors.length ? stats.errors.slice(0, 15).join('\n') : 'Koi error nahi.';
     default:
-      return 'Commands: /status /pause /resume /check /digest /remind /post <channel> <msg> /clearqueue /errors';
+      return 'Commands: /status /pause /resume /check /digest /remind /post <channel> <msg> /clearqueue /errors /quiz [on|off|now <channel|all>|verify <channel>]';
   }
 }
 
-module.exports = { tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };
+module.exports = { quizCommand, tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };

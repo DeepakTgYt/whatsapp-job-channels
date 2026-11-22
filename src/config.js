@@ -67,7 +67,14 @@ module.exports = {
   WEEKLY_DAY: 0,                                        // Sunday
   WEEKLY_HOUR: Number(env('WEEKLY_HOUR', 19)),          // weekly roundup 19:00
 
-  // Only these post types are mirrored. Quiz/polls are NEVER posted to WhatsApp.
+  // Our OWN daily quiz (native WhatsApp channel quiz polls, answer shown only after a follower taps).
+  // Quiz/PYQ content coming FROM job sources is still never mirrored (QUIZ_BLOCK below).
+  QUIZ_ENABLED: env('QUIZ_ENABLED', 'true') !== 'false',
+  QUIZ_HOURS: String(env('QUIZ_HOURS', '11,17')).split(',').map(Number).filter((h) => h >= 0 && h < 24), // IST
+  QUIZ_MAX_DELAY_HOURS: Number(env('QUIZ_MAX_DELAY_HOURS', 3)), // a quiz still waiting behind jobs after this is dropped
+  QUIZ_AUTO_OFF_AFTER: 2,                                      // WhatsApp rejects N quizzes in a row -> quiz auto-off + self-chat alert
+
+  // Only these post types are mirrored from sources. Source quiz/polls are NEVER mirrored.
   JOB_MARKERS: [
     { re: /NEW VACANCY|नई भर्ती/i, type: 'vacancy', head: '🆕 *नई भर्ती | NEW VACANCY*' },
     { re: /ADMIT CARD|एडमिट कार्ड/i, type: 'admit', head: '🎫 *एडमिट कार्ड | ADMIT CARD*' },

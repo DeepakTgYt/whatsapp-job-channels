@@ -1,6 +1,6 @@
 # WhatsApp Job Channels Bot
 
-Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notifications** utha kar 4 WhatsApp Channels par khud post karta hai. Quiz kabhi WhatsApp par nahi jata.
+Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notifications** utha kar 4 WhatsApp Channels par khud post karta hai, aur roz apna **Daily Quiz** (WhatsApp channel quiz poll) bhejta hai. Sources se aane wale quiz/PYQ kabhi mirror nahi hote.
 
 ## Features
 - **Teen source, Telegram optional:** (1) official sarkari sites, (2) job-listing websites sirf *detection* ke liye (naya job pata chalte hi uske detail page se sirf facts: org, post, vacancy, dates, fee, age, qualification + **official links** (gov.in / nic.in / board ki apni site) lekar apna card banata hai; un sites ka link ya naam kabhi post mein nahi jata, unka text copy nahi hota), (3) Telegram (optional, `TELEGRAM_ENABLED=false` se band). Posting kisi ek source par depend nahi.
@@ -29,13 +29,20 @@ Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notific
 - Har post ke neeche baaki channels + Telegram ke links
 - WhatsApp login MongoDB mein save, restart par logout nahi
 
+## Daily Quiz (apna, native WhatsApp channel quiz)
+- Har channel mein roz **11:00 aur 17:00 IST** ek quiz (`QUIZ_HOURS`), quiet hours ke bahar, MIN_GAP aur per-hour limit ke andar. Job post hamesha pehle; quiz job ke peeche 3 ghante se zyada ruka to drop.
+- WhatsApp **quiz poll**: 4 options, ek sahi jawab; follower option tap karta hai tabhi sahi/galat dikhta hai (Telegram quiz jaisa). Alag answer post nahi.
+- Question bank: `data/quiz/<ssc|railway|bihar|army>.json` (har ek 125+ static, hamesha-sahi sawal, Hindi + English). Options har baar shuffle. Mongo `quiz_used` mein record: bank khatam hone tak koi sawal repeat nahi.
+- Baileys 6.7.24 khud quiz nahi banata, isliye `src/quiz.js` stanza khud banata hai: `<message type="poll"><meta polltype="quiz_creation" contenttype="text"/><plaintext>` + Message field 111 (pollCreationMessageV5: pollType QUIZ + correctAnswer). WhatsApp 2 quiz lagatar reject kare to quiz auto-OFF + self-chat alert; job posting par koi asar nahi.
+- Commands: `/quiz` (status) `/quiz on` `/quiz off` `/quiz now <ssc|railway|bihar|army|all>` `/quiz verify <channel>` (channel ka last quiz WhatsApp se padh kar check). HTTP: `/quiz?key=ADMIN_KEY&cmd=verify%20ssc`. Server-level band: env `QUIZ_ENABLED=false`.
+
 ## Privacy lock (code mein)
 - Purani chats sync nahi, contacts save nahi, kisi ki chat nahi padhta
 - Sirf apne 4 channels par bhej sakta hai; kisi insaan/group ko message block
 - Commands sirf bot number ki apni "Message yourself" chat mein
 
 ## Health & backup
-- `GET /health` (public, koi secret/personal data nahi, hamesha HTTP 200): `{ok, waConnected, paused, lastPostAt, queueLength, dbSizeMB, sources:[{name,lastSuccessAt,consecutiveFails}], lastError}`. WhatsApp disconnect ho to `ok:false`.
+- `GET /health` (public, koi secret/personal data nahi, hamesha HTTP 200): `{ok, waConnected, paused, lastPostAt, queueLength, dbSizeMB, sources:[{name,lastSuccessAt,consecutiveFails}], quiz:{enabled,hoursIST,sent24h,lastSentAt,consecutiveFails,lastError}, lastError}`. WhatsApp disconnect ho to `ok:false`.
 - Har source ki health (last success, lagatar fail) `/status` mein. Koi source 6+ baar lagatar fail ho to bot **sirf apni self-chat** mein ek alert bhejta hai.
 - `GET /backup?key=ADMIN_KEY` → posts/kv/dedup/health ka JSON download (WhatsApp login data `wa_auth` kabhi nahi).
 
@@ -46,7 +53,7 @@ Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notific
 - **Bandwidth:** official sites par ETag / If-Modified-Since (badla nahi to 304, kuch download nahi), 15s timeout, SSC API se sirf 15 items. Telegram preview ~100 KB x 4 channels har 3 min ≈ 6 GB/month (Render free 100 GB ke andar).
 
 ## Commands (bot number ki self-chat mein likhein)
-/status /pause /resume /check /digest /remind /post <ssc|railway|bihar|army> <msg> /clearqueue /errors
+/status /pause /resume /check /digest /remind /post <ssc|railway|bihar|army> <msg> /clearqueue /errors /quiz [on|off|now <channel|all>|verify <channel>]
 
 ## Deploy (Render free)
 1. Render → New → Blueprint → is repo ko chunein (render.yaml)

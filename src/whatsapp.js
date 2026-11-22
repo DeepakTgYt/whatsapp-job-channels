@@ -7,6 +7,9 @@ const {
   fetchLatestBaileysVersion,
   Browsers,
   jidNormalizedUser,
+  generateMessageIDV2,
+  getBinaryNodeChild,
+  getBinaryNodeChildren,
 } = require('@whiskeysockets/baileys');
 const pino = require('pino');
 const cfg = require('./config');
@@ -108,7 +111,53 @@ async function send(jid, text) {
 }
 
 const sendToChannel = (key, text) => send(state.channelJids[key], text);
+
+// wait for WhatsApp's server ack of one stanza id: resolves ack attrs ({ server_id } or { error }) or null on timeout
+function waitAck(id, ms) {
+  return new Promise((resolve) => {
+    const ws = state.sock.ws;
+    const h = (node) => {
+      if (node && node.attrs && node.attrs.id === id) { clearTimeout(t); ws.off('CB:ack,class:message', h); resolve(node.attrs); }
+    };
+    const t = setTimeout(() => { ws.off('CB:ack,class:message', h); resolve(null); }, ms);
+    ws.on('CB:ack,class:message', h);
+  });
+}
+
+// Native channel QUIZ poll. Hard lock: only the 4 resolved channel JIDs (@newsletter), never a person or the self-chat.
+async function sendQuiz(key, bytes) {
+  const jid = state.channelJids[key];
+  if (!jid || !allowed.has(jid) || !/@newsletter$/.test(jid)) throw new Error('BLOCKED: quiz allowed only to own channels');
+  if (!state.ready) throw new Error('WhatsApp not connected');
+  const id = generateMessageIDV2(state.sock.user && state.sock.user.id);
+  const ackP = waitAck(id, 20000);
+  await state.sock.sendNode({
+    tag: 'message',
+    attrs: { to: jid, id, type: 'poll' },
+    content: [
+      { tag: 'meta', attrs: { polltype: 'quiz_creation', contenttype: 'text' } },
+      { tag: 'plaintext', attrs: {}, content: bytes },
+    ],
+  });
+  const ack = await ackP;
+  if (ack && ack.error) throw new Error(`quiz rejected by WhatsApp (ack error ${ack.error})`);
+  return { id, acked: !!ack, serverId: (ack && ack.server_id) || null };
+}
+
+// read back the latest posts of OUR channel (channel content only) -> raw plaintext bytes per post
+async function fetchChannelPosts(key, count = 5) {
+  const jid = state.channelJids[key];
+  if (!jid || !/@newsletter$/.test(jid)) throw new Error('not one of our channels');
+  if (!state.ready) throw new Error('WhatsApp not connected');
+  const res = await state.sock.newsletterFetchMessages(jid, count);
+  const box = getBinaryNodeChild(res, 'message_updates') || getBinaryNodeChild(res, 'messages') || res;
+  const msgs = getBinaryNodeChildren(getBinaryNodeChild(box, 'messages') || box, 'message');
+  return msgs.map((m) => {
+    const pt = getBinaryNodeChild(m, 'plaintext');
+    return { serverId: m.attrs.server_id, type: m.attrs.type, t: m.attrs.t, bytes: pt && pt.content ? Buffer.from(pt.content) : null };
+  });
+}
 // owner alerts go ONLY to the bot number's own self-chat
 const sendSelf = (text) => send(state.selfJid, text);
 
-module.exports = { start, state, sendToChannel, sendSelf };
+module.exports = { start, state, sendToChannel, sendSelf, sendQuiz, fetchChannelPosts, resolveChannels };

@@ -1,0 +1,1657 @@
+{
+ "channel": "railway",
+ "note": "answer = index of the correct option; options are shuffled at send time",
+ "questions": [
+  {
+   "id": "ra001",
+   "tag": "Science",
+   "hi": "बल का SI मात्रक क्या है?",
+   "en": "What is the SI unit of force?",
+   "options": [
+    "Newton / न्यूटन",
+    "Joule / जूल",
+    "Watt / वाट",
+    "Pascal / पास्कल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra002",
+   "tag": "Science",
+   "hi": "विद्युत प्रतिरोध का SI मात्रक क्या है?",
+   "en": "What is the SI unit of electrical resistance?",
+   "options": [
+    "Ohm / ओम",
+    "Volt / वोल्ट",
+    "Ampere / एम्पियर",
+    "Coulomb / कूलॉम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra003",
+   "tag": "Science",
+   "hi": "शक्ति (Power) का SI मात्रक क्या है?",
+   "en": "What is the SI unit of power?",
+   "options": [
+    "Watt / वाट",
+    "Joule / जूल",
+    "Newton / न्यूटन",
+    "Ohm / ओम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra004",
+   "tag": "Science",
+   "hi": "कार्य (Work) का SI मात्रक क्या है?",
+   "en": "What is the SI unit of work?",
+   "options": [
+    "Joule / जूल",
+    "Watt / वाट",
+    "Newton / न्यूटन",
+    "Pascal / पास्कल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra005",
+   "tag": "Science",
+   "hi": "दाब (Pressure) का SI मात्रक क्या है?",
+   "en": "What is the SI unit of pressure?",
+   "options": [
+    "Pascal / पास्कल",
+    "Newton / न्यूटन",
+    "Joule / जूल",
+    "Bar / बार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra006",
+   "tag": "Science",
+   "hi": "विद्युत धारा का SI मात्रक क्या है?",
+   "en": "What is the SI unit of electric current?",
+   "options": [
+    "Ampere / एम्पियर",
+    "Volt / वोल्ट",
+    "Ohm / ओम",
+    "Watt / वाट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra007",
+   "tag": "Science",
+   "hi": "आवृत्ति (Frequency) का SI मात्रक क्या है?",
+   "en": "What is the SI unit of frequency?",
+   "options": [
+    "Hertz / हर्ट्ज़",
+    "Decibel / डेसिबल",
+    "Metre / मीटर",
+    "Second / सेकंड"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra008",
+   "tag": "Science",
+   "hi": "निर्वात में प्रकाश की चाल लगभग कितनी है?",
+   "en": "What is the approximate speed of light in vacuum?",
+   "options": [
+    "3 × 10^8 m/s",
+    "3 × 10^6 m/s",
+    "3 × 10^5 m/s",
+    "330 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra009",
+   "tag": "Science",
+   "hi": "ध्वनि किसमें गमन नहीं कर सकती?",
+   "en": "Sound cannot travel through?",
+   "options": [
+    "Vacuum / निर्वात",
+    "Water / पानी",
+    "Steel / स्टील",
+    "Air / हवा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra010",
+   "tag": "Science",
+   "hi": "गति के नियम किसने दिए?",
+   "en": "Who gave the laws of motion?",
+   "options": [
+    "Isaac Newton / आइज़क न्यूटन",
+    "Galileo Galilei / गैलीलियो",
+    "Albert Einstein / आइंस्टीन",
+    "Johannes Kepler / केप्लर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra011",
+   "tag": "Science",
+   "hi": "सापेक्षता का सिद्धांत किसने दिया?",
+   "en": "Who gave the Theory of Relativity?",
+   "options": [
+    "Albert Einstein / आइंस्टीन",
+    "Isaac Newton / न्यूटन",
+    "Niels Bohr / नील्स बोर",
+    "Max Planck / मैक्स प्लांक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra012",
+   "tag": "Science",
+   "hi": "ओम का नियम किस संबंध को दर्शाता है?",
+   "en": "Ohm's law gives the relation V = ?",
+   "options": [
+    "I × R",
+    "I / R",
+    "R / I",
+    "I² × R"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra013",
+   "tag": "Science",
+   "hi": "पृथ्वी पर गुरुत्वीय त्वरण (g) का मान लगभग कितना है?",
+   "en": "Approximate value of acceleration due to gravity (g) on Earth?",
+   "options": [
+    "9.8 m/s²",
+    "8.9 m/s²",
+    "6.67 m/s²",
+    "10.8 m/s²"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra014",
+   "tag": "Science",
+   "hi": "किस दर्पण का प्रयोग वाहनों में पीछे देखने (rear-view) के लिए होता है?",
+   "en": "Which mirror is used as a rear-view mirror in vehicles?",
+   "options": [
+    "Convex / उत्तल",
+    "Concave / अवतल",
+    "Plane / समतल",
+    "Cylindrical / बेलनाकार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra015",
+   "tag": "Science",
+   "hi": "इंद्रधनुष किस घटना के कारण बनता है?",
+   "en": "A rainbow is formed due to which phenomenon?",
+   "options": [
+    "Dispersion of light / प्रकाश का विक्षेपण",
+    "Reflection only / केवल परावर्तन",
+    "Polarisation / ध्रुवण",
+    "Diffraction only / केवल विवर्तन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra016",
+   "tag": "Science",
+   "hi": "विद्युत मोटर किस ऊर्जा को किसमें बदलती है?",
+   "en": "An electric motor converts?",
+   "options": [
+    "Electrical to mechanical / विद्युत से यांत्रिक",
+    "Mechanical to electrical / यांत्रिक से विद्युत",
+    "Heat to electrical / ऊष्मा से विद्युत",
+    "Chemical to electrical / रासायनिक से विद्युत"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra017",
+   "tag": "Science",
+   "hi": "जनरेटर (डायनेमो) किस सिद्धांत पर काम करता है?",
+   "en": "An electric generator works on the principle of?",
+   "options": [
+    "Electromagnetic induction / विद्युत चुंबकीय प्रेरण",
+    "Electrolysis / विद्युत अपघटन",
+    "Photoelectric effect / प्रकाश विद्युत प्रभाव",
+    "Thermal expansion / ऊष्मीय प्रसार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra018",
+   "tag": "Science",
+   "hi": "1 किलोवाट-घंटा (kWh) कितने जूल के बराबर है?",
+   "en": "1 kilowatt-hour (kWh) equals how many joules?",
+   "options": [
+    "3.6 × 10^6 J",
+    "3.6 × 10^3 J",
+    "1000 J",
+    "3600 J"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra019",
+   "tag": "Science",
+   "hi": "किसी वस्तु का द्रव्यमान चंद्रमा पर जाने पर क्या होता है?",
+   "en": "What happens to the mass of an object on the Moon?",
+   "options": [
+    "Remains the same / वही रहता है",
+    "Becomes 1/6 / 1/6 हो जाता है",
+    "Becomes zero / शून्य हो जाता है",
+    "Becomes 6 times / 6 गुना हो जाता है"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra020",
+   "tag": "Science",
+   "hi": "ध्वनि की प्रबलता किस मात्रक में मापी जाती है?",
+   "en": "Loudness of sound is measured in?",
+   "options": [
+    "Decibel / डेसिबल",
+    "Hertz / हर्ट्ज़",
+    "Watt / वाट",
+    "Newton / न्यूटन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra021",
+   "tag": "Science",
+   "hi": "पानी का रासायनिक सूत्र क्या है?",
+   "en": "What is the chemical formula of water?",
+   "options": [
+    "H2O",
+    "H2O2",
+    "HO2",
+    "H3O"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra022",
+   "tag": "Science",
+   "hi": "साधारण नमक का रासायनिक नाम क्या है?",
+   "en": "What is the chemical name of common salt?",
+   "options": [
+    "Sodium chloride / सोडियम क्लोराइड",
+    "Sodium bicarbonate / सोडियम बाइकार्बोनेट",
+    "Calcium carbonate / कैल्शियम कार्बोनेट",
+    "Potassium chloride / पोटैशियम क्लोराइड"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra023",
+   "tag": "Science",
+   "hi": "25°C पर शुद्ध जल का pH कितना होता है?",
+   "en": "pH of pure water at 25°C is?",
+   "options": [
+    "7",
+    "0",
+    "14",
+    "5"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra024",
+   "tag": "Science",
+   "hi": "हंसाने वाली गैस (Laughing gas) कौन-सी है?",
+   "en": "Which gas is known as laughing gas?",
+   "options": [
+    "Nitrous oxide (N2O) / नाइट्रस ऑक्साइड",
+    "Nitric oxide (NO) / नाइट्रिक ऑक्साइड",
+    "Carbon monoxide / कार्बन मोनोऑक्साइड",
+    "Ammonia / अमोनिया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra025",
+   "tag": "Science",
+   "hi": "सबसे कठोर प्राकृतिक पदार्थ कौन-सा है?",
+   "en": "Which is the hardest natural substance?",
+   "options": [
+    "Diamond / हीरा",
+    "Graphite / ग्रेफाइट",
+    "Iron / लोहा",
+    "Quartz / क्वार्ट्ज"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra026",
+   "tag": "Science",
+   "hi": "वायुमंडल में सबसे अधिक मात्रा में कौन-सी गैस है?",
+   "en": "Which gas is most abundant in the atmosphere?",
+   "options": [
+    "Nitrogen / नाइट्रोजन",
+    "Oxygen / ऑक्सीजन",
+    "Carbon dioxide / कार्बन डाइऑक्साइड",
+    "Argon / आर्गन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra027",
+   "tag": "Science",
+   "hi": "सबसे हल्का तत्व कौन-सा है?",
+   "en": "Which is the lightest element?",
+   "options": [
+    "Hydrogen / हाइड्रोजन",
+    "Helium / हीलियम",
+    "Lithium / लिथियम",
+    "Oxygen / ऑक्सीजन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra028",
+   "tag": "Science",
+   "hi": "सोने का रासायनिक प्रतीक क्या है?",
+   "en": "What is the chemical symbol of gold?",
+   "options": [
+    "Au",
+    "Ag",
+    "Gd",
+    "Go"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra029",
+   "tag": "Science",
+   "hi": "लोहे का रासायनिक प्रतीक क्या है?",
+   "en": "What is the chemical symbol of iron?",
+   "options": [
+    "Fe",
+    "Ir",
+    "In",
+    "I"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra030",
+   "tag": "Science",
+   "hi": "सोडियम का रासायनिक प्रतीक क्या है?",
+   "en": "What is the chemical symbol of sodium?",
+   "options": [
+    "Na",
+    "So",
+    "Sd",
+    "N"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra031",
+   "tag": "Science",
+   "hi": "बेकिंग सोडा का रासायनिक नाम क्या है?",
+   "en": "What is the chemical name of baking soda?",
+   "options": [
+    "Sodium bicarbonate / सोडियम बाइकार्बोनेट",
+    "Sodium carbonate / सोडियम कार्बोनेट",
+    "Calcium oxide / कैल्शियम ऑक्साइड",
+    "Sodium chloride / सोडियम क्लोराइड"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra032",
+   "tag": "Science",
+   "hi": "कमरे के ताप पर द्रव अवस्था में रहने वाली धातु कौन-सी है?",
+   "en": "Which metal is liquid at room temperature?",
+   "options": [
+    "Mercury / पारा",
+    "Sodium / सोडियम",
+    "Lead / सीसा",
+    "Aluminium / एल्युमिनियम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra033",
+   "tag": "Science",
+   "hi": "जंग लगना (Rusting) किसकी उपस्थिति में होता है?",
+   "en": "Rusting of iron needs?",
+   "options": [
+    "Oxygen and moisture / ऑक्सीजन और नमी",
+    "Only nitrogen / केवल नाइट्रोजन",
+    "Only heat / केवल ऊष्मा",
+    "Only carbon dioxide / केवल CO2"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra034",
+   "tag": "Science",
+   "hi": "आधुनिक आवर्त सारणी किस आधार पर व्यवस्थित है?",
+   "en": "The modern periodic table is arranged by?",
+   "options": [
+    "Atomic number / परमाणु क्रमांक",
+    "Atomic mass / परमाणु द्रव्यमान",
+    "Number of neutrons / न्यूट्रॉन संख्या",
+    "Density / घनत्व"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra035",
+   "tag": "Science",
+   "hi": "गुब्बारों में भरी जाने वाली हल्की, अज्वलनशील गैस कौन-सी है?",
+   "en": "Which light, non-flammable gas is filled in balloons?",
+   "options": [
+    "Helium / हीलियम",
+    "Hydrogen / हाइड्रोजन",
+    "Nitrogen / नाइट्रोजन",
+    "Neon / नियॉन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra036",
+   "tag": "Science",
+   "hi": "नींबू में कौन-सा अम्ल पाया जाता है?",
+   "en": "Which acid is found in lemon?",
+   "options": [
+    "Citric acid / साइट्रिक अम्ल",
+    "Acetic acid / एसिटिक अम्ल",
+    "Lactic acid / लैक्टिक अम्ल",
+    "Tartaric acid only / केवल टार्टरिक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra037",
+   "tag": "Science",
+   "hi": "सिरके में कौन-सा अम्ल होता है?",
+   "en": "Which acid is present in vinegar?",
+   "options": [
+    "Acetic acid / एसिटिक अम्ल",
+    "Citric acid / साइट्रिक अम्ल",
+    "Formic acid / फॉर्मिक अम्ल",
+    "Oxalic acid / ऑक्सेलिक अम्ल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra038",
+   "tag": "Science",
+   "hi": "शुष्क बर्फ (Dry ice) क्या है?",
+   "en": "What is dry ice?",
+   "options": [
+    "Solid carbon dioxide / ठोस कार्बन डाइऑक्साइड",
+    "Frozen water / जमा पानी",
+    "Solid nitrogen / ठोस नाइट्रोजन",
+    "Solid ammonia / ठोस अमोनिया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra039",
+   "tag": "Science",
+   "hi": "विटामिन C की कमी से कौन-सा रोग होता है?",
+   "en": "Deficiency of Vitamin C causes?",
+   "options": [
+    "Scurvy / स्कर्वी",
+    "Rickets / रिकेट्स",
+    "Beriberi / बेरीबेरी",
+    "Night blindness / रतौंधी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra040",
+   "tag": "Science",
+   "hi": "विटामिन D की कमी से बच्चों में कौन-सा रोग होता है?",
+   "en": "Vitamin D deficiency in children causes?",
+   "options": [
+    "Rickets / रिकेट्स",
+    "Scurvy / स्कर्वी",
+    "Pellagra / पेलाग्रा",
+    "Goitre / घेंघा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra041",
+   "tag": "Science",
+   "hi": "रतौंधी (Night blindness) किस विटामिन की कमी से होती है?",
+   "en": "Night blindness is caused by deficiency of?",
+   "options": [
+    "Vitamin A / विटामिन A",
+    "Vitamin B12 / विटामिन B12",
+    "Vitamin C / विटामिन C",
+    "Vitamin K / विटामिन K"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra042",
+   "tag": "Science",
+   "hi": "कोशिका का 'पावरहाउस' किसे कहते हैं?",
+   "en": "Which is called the 'powerhouse of the cell'?",
+   "options": [
+    "Mitochondria / माइटोकॉन्ड्रिया",
+    "Ribosome / राइबोसोम",
+    "Nucleus / केंद्रक",
+    "Golgi body / गॉल्जी काय"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra043",
+   "tag": "Science",
+   "hi": "मानव शरीर की सबसे बड़ी ग्रंथि कौन-सी है?",
+   "en": "Which is the largest gland in the human body?",
+   "options": [
+    "Liver / यकृत",
+    "Pancreas / अग्न्याशय",
+    "Thyroid / थायरॉइड",
+    "Pituitary / पीयूष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra044",
+   "tag": "Science",
+   "hi": "वयस्क मानव शरीर में कितनी हड्डियाँ होती हैं?",
+   "en": "How many bones are there in an adult human body?",
+   "options": [
+    "206",
+    "208",
+    "300",
+    "196"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra045",
+   "tag": "Science",
+   "hi": "इंसुलिन किस अंग से स्रावित होता है?",
+   "en": "Insulin is secreted by which organ?",
+   "options": [
+    "Pancreas / अग्न्याशय",
+    "Liver / यकृत",
+    "Kidney / गुर्दा",
+    "Stomach / आमाशय"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra046",
+   "tag": "Science",
+   "hi": "प्रकाश संश्लेषण में पौधे कौन-सी गैस छोड़ते हैं?",
+   "en": "Which gas do plants release during photosynthesis?",
+   "options": [
+    "Oxygen / ऑक्सीजन",
+    "Carbon dioxide / कार्बन डाइऑक्साइड",
+    "Nitrogen / नाइट्रोजन",
+    "Hydrogen / हाइड्रोजन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra047",
+   "tag": "Science",
+   "hi": "पेनिसिलिन की खोज किसने की?",
+   "en": "Who discovered penicillin?",
+   "options": [
+    "Alexander Fleming / अलेक्जेंडर फ्लेमिंग",
+    "Louis Pasteur / लुई पाश्चर",
+    "Edward Jenner / एडवर्ड जेनर",
+    "Robert Koch / रॉबर्ट कोच"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra048",
+   "tag": "Science",
+   "hi": "लाल रक्त कोशिकाएँ (RBC) मुख्य रूप से कहाँ बनती हैं?",
+   "en": "Red blood cells are mainly produced in the?",
+   "options": [
+    "Bone marrow / अस्थि मज्जा",
+    "Liver / यकृत",
+    "Heart / हृदय",
+    "Spleen / प्लीहा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra049",
+   "tag": "Science",
+   "hi": "मानव हृदय में कितने कक्ष (chambers) होते हैं?",
+   "en": "How many chambers does the human heart have?",
+   "options": [
+    "4",
+    "2",
+    "3",
+    "5"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra050",
+   "tag": "Science",
+   "hi": "आयोडीन की कमी से कौन-सा रोग होता है?",
+   "en": "Iodine deficiency causes?",
+   "options": [
+    "Goitre / घेंघा",
+    "Anaemia / रक्ताल्पता",
+    "Scurvy / स्कर्वी",
+    "Rickets / रिकेट्स"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra051",
+   "tag": "Science",
+   "hi": "रक्त में ऑक्सीजन का परिवहन कौन करता है?",
+   "en": "Which carries oxygen in the blood?",
+   "options": [
+    "Haemoglobin / हीमोग्लोबिन",
+    "Plasma only / केवल प्लाज़्मा",
+    "Platelets / प्लेटलेट्स",
+    "White blood cells / श्वेत रक्त कोशिकाएँ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra052",
+   "tag": "Science",
+   "hi": "मानव शरीर का सामान्य तापमान कितना होता है?",
+   "en": "Normal human body temperature is about?",
+   "options": [
+    "37°C (98.6°F)",
+    "35°C (95°F)",
+    "40°C (104°F)",
+    "32°C (89.6°F)"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra053",
+   "tag": "Science",
+   "hi": "रक्त का थक्का बनाने में कौन-सा विटामिन सहायक है?",
+   "en": "Which vitamin helps in blood clotting?",
+   "options": [
+    "Vitamin K / विटामिन K",
+    "Vitamin A / विटामिन A",
+    "Vitamin C / विटामिन C",
+    "Vitamin D / विटामिन D"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra054",
+   "tag": "Science",
+   "hi": "पौधों में जल का परिवहन कौन-सा ऊतक करता है?",
+   "en": "Which tissue transports water in plants?",
+   "options": [
+    "Xylem / जाइलम",
+    "Phloem / फ्लोएम",
+    "Cambium / कैम्बियम",
+    "Epidermis / बाह्यत्वचा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra055",
+   "tag": "Science",
+   "hi": "मलेरिया किस मच्छर के काटने से फैलता है?",
+   "en": "Malaria is spread by the bite of which mosquito?",
+   "options": [
+    "Female Anopheles / मादा एनोफिलीज़",
+    "Male Anopheles / नर एनोफिलीज़",
+    "Culex / क्यूलेक्स",
+    "Housefly / घरेलू मक्खी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra056",
+   "tag": "Science",
+   "hi": "DNA का पूरा नाम क्या है?",
+   "en": "What is the full form of DNA?",
+   "options": [
+    "Deoxyribonucleic acid",
+    "Dinitro acid",
+    "Deoxyribose nitrogen acid",
+    "Dual nucleic acid"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra057",
+   "tag": "Geography",
+   "hi": "सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",
+   "en": "Which is the largest planet in the Solar System?",
+   "options": [
+    "Jupiter / बृहस्पति",
+    "Saturn / शनि",
+    "Earth / पृथ्वी",
+    "Neptune / वरुण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra058",
+   "tag": "Geography",
+   "hi": "सूर्य के सबसे निकट ग्रह कौन-सा है?",
+   "en": "Which planet is nearest to the Sun?",
+   "options": [
+    "Mercury / बुध",
+    "Venus / शुक्र",
+    "Mars / मंगल",
+    "Earth / पृथ्वी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra059",
+   "tag": "Geography",
+   "hi": "किस ग्रह को 'लाल ग्रह' कहा जाता है?",
+   "en": "Which planet is called the 'Red Planet'?",
+   "options": [
+    "Mars / मंगल",
+    "Venus / शुक्र",
+    "Jupiter / बृहस्पति",
+    "Mercury / बुध"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra060",
+   "tag": "Geography",
+   "hi": "क्षेत्रफल में भारत का सबसे बड़ा राज्य कौन-सा है?",
+   "en": "Which is the largest state of India by area?",
+   "options": [
+    "Rajasthan / राजस्थान",
+    "Madhya Pradesh / मध्य प्रदेश",
+    "Maharashtra / महाराष्ट्र",
+    "Uttar Pradesh / उत्तर प्रदेश"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra061",
+   "tag": "Geography",
+   "hi": "क्षेत्रफल में भारत का सबसे छोटा राज्य कौन-सा है?",
+   "en": "Which is the smallest state of India by area?",
+   "options": [
+    "Goa / गोवा",
+    "Sikkim / सिक्किम",
+    "Tripura / त्रिपुरा",
+    "Mizoram / मिज़ोरम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra062",
+   "tag": "Geography",
+   "hi": "विश्व का सबसे बड़ा महासागर कौन-सा है?",
+   "en": "Which is the largest ocean in the world?",
+   "options": [
+    "Pacific / प्रशांत",
+    "Atlantic / अटलांटिक",
+    "Indian / हिंद",
+    "Arctic / आर्कटिक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra063",
+   "tag": "Geography",
+   "hi": "भारत की मानक मध्याह्न रेखा (IST) किस देशांतर पर है?",
+   "en": "India's Standard Meridian (IST) is at which longitude?",
+   "options": [
+    "82.5° E",
+    "80° E",
+    "75.5° E",
+    "90° E"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra064",
+   "tag": "Geography",
+   "hi": "पाक जलडमरूमध्य भारत को किस देश से अलग करता है?",
+   "en": "Palk Strait separates India from?",
+   "options": [
+    "Sri Lanka / श्रीलंका",
+    "Maldives / मालदीव",
+    "Myanmar / म्यांमार",
+    "Indonesia / इंडोनेशिया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra065",
+   "tag": "Geography",
+   "hi": "ऑस्ट्रेलिया की राजधानी कौन-सी है?",
+   "en": "What is the capital of Australia?",
+   "options": [
+    "Canberra / कैनबरा",
+    "Sydney / सिडनी",
+    "Melbourne / मेलबर्न",
+    "Perth / पर्थ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra066",
+   "tag": "Geography",
+   "hi": "लोकटक झील किस राज्य में है?",
+   "en": "Loktak Lake is in which state?",
+   "options": [
+    "Manipur / मणिपुर",
+    "Assam / असम",
+    "Meghalaya / मेघालय",
+    "Mizoram / मिज़ोरम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra067",
+   "tag": "Geography",
+   "hi": "चिल्का झील किस राज्य में है?",
+   "en": "Chilika Lake is in which state?",
+   "options": [
+    "Odisha / ओडिशा",
+    "Andhra Pradesh / आंध्र प्रदेश",
+    "West Bengal / पश्चिम बंगाल",
+    "Tamil Nadu / तमिलनाडु"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra068",
+   "tag": "Geography",
+   "hi": "पश्चिमी घाट को और किस नाम से जाना जाता है?",
+   "en": "The Western Ghats are also known as?",
+   "options": [
+    "Sahyadri / सह्याद्रि",
+    "Satpura / सतपुड़ा",
+    "Aravalli / अरावली",
+    "Vindhya / विंध्य"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra069",
+   "tag": "Geography",
+   "hi": "कपास की खेती के लिए कौन-सी मिट्टी सबसे उपयुक्त है?",
+   "en": "Which soil is best suited for cotton?",
+   "options": [
+    "Black soil / काली मिट्टी",
+    "Laterite soil / लैटेराइट",
+    "Sandy soil / बलुई",
+    "Alluvial only / केवल जलोढ़"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra070",
+   "tag": "Geography",
+   "hi": "काज़ीरंगा राष्ट्रीय उद्यान किस राज्य में है?",
+   "en": "Kaziranga National Park is in which state?",
+   "options": [
+    "Assam / असम",
+    "West Bengal / पश्चिम बंगाल",
+    "Uttarakhand / उत्तराखंड",
+    "Madhya Pradesh / मध्य प्रदेश"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra071",
+   "tag": "Geography",
+   "hi": "गिर राष्ट्रीय उद्यान किस जानवर के लिए प्रसिद्ध है?",
+   "en": "Gir National Park is famous for?",
+   "options": [
+    "Asiatic Lion / एशियाई शेर",
+    "One-horned Rhino / एक सींग वाला गैंडा",
+    "Tiger / बाघ",
+    "Elephant / हाथी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra072",
+   "tag": "Geography",
+   "hi": "नर्मदा नदी किस सागर में गिरती है?",
+   "en": "The Narmada river falls into?",
+   "options": [
+    "Arabian Sea / अरब सागर",
+    "Bay of Bengal / बंगाल की खाड़ी",
+    "Indian Ocean directly / सीधे हिंद महासागर",
+    "Gulf of Mannar / मन्नार की खाड़ी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra073",
+   "tag": "Geography",
+   "hi": "भारत का सबसे दक्षिणी बिंदु 'इंदिरा पॉइंट' कहाँ है?",
+   "en": "Where is Indira Point, India's southernmost point?",
+   "options": [
+    "Great Nicobar / ग्रेट निकोबार",
+    "Kanyakumari / कन्याकुमारी",
+    "Rameswaram / रामेश्वरम",
+    "Lakshadweep / लक्षद्वीप"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra074",
+   "tag": "Geography",
+   "hi": "भूकंप की तीव्रता मापने का यंत्र क्या है?",
+   "en": "Which instrument records earthquakes?",
+   "options": [
+    "Seismograph / सिस्मोग्राफ",
+    "Barometer / बैरोमीटर",
+    "Hygrometer / हाइग्रोमीटर",
+    "Altimeter / अल्टीमीटर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra075",
+   "tag": "Geography",
+   "hi": "कर्क रेखा भारत के कितने राज्यों से होकर गुजरती है?",
+   "en": "The Tropic of Cancer passes through how many Indian states?",
+   "options": [
+    "8",
+    "6",
+    "7",
+    "9"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra076",
+   "tag": "Geography",
+   "hi": "सुंदरबन डेल्टा किन नदियों से बना है?",
+   "en": "The Sundarbans delta is formed by?",
+   "options": [
+    "Ganga & Brahmaputra / गंगा व ब्रह्मपुत्र",
+    "Godavari & Krishna / गोदावरी व कृष्णा",
+    "Indus & Sutlej / सिंधु व सतलुज",
+    "Narmada & Tapi / नर्मदा व तापी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra077",
+   "tag": "Geography",
+   "hi": "ओज़ोन परत किस वायुमंडलीय परत में पाई जाती है?",
+   "en": "The ozone layer is found in which layer of the atmosphere?",
+   "options": [
+    "Stratosphere / समताप मंडल",
+    "Troposphere / क्षोभ मंडल",
+    "Mesosphere / मध्य मंडल",
+    "Exosphere / बाह्य मंडल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra078",
+   "tag": "Geography",
+   "hi": "विश्व का सबसे बड़ा गर्म मरुस्थल कौन-सा है?",
+   "en": "Which is the largest hot desert in the world?",
+   "options": [
+    "Sahara / सहारा",
+    "Thar / थार",
+    "Gobi / गोबी",
+    "Kalahari / कालाहारी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra079",
+   "tag": "Railway",
+   "hi": "भारत की पहली यात्री ट्रेन (16 अप्रैल 1853) किन स्टेशनों के बीच चली?",
+   "en": "India's first passenger train (16 April 1853) ran between?",
+   "options": [
+    "Bombay (Bori Bunder) - Thane / बॉम्बे - ठाणे",
+    "Howrah - Hooghly / हावड़ा - हुगली",
+    "Madras - Arcot / मद्रास - आर्काट",
+    "Delhi - Agra / दिल्ली - आगरा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra080",
+   "tag": "Railway",
+   "hi": "भारत में पहली यात्री ट्रेन किस वर्ष चली?",
+   "en": "In which year did the first passenger train run in India?",
+   "options": [
+    "1853",
+    "1857",
+    "1835",
+    "1873"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra081",
+   "tag": "Railway",
+   "hi": "इंटीग्रल कोच फैक्ट्री (ICF) कहाँ स्थित है?",
+   "en": "Where is the Integral Coach Factory (ICF) located?",
+   "options": [
+    "Chennai (Perambur) / चेन्नई (पेरम्बूर)",
+    "Kapurthala / कपूरथला",
+    "Varanasi / वाराणसी",
+    "Chittaranjan / चित्तरंजन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra082",
+   "tag": "Railway",
+   "hi": "रेल कोच फैक्ट्री (RCF) कहाँ स्थित है?",
+   "en": "Where is the Rail Coach Factory (RCF) located?",
+   "options": [
+    "Kapurthala / कपूरथला",
+    "Chennai / चेन्नई",
+    "Bengaluru / बेंगलुरु",
+    "Rae Bareli / रायबरेली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra083",
+   "tag": "Railway",
+   "hi": "चित्तरंजन लोकोमोटिव वर्क्स (CLW) किस राज्य में है?",
+   "en": "Chittaranjan Locomotive Works (CLW) is in which state?",
+   "options": [
+    "West Bengal / पश्चिम बंगाल",
+    "Bihar / बिहार",
+    "Jharkhand / झारखंड",
+    "Odisha / ओडिशा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra084",
+   "tag": "Railway",
+   "hi": "भारत में पहली इलेक्ट्रिक ट्रेन (1925) किस शहर में चली?",
+   "en": "India's first electric train (1925) ran in which city?",
+   "options": [
+    "Bombay (Mumbai) / बॉम्बे (मुंबई)",
+    "Calcutta / कलकत्ता",
+    "Madras / मद्रास",
+    "Delhi / दिल्ली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra085",
+   "tag": "Railway",
+   "hi": "दार्जिलिंग हिमालयन रेलवे को यूनेस्को विश्व धरोहर किस वर्ष घोषित किया गया?",
+   "en": "In which year was the Darjeeling Himalayan Railway declared a UNESCO World Heritage Site?",
+   "options": [
+    "1999",
+    "2005",
+    "1989",
+    "2008"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra086",
+   "tag": "Railway",
+   "hi": "भारत में रेलवे बोर्ड का गठन किस वर्ष हुआ?",
+   "en": "In which year was the Railway Board constituted in India?",
+   "options": [
+    "1905",
+    "1853",
+    "1925",
+    "1951"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra087",
+   "tag": "Railway",
+   "hi": "भारत में मेट्रो रेल सबसे पहले किस शहर में शुरू हुई (1984)?",
+   "en": "Which Indian city got the first metro rail (1984)?",
+   "options": [
+    "Kolkata / कोलकाता",
+    "Delhi / दिल्ली",
+    "Mumbai / मुंबई",
+    "Chennai / चेन्नई"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra088",
+   "tag": "Railway",
+   "hi": "भारतीय रेल में ब्रॉड गेज की चौड़ाई कितनी होती है?",
+   "en": "What is the width of Broad Gauge in Indian Railways?",
+   "options": [
+    "1676 mm",
+    "1435 mm",
+    "1000 mm",
+    "762 mm"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra089",
+   "tag": "Railway",
+   "hi": "भारतीय रेल में मीटर गेज की चौड़ाई कितनी होती है?",
+   "en": "What is the width of Metre Gauge?",
+   "options": [
+    "1000 mm",
+    "1676 mm",
+    "762 mm",
+    "610 mm"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra090",
+   "tag": "Railway",
+   "hi": "नीलगिरि माउंटेन रेलवे किस राज्य में है?",
+   "en": "The Nilgiri Mountain Railway is in which state?",
+   "options": [
+    "Tamil Nadu / तमिलनाडु",
+    "Kerala / केरल",
+    "Karnataka / कर्नाटक",
+    "Himachal Pradesh / हिमाचल प्रदेश"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra091",
+   "tag": "Railway",
+   "hi": "कालका-शिमला रेलवे किस राज्य/क्षेत्र से जुड़ी है?",
+   "en": "The Kalka-Shimla Railway goes to which state?",
+   "options": [
+    "Himachal Pradesh / हिमाचल प्रदेश",
+    "Uttarakhand / उत्तराखंड",
+    "Jammu & Kashmir / जम्मू-कश्मीर",
+    "Sikkim / सिक्किम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra092",
+   "tag": "Railway",
+   "hi": "भाप इंजन किस प्रकार के इंजन का उदाहरण है?",
+   "en": "A steam engine is an example of?",
+   "options": [
+    "External combustion engine / बाह्य दहन इंजन",
+    "Internal combustion engine / आंतरिक दहन इंजन",
+    "Electric motor / विद्युत मोटर",
+    "Jet engine / जेट इंजन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra093",
+   "tag": "Railway",
+   "hi": "डीज़ल इंजन किस प्रकार का इंजन है?",
+   "en": "A diesel engine is a type of?",
+   "options": [
+    "Compression ignition engine / संपीडन प्रज्वलन इंजन",
+    "Spark ignition engine / स्पार्क प्रज्वलन इंजन",
+    "External combustion engine / बाह्य दहन इंजन",
+    "Steam turbine / भाप टरबाइन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra094",
+   "tag": "Maths",
+   "hi": "450 का 12% कितना है?",
+   "en": "What is 12% of 450?",
+   "options": [
+    "54",
+    "59",
+    "51",
+    "108"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra095",
+   "tag": "Maths",
+   "hi": "275 का 40% कितना है?",
+   "en": "What is 40% of 275?",
+   "options": [
+    "110",
+    "115",
+    "107",
+    "220"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra096",
+   "tag": "Maths",
+   "hi": "₹8000 पर 5% वार्षिक दर से 4 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹8000 at 5% per annum for 4 years?",
+   "options": [
+    "1600",
+    "2000",
+    "1280",
+    "3200"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra097",
+   "tag": "Maths",
+   "hi": "₹5000 पर 20% वार्षिक चक्रवृद्धि ब्याज (2 वर्ष) कितना होगा?",
+   "en": "Compound interest on ₹5000 at 20% per annum for 2 years (compounded yearly)?",
+   "options": [
+    "2200",
+    "2000",
+    "2250",
+    "2175"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra098",
+   "tag": "Maths",
+   "hi": "15 और 25 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 15 and 25?",
+   "options": [
+    "75",
+    "375",
+    "90",
+    "80"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra099",
+   "tag": "Maths",
+   "hi": "54 और 72 का HCF (महत्तम समापवर्तक) क्या है?",
+   "en": "What is the HCF of 54 and 72?",
+   "options": [
+    "18",
+    "36",
+    "9",
+    "19"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra100",
+   "tag": "Maths",
+   "hi": "54 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "54 km/h = how many m/s?",
+   "options": [
+    "15 m/s",
+    "20 m/s",
+    "30 m/s",
+    "194.4 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra101",
+   "tag": "Maths",
+   "hi": "150 मीटर लंबी ट्रेन 54 किमी/घंटा की चाल से एक खंभे को कितने समय में पार करेगी?",
+   "en": "A 150 m long train at 54 km/h crosses a pole in how much time?",
+   "options": [
+    "10 s",
+    "14 s",
+    "20 s",
+    "8 s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra102",
+   "tag": "Maths",
+   "hi": "क्रय मूल्य ₹250 और विक्रय मूल्य ₹300 है। लाभ प्रतिशत कितना है?",
+   "en": "Cost price ₹250, selling price ₹300. Profit percent?",
+   "options": [
+    "20%",
+    "16.67%",
+    "25%",
+    "15%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra103",
+   "tag": "Maths",
+   "hi": "पहली 20 प्राकृत संख्याओं का औसत क्या है?",
+   "en": "Average of the first 20 natural numbers?",
+   "options": [
+    "10.5",
+    "10",
+    "11.5",
+    "210"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra104",
+   "tag": "Maths",
+   "hi": "√2304 का मान क्या है?",
+   "en": "What is the value of √2304?",
+   "options": [
+    "48",
+    "50",
+    "46",
+    "52"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra105",
+   "tag": "Maths",
+   "hi": "9 का घन (cube) क्या है?",
+   "en": "What is the cube of 9?",
+   "options": [
+    "729",
+    "648",
+    "738",
+    "81"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra106",
+   "tag": "Maths",
+   "hi": "A किसी काम को 12 दिन में और B 24 दिन में करता है। दोनों मिलकर कितने दिन में करेंगे?",
+   "en": "A does a work in 12 days and B in 24 days. Together they finish it in?",
+   "options": [
+    "8 days",
+    "18 days",
+    "10 days",
+    "9 days"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra107",
+   "tag": "Maths",
+   "hi": "90 को 4:5 के अनुपात में बाँटने पर बड़ा भाग कितना होगा?",
+   "en": "90 is divided in the ratio 4:5. What is the larger part?",
+   "options": [
+    "50",
+    "40",
+    "54",
+    "48"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra108",
+   "tag": "Maths",
+   "hi": "20% और 25% की दो क्रमिक छूट के बराबर एकल छूट कितनी है?",
+   "en": "Two successive discounts of 20% and 25% equal a single discount of?",
+   "options": [
+    "40%",
+    "45%",
+    "38%",
+    "43%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra109",
+   "tag": "Maths",
+   "hi": "एक पंचभुज के सभी अंतः कोणों का योग कितना होता है?",
+   "en": "Sum of all interior angles of a pentagon?",
+   "options": [
+    "540°",
+    "360°",
+    "720°",
+    "900°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra110",
+   "tag": "Maths",
+   "hi": "त्रिज्या 14 सेमी वाले वृत्त का क्षेत्रफल (π = 22/7) कितना है?",
+   "en": "Area of a circle of radius 14 cm (π = 22/7)?",
+   "options": [
+    "616 cm²",
+    "88 cm²",
+    "1232 cm²",
+    "638 cm²"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra111",
+   "tag": "Maths",
+   "hi": "3/4 को प्रतिशत में लिखें।",
+   "en": "Express 3/4 as a percentage.",
+   "options": [
+    "75%",
+    "80%",
+    "37.5%",
+    "87.5%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra112",
+   "tag": "Maths",
+   "hi": "6 संख्याओं का औसत 30 है। एक संख्या हटाने पर औसत 28 हो जाता है। हटाई गई संख्या कौन-सी है?",
+   "en": "The average of 6 numbers is 30. Removing one number makes the average 28. The removed number is?",
+   "options": [
+    "40",
+    "46",
+    "38",
+    "58"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra113",
+   "tag": "Reasoning",
+   "hi": "4:20 बजे घड़ी की सुइयों के बीच कितना कोण होता है?",
+   "en": "What is the angle between the clock hands at 4:20?",
+   "options": [
+    "10°",
+    "25°",
+    "20°",
+    "120°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra114",
+   "tag": "Reasoning",
+   "hi": "आज बुधवार है। 45 दिन बाद कौन-सा दिन होगा?",
+   "en": "Today is Wednesday. What day will it be after 45 days?",
+   "options": [
+    "Saturday / शनिवार",
+    "Sunday / रविवार",
+    "Friday / शुक्रवार",
+    "Monday / सोमवार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra115",
+   "tag": "Reasoning",
+   "hi": "किसी कूट भाषा में BAT को DCV लिखा जाता है। उसी भाषा में CUP को कैसे लिखेंगे?",
+   "en": "In a code, BAT is written as DCV. How is CUP written?",
+   "options": [
+    "EWR",
+    "FXS",
+    "ASN",
+    "RWE"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra116",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 5, 11, 17, 23, 29, ?",
+   "en": "Find the next number in the series: 5, 11, 17, 23, 29, ?",
+   "options": [
+    "35",
+    "33",
+    "37",
+    "31"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra117",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 2, 4, 8, 16, 32, ?",
+   "en": "Find the next number in the series: 2, 4, 8, 16, 32, ?",
+   "options": [
+    "64",
+    "48",
+    "60",
+    "62"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra118",
+   "tag": "Reasoning",
+   "hi": "अंग्रेज़ी वर्णमाला में बाएँ से 5वें अक्षर के दाएँ 9वाँ अक्षर कौन-सा है?",
+   "en": "In the English alphabet, which letter is 9th to the right of the 5th letter from the left?",
+   "options": [
+    "N",
+    "O",
+    "M",
+    "P"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra119",
+   "tag": "Reasoning",
+   "hi": "विषम (अलग) संख्या चुनें: 7, 13, 17, 21, 23",
+   "en": "Find the odd one out: 7, 13, 17, 21, 23",
+   "options": [
+    "21",
+    "7",
+    "13",
+    "17"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra120",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 1, 8, 27, 64, ?",
+   "en": "Find the next number in the series: 1, 8, 27, 64, ?",
+   "options": [
+    "125",
+    "100",
+    "81",
+    "216"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra121",
+   "tag": "Maths",
+   "hi": "₹12000 पर 6% वार्षिक दर से 2 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹12000 at 6% per annum for 2 years?",
+   "options": [
+    "1440",
+    "2040",
+    "960",
+    "2880"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra122",
+   "tag": "Maths",
+   "hi": "8 और 14 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 8 and 14?",
+   "options": [
+    "56",
+    "112",
+    "28",
+    "58"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra123",
+   "tag": "Maths",
+   "hi": "90 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "90 km/h = how many m/s?",
+   "options": [
+    "25 m/s",
+    "30 m/s",
+    "50 m/s",
+    "324 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra124",
+   "tag": "Maths",
+   "hi": "300 मीटर लंबी ट्रेन 90 किमी/घंटा की चाल से एक खंभे को कितने समय में पार करेगी?",
+   "en": "A 300 m long train at 90 km/h crosses a pole in how much time?",
+   "options": [
+    "12 s",
+    "16 s",
+    "24 s",
+    "22 s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra125",
+   "tag": "Maths",
+   "hi": "क्रय मूल्य ₹800 और विक्रय मूल्य ₹1000 है। लाभ प्रतिशत कितना है?",
+   "en": "Cost price ₹800, selling price ₹1000. Profit percent?",
+   "options": [
+    "25%",
+    "20%",
+    "30%",
+    "50%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra126",
+   "tag": "Maths",
+   "hi": "A किसी काम को 6 दिन में और B 12 दिन में करता है। दोनों मिलकर कितने दिन में करेंगे?",
+   "en": "A does a work in 6 days and B in 12 days. Together they finish it in?",
+   "options": [
+    "4 days",
+    "9 days",
+    "6 days",
+    "5 days"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ra127",
+   "tag": "Maths",
+   "hi": "640 का 25% कितना है?",
+   "en": "What is 25% of 640?",
+   "options": [
+    "160",
+    "165",
+    "157",
+    "320"
+   ],
+   "answer": 0
+  }
+ ]
+}

@@ -1,0 +1,1748 @@
+{
+ "channel": "army",
+ "note": "answer = index of the correct option; options are shuffled at send time",
+ "questions": [
+  {
+   "id": "ar001",
+   "tag": "Defence",
+   "hi": "युद्धकाल का भारत का सर्वोच्च वीरता पुरस्कार कौन-सा है?",
+   "en": "What is India's highest wartime gallantry award?",
+   "options": [
+    "Param Vir Chakra / परमवीर चक्र",
+    "Maha Vir Chakra / महावीर चक्र",
+    "Ashoka Chakra / अशोक चक्र",
+    "Vir Chakra / वीर चक्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar002",
+   "tag": "Defence",
+   "hi": "शांतिकाल का भारत का सर्वोच्च वीरता पुरस्कार कौन-सा है?",
+   "en": "What is India's highest peacetime gallantry award?",
+   "options": [
+    "Ashoka Chakra / अशोक चक्र",
+    "Kirti Chakra / कीर्ति चक्र",
+    "Param Vir Chakra / परमवीर चक्र",
+    "Shaurya Chakra / शौर्य चक्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar003",
+   "tag": "Defence",
+   "hi": "युद्धकाल का दूसरा सर्वोच्च वीरता पुरस्कार कौन-सा है?",
+   "en": "What is the second-highest wartime gallantry award?",
+   "options": [
+    "Maha Vir Chakra / महावीर चक्र",
+    "Vir Chakra / वीर चक्र",
+    "Kirti Chakra / कीर्ति चक्र",
+    "Sena Medal / सेना मेडल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar004",
+   "tag": "Defence",
+   "hi": "शांतिकाल का दूसरा सर्वोच्च वीरता पुरस्कार कौन-सा है?",
+   "en": "What is the second-highest peacetime gallantry award?",
+   "options": [
+    "Kirti Chakra / कीर्ति चक्र",
+    "Shaurya Chakra / शौर्य चक्र",
+    "Vir Chakra / वीर चक्र",
+    "Maha Vir Chakra / महावीर चक्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar005",
+   "tag": "Defence",
+   "hi": "पहला परमवीर चक्र किसे मिला?",
+   "en": "Who was the first recipient of the Param Vir Chakra?",
+   "options": [
+    "Major Somnath Sharma / मेजर सोमनाथ शर्मा",
+    "Captain Vikram Batra / कैप्टन विक्रम बत्रा",
+    "Abdul Hamid / अब्दुल हमीद",
+    "Major Shaitan Singh / मेजर शैतान सिंह"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar006",
+   "tag": "Defence",
+   "hi": "परमवीर चक्र पदक का डिज़ाइन किसने बनाया?",
+   "en": "Who designed the Param Vir Chakra medal?",
+   "options": [
+    "Savitri Khanolkar / सावित्री खानोलकर",
+    "Pingali Venkayya / पिंगली वेंकैया",
+    "Nandalal Bose / नंदलाल बोस",
+    "Amrita Sher-Gil / अमृता शेरगिल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar007",
+   "tag": "Defence",
+   "hi": "भारतीय सेना दिवस कब मनाया जाता है?",
+   "en": "When is Indian Army Day celebrated?",
+   "options": [
+    "15 January",
+    "4 December",
+    "8 October",
+    "26 July"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar008",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना दिवस कब मनाया जाता है?",
+   "en": "When is Indian Navy Day celebrated?",
+   "options": [
+    "4 December",
+    "15 January",
+    "8 October",
+    "16 December"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar009",
+   "tag": "Defence",
+   "hi": "भारतीय वायुसेना दिवस कब मनाया जाता है?",
+   "en": "When is Indian Air Force Day celebrated?",
+   "options": [
+    "8 October",
+    "4 December",
+    "15 January",
+    "1 April"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar010",
+   "tag": "Defence",
+   "hi": "भारतीय सशस्त्र बलों का सर्वोच्च कमांडर कौन होता है?",
+   "en": "Who is the Supreme Commander of India's Armed Forces?",
+   "options": [
+    "President / राष्ट्रपति",
+    "Prime Minister / प्रधानमंत्री",
+    "Defence Minister / रक्षा मंत्री",
+    "Chief of Defence Staff / CDS"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar011",
+   "tag": "Defence",
+   "hi": "भारत के पहले फील्ड मार्शल कौन थे?",
+   "en": "Who was India's first Field Marshal?",
+   "options": [
+    "Sam Manekshaw / सैम मानेकशॉ",
+    "K. M. Cariappa / के. एम. करियप्पा",
+    "Arjan Singh / अर्जन सिंह",
+    "K. S. Thimayya / के. एस. थिमैया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar012",
+   "tag": "Defence",
+   "hi": "भारतीय सेना के पहले भारतीय कमांडर-इन-चीफ कौन थे?",
+   "en": "Who was the first Indian Commander-in-Chief of the Indian Army?",
+   "options": [
+    "K. M. Cariappa / के. एम. करियप्पा",
+    "Sam Manekshaw / सैम मानेकशॉ",
+    "Rajendrasinhji / राजेंद्रसिंहजी",
+    "K. S. Thimayya / के. एस. थिमैया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar013",
+   "tag": "Defence",
+   "hi": "भारतीय वायुसेना के एकमात्र 'मार्शल ऑफ द एयर फोर्स' कौन थे?",
+   "en": "Who was the only 'Marshal of the Indian Air Force'?",
+   "options": [
+    "Arjan Singh / अर्जन सिंह",
+    "Subroto Mukerjee / सुब्रतो मुखर्जी",
+    "P. C. Lal / पी. सी. लाल",
+    "Idris Latif / इदरीस लतीफ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar014",
+   "tag": "Defence",
+   "hi": "राष्ट्रीय रक्षा अकादमी (NDA) कहाँ स्थित है?",
+   "en": "Where is the National Defence Academy (NDA) located?",
+   "options": [
+    "Khadakwasla, Pune / खड़कवासला, पुणे",
+    "Dehradun / देहरादून",
+    "Chennai / चेन्नई",
+    "Ezhimala / एझिमला"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar015",
+   "tag": "Defence",
+   "hi": "भारतीय सैन्य अकादमी (IMA) कहाँ स्थित है?",
+   "en": "Where is the Indian Military Academy (IMA) located?",
+   "options": [
+    "Dehradun / देहरादून",
+    "Pune / पुणे",
+    "Mhow / महू",
+    "Secunderabad / सिकंदराबाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar016",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना अकादमी कहाँ स्थित है?",
+   "en": "Where is the Indian Naval Academy located?",
+   "options": [
+    "Ezhimala, Kerala / एझिमला, केरल",
+    "Goa / गोवा",
+    "Visakhapatnam / विशाखापत्तनम",
+    "Mumbai / मुंबई"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar017",
+   "tag": "Defence",
+   "hi": "वायुसेना अकादमी कहाँ स्थित है?",
+   "en": "Where is the Air Force Academy located?",
+   "options": [
+    "Dundigal, Hyderabad / डुंडीगल, हैदराबाद",
+    "Bengaluru / बेंगलुरु",
+    "Jodhpur / जोधपुर",
+    "Pune / पुणे"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar018",
+   "tag": "Defence",
+   "hi": "भारतीय सेना का आदर्श वाक्य (मोटो) क्या है?",
+   "en": "What is the motto of the Indian Army?",
+   "options": [
+    "Service Before Self / स्वयं से पहले सेवा",
+    "Sham No Varunah / शं नो वरुणः",
+    "Nabhah Sparsham Deeptam / नभः स्पृशं दीप्तम्",
+    "Vayam Rakshamah / वयम् रक्षामः"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar019",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना का आदर्श वाक्य क्या है?",
+   "en": "What is the motto of the Indian Navy?",
+   "options": [
+    "Sham No Varunah / शं नो वरुणः",
+    "Service Before Self / स्वयं से पहले सेवा",
+    "Nabhah Sparsham Deeptam / नभः स्पृशं दीप्तम्",
+    "Unity and Discipline / एकता और अनुशासन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar020",
+   "tag": "Defence",
+   "hi": "भारतीय वायुसेना का आदर्श वाक्य क्या है?",
+   "en": "What is the motto of the Indian Air Force?",
+   "options": [
+    "Nabhah Sparsham Deeptam / नभः स्पृशं दीप्तम्",
+    "Sham No Varunah / शं नो वरुणः",
+    "Vayam Rakshamah / वयम् रक्षामः",
+    "Satyameva Jayate / सत्यमेव जयते"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar021",
+   "tag": "Defence",
+   "hi": "भारतीय तटरक्षक बल (Coast Guard) का आदर्श वाक्य क्या है?",
+   "en": "What is the motto of the Indian Coast Guard?",
+   "options": [
+    "Vayam Rakshamah / वयम् रक्षामः",
+    "Sham No Varunah / शं नो वरुणः",
+    "Service Before Self / स्वयं से पहले सेवा",
+    "Duty unto Death / मृत्यु तक कर्तव्य"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar022",
+   "tag": "Defence",
+   "hi": "NCC का आदर्श वाक्य क्या है?",
+   "en": "What is the motto of the NCC?",
+   "options": [
+    "Unity and Discipline / एकता और अनुशासन",
+    "Service Before Self / स्वयं से पहले सेवा",
+    "Vayam Rakshamah / वयम् रक्षामः",
+    "Duty, Honour, Courage / कर्तव्य, सम्मान, साहस"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar023",
+   "tag": "Defence",
+   "hi": "NCC की स्थापना किस वर्ष हुई?",
+   "en": "In which year was the NCC established?",
+   "options": [
+    "1948",
+    "1950",
+    "1947",
+    "1962"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar024",
+   "tag": "Defence",
+   "hi": "कारगिल युद्ध किस वर्ष हुआ?",
+   "en": "In which year was the Kargil War fought?",
+   "options": [
+    "1999",
+    "1971",
+    "1965",
+    "2001"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar025",
+   "tag": "Defence",
+   "hi": "कारगिल युद्ध में भारतीय सेना के अभियान का नाम क्या था?",
+   "en": "What was the Indian Army's operation in the Kargil War called?",
+   "options": [
+    "Operation Vijay / ऑपरेशन विजय",
+    "Operation Meghdoot / ऑपरेशन मेघदूत",
+    "Operation Trident / ऑपरेशन ट्राइडेंट",
+    "Operation Polo / ऑपरेशन पोलो"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar026",
+   "tag": "Defence",
+   "hi": "कारगिल युद्ध में भारतीय वायुसेना के अभियान का नाम क्या था?",
+   "en": "What was the Indian Air Force operation in the Kargil War called?",
+   "options": [
+    "Operation Safed Sagar / ऑपरेशन सफेद सागर",
+    "Operation Cactus / ऑपरेशन कैक्टस",
+    "Operation Rahat / ऑपरेशन राहत",
+    "Operation Pawan / ऑपरेशन पवन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar027",
+   "tag": "Defence",
+   "hi": "कारगिल विजय दिवस कब मनाया जाता है?",
+   "en": "When is Kargil Vijay Diwas observed?",
+   "options": [
+    "26 July",
+    "16 December",
+    "15 January",
+    "15 August"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar028",
+   "tag": "Defence",
+   "hi": "विजय दिवस (1971 युद्ध की जीत) कब मनाया जाता है?",
+   "en": "When is Vijay Diwas (1971 war victory) observed?",
+   "options": [
+    "16 December",
+    "26 July",
+    "4 December",
+    "3 December"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar029",
+   "tag": "Defence",
+   "hi": "सियाचिन ग्लेशियर पर नियंत्रण के लिए 1984 में कौन-सा अभियान चलाया गया?",
+   "en": "Which operation (1984) secured the Siachen Glacier?",
+   "options": [
+    "Operation Meghdoot / ऑपरेशन मेघदूत",
+    "Operation Vijay / ऑपरेशन विजय",
+    "Operation Parakram / ऑपरेशन पराक्रम",
+    "Operation Polo / ऑपरेशन पोलो"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar030",
+   "tag": "Defence",
+   "hi": "सियाचिन ग्लेशियर किस पर्वत श्रेणी में है?",
+   "en": "The Siachen Glacier lies in which range?",
+   "options": [
+    "Karakoram / काराकोरम",
+    "Pir Panjal / पीर पंजाल",
+    "Zanskar / ज़ांस्कर",
+    "Shivalik / शिवालिक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar031",
+   "tag": "Defence",
+   "hi": "1961 में गोवा मुक्ति किस अभियान से हुई?",
+   "en": "Goa was liberated in 1961 through which operation?",
+   "options": [
+    "Operation Vijay / ऑपरेशन विजय",
+    "Operation Polo / ऑपरेशन पोलो",
+    "Operation Meghdoot / ऑपरेशन मेघदूत",
+    "Operation Trident / ऑपरेशन ट्राइडेंट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar032",
+   "tag": "Defence",
+   "hi": "1948 में हैदराबाद रियासत का भारत में विलय किस अभियान से हुआ?",
+   "en": "Hyderabad State was integrated in 1948 through which operation?",
+   "options": [
+    "Operation Polo / ऑपरेशन पोलो",
+    "Operation Vijay / ऑपरेशन विजय",
+    "Operation Meghdoot / ऑपरेशन मेघदूत",
+    "Operation Cactus / ऑपरेशन कैक्टस"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar033",
+   "tag": "Defence",
+   "hi": "1971 में कराची बंदरगाह पर नौसेना का हमला किस अभियान में हुआ?",
+   "en": "The Navy's 1971 attack on Karachi harbour was called?",
+   "options": [
+    "Operation Trident / ऑपरेशन ट्राइडेंट",
+    "Operation Meghdoot / ऑपरेशन मेघदूत",
+    "Operation Vijay / ऑपरेशन विजय",
+    "Operation Polo / ऑपरेशन पोलो"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar034",
+   "tag": "Defence",
+   "hi": "ब्रह्मोस मिसाइल किन दो देशों का संयुक्त उपक्रम है?",
+   "en": "BrahMos missile is a joint venture of India and?",
+   "options": [
+    "Russia / रूस",
+    "Israel / इज़राइल",
+    "France / फ्रांस",
+    "USA / अमेरिका"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar035",
+   "tag": "Defence",
+   "hi": "'ब्रह्मोस' नाम किन दो नदियों के नाम से बना है?",
+   "en": "The name 'BrahMos' comes from which two rivers?",
+   "options": [
+    "Brahmaputra & Moskva / ब्रह्मपुत्र व मोस्कवा",
+    "Brahmani & Mosel / ब्राह्मणी व मोसेल",
+    "Brahmaputra & Mississippi / ब्रह्मपुत्र व मिसिसिपी",
+    "Brahmani & Moskva / ब्राह्मणी व मोस्कवा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar036",
+   "tag": "Defence",
+   "hi": "INS विक्रांत (2022) की विशेषता क्या है?",
+   "en": "What is special about INS Vikrant (2022)?",
+   "options": [
+    "First indigenous aircraft carrier / पहला स्वदेशी विमानवाहक",
+    "First nuclear submarine / पहली परमाणु पनडुब्बी",
+    "First destroyer / पहला विध्वंसक",
+    "First frigate / पहला फ्रिगेट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar037",
+   "tag": "Defence",
+   "hi": "भारत की पहली स्वदेशी परमाणु पनडुब्बी कौन-सी है?",
+   "en": "Which is India's first indigenous nuclear submarine?",
+   "options": [
+    "INS Arihant / आईएनएस अरिहंत",
+    "INS Chakra / आईएनएस चक्र",
+    "INS Kalvari / आईएनएस कलवरी",
+    "INS Sindhughosh / आईएनएस सिंधुघोष"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar038",
+   "tag": "Defence",
+   "hi": "'तेजस' क्या है?",
+   "en": "What is 'Tejas'?",
+   "options": [
+    "Light Combat Aircraft / हल्का लड़ाकू विमान",
+    "Battle tank / युद्धक टैंक",
+    "Missile / मिसाइल",
+    "Submarine / पनडुब्बी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar039",
+   "tag": "Defence",
+   "hi": "हिंदुस्तान एयरोनॉटिक्स लिमिटेड (HAL) का मुख्यालय कहाँ है?",
+   "en": "Where is the headquarters of HAL?",
+   "options": [
+    "Bengaluru / बेंगलुरु",
+    "Hyderabad / हैदराबाद",
+    "Nashik / नासिक",
+    "New Delhi / नई दिल्ली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar040",
+   "tag": "Defence",
+   "hi": "DRDO की स्थापना किस वर्ष हुई?",
+   "en": "In which year was DRDO established?",
+   "options": [
+    "1958",
+    "1962",
+    "1947",
+    "1969"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar041",
+   "tag": "Defence",
+   "hi": "'नाग' मिसाइल किस प्रकार की है?",
+   "en": "What type of missile is 'Nag'?",
+   "options": [
+    "Anti-tank guided / टैंक-रोधी निर्देशित",
+    "Surface-to-air / सतह से हवा",
+    "Ballistic / बैलिस्टिक",
+    "Air-to-air / हवा से हवा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar042",
+   "tag": "Defence",
+   "hi": "'आकाश' मिसाइल किस प्रकार की है?",
+   "en": "What type of missile is 'Akash'?",
+   "options": [
+    "Surface-to-air / सतह से हवा",
+    "Anti-tank / टैंक-रोधी",
+    "Surface-to-surface / सतह से सतह",
+    "Anti-ship / जहाज़-रोधी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar043",
+   "tag": "Defence",
+   "hi": "IGMDP के तहत विकसित पहली मिसाइल कौन-सी थी?",
+   "en": "Which was the first missile developed under IGMDP?",
+   "options": [
+    "Prithvi / पृथ्वी",
+    "Agni / अग्नि",
+    "Akash / आकाश",
+    "Nag / नाग"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar044",
+   "tag": "Defence",
+   "hi": "'अर्जुन' क्या है?",
+   "en": "What is 'Arjun'?",
+   "options": [
+    "Main Battle Tank / मुख्य युद्धक टैंक",
+    "Fighter jet / लड़ाकू विमान",
+    "Missile / मिसाइल",
+    "Warship / युद्धपोत"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar045",
+   "tag": "Defence",
+   "hi": "'पिनाका' क्या है?",
+   "en": "What is 'Pinaka'?",
+   "options": [
+    "Multi-barrel rocket launcher / मल्टी-बैरल रॉकेट लॉन्चर",
+    "Tank / टैंक",
+    "Helicopter / हेलीकॉप्टर",
+    "Radar / रडार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar046",
+   "tag": "Defence",
+   "hi": "राफेल लड़ाकू विमान किस देश में बना है?",
+   "en": "The Rafale fighter jet is made in which country?",
+   "options": [
+    "France / फ्रांस",
+    "Russia / रूस",
+    "USA / अमेरिका",
+    "Sweden / स्वीडन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar047",
+   "tag": "Defence",
+   "hi": "सुखोई Su-30MKI मूल रूप से किस देश का विमान है?",
+   "en": "The Sukhoi Su-30MKI is originally from which country?",
+   "options": [
+    "Russia / रूस",
+    "France / फ्रांस",
+    "USA / अमेरिका",
+    "Israel / इज़राइल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar048",
+   "tag": "Defence",
+   "hi": "'चिनूक' किस प्रकार का हेलीकॉप्टर है?",
+   "en": "What type of helicopter is the 'Chinook'?",
+   "options": [
+    "Heavy-lift / भारी मालवाहक",
+    "Attack / हमलावर",
+    "Light utility / हल्का उपयोगी",
+    "Anti-submarine / पनडुब्बी-रोधी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar049",
+   "tag": "Defence",
+   "hi": "सेना के 'कैप्टन' के बराबर नौसेना में कौन-सा रैंक है?",
+   "en": "Army 'Captain' is equivalent to which Navy rank?",
+   "options": [
+    "Lieutenant / लेफ्टिनेंट",
+    "Captain / कैप्टन",
+    "Commander / कमांडर",
+    "Sub Lieutenant / सब लेफ्टिनेंट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar050",
+   "tag": "Defence",
+   "hi": "सेना के 'कर्नल' के बराबर नौसेना में कौन-सा रैंक है?",
+   "en": "Army 'Colonel' is equivalent to which Navy rank?",
+   "options": [
+    "Captain / कैप्टन",
+    "Commander / कमांडर",
+    "Commodore / कमोडोर",
+    "Lieutenant Commander / लेफ्टिनेंट कमांडर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar051",
+   "tag": "Defence",
+   "hi": "सेना के 'ब्रिगेडियर' के बराबर वायुसेना में कौन-सा रैंक है?",
+   "en": "Army 'Brigadier' is equivalent to which Air Force rank?",
+   "options": [
+    "Air Commodore / एयर कमोडोर",
+    "Group Captain / ग्रुप कैप्टन",
+    "Air Vice Marshal / एयर वाइस मार्शल",
+    "Wing Commander / विंग कमांडर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar052",
+   "tag": "Defence",
+   "hi": "सेना के 'मेजर' के बराबर वायुसेना में कौन-सा रैंक है?",
+   "en": "Army 'Major' is equivalent to which Air Force rank?",
+   "options": [
+    "Squadron Leader / स्क्वाड्रन लीडर",
+    "Flight Lieutenant / फ्लाइट लेफ्टिनेंट",
+    "Wing Commander / विंग कमांडर",
+    "Group Captain / ग्रुप कैप्टन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar053",
+   "tag": "Defence",
+   "hi": "सेना के 'लेफ्टिनेंट कर्नल' के बराबर नौसेना में कौन-सा रैंक है?",
+   "en": "Army 'Lieutenant Colonel' is equivalent to which Navy rank?",
+   "options": [
+    "Commander / कमांडर",
+    "Captain / कैप्टन",
+    "Lieutenant Commander / लेफ्टिनेंट कमांडर",
+    "Commodore / कमोडोर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar054",
+   "tag": "Defence",
+   "hi": "सेना के 'लेफ्टिनेंट जनरल' के बराबर नौसेना में कौन-सा रैंक है?",
+   "en": "Army 'Lieutenant General' is equivalent to which Navy rank?",
+   "options": [
+    "Vice Admiral / वाइस एडमिरल",
+    "Rear Admiral / रियर एडमिरल",
+    "Admiral / एडमिरल",
+    "Commodore / कमोडोर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar055",
+   "tag": "Defence",
+   "hi": "सेना के 'मेजर जनरल' के बराबर वायुसेना में कौन-सा रैंक है?",
+   "en": "Army 'Major General' is equivalent to which Air Force rank?",
+   "options": [
+    "Air Vice Marshal / एयर वाइस मार्शल",
+    "Air Marshal / एयर मार्शल",
+    "Air Commodore / एयर कमोडोर",
+    "Air Chief Marshal / एयर चीफ मार्शल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar056",
+   "tag": "Defence",
+   "hi": "सेना के 'जनरल' के बराबर वायुसेना में कौन-सा रैंक है?",
+   "en": "Army 'General' is equivalent to which Air Force rank?",
+   "options": [
+    "Air Chief Marshal / एयर चीफ मार्शल",
+    "Air Marshal / एयर मार्शल",
+    "Marshal of the Air Force / मार्शल ऑफ द एयर फोर्स",
+    "Air Vice Marshal / एयर वाइस मार्शल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar057",
+   "tag": "Defence",
+   "hi": "भारतीय सेना की उत्तरी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Army's Northern Command?",
+   "options": [
+    "Udhampur / उधमपुर",
+    "Chandimandir / चंडीमंदिर",
+    "Lucknow / लखनऊ",
+    "Shimla / शिमला"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar058",
+   "tag": "Defence",
+   "hi": "भारतीय सेना की दक्षिणी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Army's Southern Command?",
+   "options": [
+    "Pune / पुणे",
+    "Chennai / चेन्नई",
+    "Bengaluru / बेंगलुरु",
+    "Secunderabad / सिकंदराबाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar059",
+   "tag": "Defence",
+   "hi": "भारतीय सेना की पूर्वी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Army's Eastern Command?",
+   "options": [
+    "Kolkata / कोलकाता",
+    "Shillong / शिलांग",
+    "Guwahati / गुवाहाटी",
+    "Patna / पटना"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar060",
+   "tag": "Defence",
+   "hi": "भारतीय सेना की पश्चिमी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Army's Western Command?",
+   "options": [
+    "Chandimandir / चंडीमंदिर",
+    "Jaipur / जयपुर",
+    "Udhampur / उधमपुर",
+    "Ambala / अंबाला"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar061",
+   "tag": "Defence",
+   "hi": "भारतीय सेना की मध्य (सेंट्रल) कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Army's Central Command?",
+   "options": [
+    "Lucknow / लखनऊ",
+    "Bhopal / भोपाल",
+    "Jabalpur / जबलपुर",
+    "Prayagraj / प्रयागराज"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar062",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना की पश्चिमी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Navy's Western Naval Command?",
+   "options": [
+    "Mumbai / मुंबई",
+    "Kochi / कोच्चि",
+    "Karwar / कारवार",
+    "Goa / गोवा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar063",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना की पूर्वी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Navy's Eastern Naval Command?",
+   "options": [
+    "Visakhapatnam / विशाखापत्तनम",
+    "Chennai / चेन्नई",
+    "Kolkata / कोलकाता",
+    "Port Blair / पोर्ट ब्लेयर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar064",
+   "tag": "Defence",
+   "hi": "भारतीय नौसेना की दक्षिणी कमान का मुख्यालय कहाँ है?",
+   "en": "Where is the HQ of the Indian Navy's Southern Naval Command?",
+   "options": [
+    "Kochi / कोच्चि",
+    "Chennai / चेन्नई",
+    "Thiruvananthapuram / तिरुवनंतपुरम",
+    "Mumbai / मुंबई"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar065",
+   "tag": "Defence",
+   "hi": "भारत का सबसे पुराना अर्धसैनिक बल कौन-सा है?",
+   "en": "Which is India's oldest paramilitary force?",
+   "options": [
+    "Assam Rifles / असम राइफल्स",
+    "BSF / बीएसएफ",
+    "ITBP / आईटीबीपी",
+    "CRPF / सीआरपीएफ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar066",
+   "tag": "Defence",
+   "hi": "सीमा सुरक्षा बल (BSF) का गठन किस वर्ष हुआ?",
+   "en": "In which year was the BSF raised?",
+   "options": [
+    "1965",
+    "1962",
+    "1971",
+    "1949"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar067",
+   "tag": "Defence",
+   "hi": "भारत-तिब्बत सीमा पुलिस (ITBP) का गठन किस वर्ष हुआ?",
+   "en": "In which year was the ITBP raised?",
+   "options": [
+    "1962",
+    "1965",
+    "1947",
+    "1984"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar068",
+   "tag": "Defence",
+   "hi": "NSG कमांडो को किस नाम से जाना जाता है?",
+   "en": "NSG commandos are popularly known as?",
+   "options": [
+    "Black Cats / ब्लैक कैट्स",
+    "Red Berets / रेड बेरेट्स",
+    "Marcos / मार्कोस",
+    "Garuds / गरुड़"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar069",
+   "tag": "Defence",
+   "hi": "'आयो गोरखाली' किस रेजिमेंट का युद्धघोष है?",
+   "en": "'Ayo Gorkhali' is the war cry of which regiment?",
+   "options": [
+    "Gorkha Rifles / गोरखा राइफल्स",
+    "Sikh Regiment / सिख रेजिमेंट",
+    "Jat Regiment / जाट रेजिमेंट",
+    "Garhwal Rifles / गढ़वाल राइफल्स"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar070",
+   "tag": "Defence",
+   "hi": "'बोले सो निहाल, सत श्री अकाल' किस रेजिमेंट का युद्धघोष है?",
+   "en": "'Bole So Nihal, Sat Sri Akal' is the war cry of which regiment?",
+   "options": [
+    "Sikh Regiment / सिख रेजिमेंट",
+    "Punjab Regiment / पंजाब रेजिमेंट",
+    "Jat Regiment / जाट रेजिमेंट",
+    "Dogra Regiment / डोगरा रेजिमेंट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar071",
+   "tag": "Defence",
+   "hi": "'जाट बलवान, जय भगवान' किस रेजिमेंट का युद्धघोष है?",
+   "en": "'Jat Balwan, Jai Bhagwan' is the war cry of which regiment?",
+   "options": [
+    "Jat Regiment / जाट रेजिमेंट",
+    "Rajput Regiment / राजपूत रेजिमेंट",
+    "Sikh Regiment / सिख रेजिमेंट",
+    "Grenadiers / ग्रेनेडियर्स"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar072",
+   "tag": "Defence",
+   "hi": "'बद्री विशाल लाल की जय' किस रेजिमेंट का युद्धघोष है?",
+   "en": "'Badri Vishal Lal Ki Jai' is the war cry of which regiment?",
+   "options": [
+    "Garhwal Rifles / गढ़वाल राइफल्स",
+    "Kumaon Regiment / कुमाऊँ रेजिमेंट",
+    "Gorkha Rifles / गोरखा राइफल्स",
+    "Dogra Regiment / डोगरा रेजिमेंट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar073",
+   "tag": "Defence",
+   "hi": "बिहार रेजिमेंट का रेजिमेंटल सेंटर कहाँ है?",
+   "en": "Where is the Bihar Regiment's Regimental Centre?",
+   "options": [
+    "Danapur, Patna / दानापुर, पटना",
+    "Gaya / गया",
+    "Ramgarh / रामगढ़",
+    "Ranchi / रांची"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar074",
+   "tag": "Defence",
+   "hi": "कारगिल युद्ध के नायक कैप्टन विक्रम बत्रा का प्रसिद्ध नारा क्या था?",
+   "en": "What was Kargil hero Captain Vikram Batra's famous line?",
+   "options": [
+    "Yeh Dil Maange More / ये दिल मांगे मोर",
+    "Do or Die / करो या मरो",
+    "Jai Hind / जय हिंद",
+    "Inquilab Zindabad / इंकलाब ज़िंदाबाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar075",
+   "tag": "Defence",
+   "hi": "1962 के युद्ध में रेज़ांग ला की लड़ाई के लिए परमवीर चक्र किसे मिला?",
+   "en": "Who got the Param Vir Chakra for the Battle of Rezang La (1962)?",
+   "options": [
+    "Major Shaitan Singh / मेजर शैतान सिंह",
+    "Major Somnath Sharma / मेजर सोमनाथ शर्मा",
+    "Abdul Hamid / अब्दुल हमीद",
+    "Albert Ekka / अल्बर्ट एक्का"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar076",
+   "tag": "Defence",
+   "hi": "वायुसेना के एकमात्र परमवीर चक्र विजेता कौन हैं?",
+   "en": "Who is the only Air Force recipient of the Param Vir Chakra?",
+   "options": [
+    "Nirmal Jit Singh Sekhon / निर्मलजीत सिंह सेखों",
+    "Arjan Singh / अर्जन सिंह",
+    "Rakesh Sharma / राकेश शर्मा",
+    "Abhinandan Varthaman / अभिनंदन वर्धमान"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar077",
+   "tag": "Defence",
+   "hi": "सीमा सड़क संगठन (BRO) की स्थापना किस वर्ष हुई?",
+   "en": "In which year was the Border Roads Organisation (BRO) set up?",
+   "options": [
+    "1960",
+    "1950",
+    "1965",
+    "1971"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar078",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय पक्षी कौन-सा है?",
+   "en": "What is India's national bird?",
+   "options": [
+    "Peacock / मोर",
+    "Parrot / तोता",
+    "Eagle / बाज़",
+    "Sparrow / गौरैया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar079",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय पशु कौन-सा है?",
+   "en": "What is India's national animal?",
+   "options": [
+    "Tiger / बाघ",
+    "Lion / शेर",
+    "Elephant / हाथी",
+    "Cow / गाय"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar080",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय पुष्प कौन-सा है?",
+   "en": "What is India's national flower?",
+   "options": [
+    "Lotus / कमल",
+    "Rose / गुलाब",
+    "Sunflower / सूरजमुखी",
+    "Marigold / गेंदा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar081",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय वृक्ष कौन-सा है?",
+   "en": "What is India's national tree?",
+   "options": [
+    "Banyan / बरगद",
+    "Peepal / पीपल",
+    "Neem / नीम",
+    "Mango / आम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar082",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय फल कौन-सा है?",
+   "en": "What is India's national fruit?",
+   "options": [
+    "Mango / आम",
+    "Banana / केला",
+    "Apple / सेब",
+    "Jackfruit / कटहल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar083",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय विरासत पशु कौन-सा है?",
+   "en": "What is India's National Heritage Animal?",
+   "options": [
+    "Elephant / हाथी",
+    "Tiger / बाघ",
+    "Lion / शेर",
+    "Gaur / गौर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar084",
+   "tag": "GK",
+   "hi": "राष्ट्रीय ध्वज की लंबाई और चौड़ाई का अनुपात क्या है?",
+   "en": "What is the ratio of length to width of the National Flag?",
+   "options": [
+    "3:2",
+    "2:1",
+    "4:3",
+    "5:3"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar085",
+   "tag": "GK",
+   "hi": "राष्ट्रीय ध्वज के अशोक चक्र में कितनी तीलियाँ हैं?",
+   "en": "How many spokes does the Ashoka Chakra on the flag have?",
+   "options": [
+    "24",
+    "22",
+    "20",
+    "32"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar086",
+   "tag": "GK",
+   "hi": "भारत के राष्ट्रीय ध्वज का डिज़ाइन किसने तैयार किया?",
+   "en": "Who designed the Indian National Flag?",
+   "options": [
+    "Pingali Venkayya / पिंगली वेंकैया",
+    "Rabindranath Tagore / रवीन्द्रनाथ टैगोर",
+    "Nandalal Bose / नंदलाल बोस",
+    "Bhikaiji Cama / भीकाजी कामा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar087",
+   "tag": "GK",
+   "hi": "राष्ट्रीय प्रतीक (Emblem) किस स्तंभ से लिया गया है?",
+   "en": "The National Emblem is taken from which pillar?",
+   "options": [
+    "Lion Capital of Sarnath / सारनाथ का सिंह स्तंभ",
+    "Vaishali pillar / वैशाली स्तंभ",
+    "Lauriya Nandangarh / लौरिया नंदनगढ़",
+    "Qutub Minar / कुतुब मीनार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar088",
+   "tag": "GK",
+   "hi": "'सत्यमेव जयते' किस ग्रंथ से लिया गया है?",
+   "en": "'Satyameva Jayate' is taken from which text?",
+   "options": [
+    "Mundaka Upanishad / मुंडक उपनिषद",
+    "Rigveda / ऋग्वेद",
+    "Bhagavad Gita / भगवद गीता",
+    "Ramayana / रामायण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar089",
+   "tag": "GK",
+   "hi": "भारत का राष्ट्रीय पंचांग (कैलेंडर) कौन-सा है?",
+   "en": "What is India's national calendar?",
+   "options": [
+    "Saka calendar / शक संवत",
+    "Vikram Samvat / विक्रम संवत",
+    "Hijri / हिजरी",
+    "Gregorian / ग्रेगोरियन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar090",
+   "tag": "GK",
+   "hi": "भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?",
+   "en": "India shares its longest international border with?",
+   "options": [
+    "Bangladesh / बांग्लादेश",
+    "China / चीन",
+    "Pakistan / पाकिस्तान",
+    "Nepal / नेपाल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar091",
+   "tag": "GK",
+   "hi": "मैकमोहन रेखा किन दो देशों के बीच है?",
+   "en": "The McMahon Line lies between India and?",
+   "options": [
+    "China / चीन",
+    "Pakistan / पाकिस्तान",
+    "Bangladesh / बांग्लादेश",
+    "Nepal / नेपाल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar092",
+   "tag": "GK",
+   "hi": "डूरंड रेखा किन दो देशों के बीच है?",
+   "en": "The Durand Line lies between?",
+   "options": [
+    "Pakistan & Afghanistan / पाकिस्तान व अफ़गानिस्तान",
+    "India & China / भारत व चीन",
+    "India & Pakistan / भारत व पाकिस्तान",
+    "India & Nepal / भारत व नेपाल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar093",
+   "tag": "GK",
+   "hi": "रैडक्लिफ रेखा भारत को किस देश से अलग करती है?",
+   "en": "The Radcliffe Line separates India from?",
+   "options": [
+    "Pakistan / पाकिस्तान",
+    "China / चीन",
+    "Myanmar / म्यांमार",
+    "Afghanistan / अफ़गानिस्तान"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar094",
+   "tag": "GK",
+   "hi": "ज़ोजिला दर्रा किन दो स्थानों को जोड़ता है?",
+   "en": "Zoji La pass connects?",
+   "options": [
+    "Srinagar & Leh (Ladakh) / श्रीनगर व लेह",
+    "Manali & Leh / मनाली व लेह",
+    "Sikkim & Tibet / सिक्किम व तिब्बत",
+    "Shimla & Kinnaur / शिमला व किन्नौर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar095",
+   "tag": "GK",
+   "hi": "नाथू ला दर्रा किस राज्य में है?",
+   "en": "Nathu La pass is in which state?",
+   "options": [
+    "Sikkim / सिक्किम",
+    "Arunachal Pradesh / अरुणाचल प्रदेश",
+    "Himachal Pradesh / हिमाचल प्रदेश",
+    "Uttarakhand / उत्तराखंड"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar096",
+   "tag": "GK",
+   "hi": "रोहतांग दर्रा किस राज्य में है?",
+   "en": "Rohtang Pass is in which state?",
+   "options": [
+    "Himachal Pradesh / हिमाचल प्रदेश",
+    "Jammu & Kashmir / जम्मू-कश्मीर",
+    "Uttarakhand / उत्तराखंड",
+    "Sikkim / सिक्किम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar097",
+   "tag": "GK",
+   "hi": "अरुणाचल प्रदेश की राजधानी कौन-सी है?",
+   "en": "What is the capital of Arunachal Pradesh?",
+   "options": [
+    "Itanagar / ईटानगर",
+    "Dispur / दिसपुर",
+    "Kohima / कोहिमा",
+    "Aizawl / आइज़ोल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar098",
+   "tag": "GK",
+   "hi": "माउंट एवरेस्ट किस पर्वत श्रृंखला में है?",
+   "en": "Mount Everest is in which mountain range?",
+   "options": [
+    "Himalayas / हिमालय",
+    "Karakoram / काराकोरम",
+    "Hindu Kush / हिंदूकुश",
+    "Alps / आल्प्स"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar099",
+   "tag": "GK",
+   "hi": "भारत का पहला अंतरिक्ष यात्री कौन था?",
+   "en": "Who was India's first astronaut (in space)?",
+   "options": [
+    "Rakesh Sharma / राकेश शर्मा",
+    "Kalpana Chawla / कल्पना चावला",
+    "Sunita Williams / सुनीता विलियम्स",
+    "Ravish Malhotra / रवीश मल्होत्रा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar100",
+   "tag": "GK",
+   "hi": "भारत का पहला उपग्रह कौन-सा था?",
+   "en": "Which was India's first satellite?",
+   "options": [
+    "Aryabhata / आर्यभट्ट",
+    "Rohini / रोहिणी",
+    "Bhaskara / भास्कर",
+    "INSAT-1A / इनसैट-1A"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar101",
+   "tag": "GK",
+   "hi": "ISRO का मुख्यालय कहाँ है?",
+   "en": "Where is ISRO's headquarters?",
+   "options": [
+    "Bengaluru / बेंगलुरु",
+    "Sriharikota / श्रीहरिकोटा",
+    "Thiruvananthapuram / तिरुवनंतपुरम",
+    "Ahmedabad / अहमदाबाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar102",
+   "tag": "GK",
+   "hi": "सतीश धवन अंतरिक्ष केंद्र (लॉन्च साइट) कहाँ है?",
+   "en": "Where is the Satish Dhawan Space Centre (launch site)?",
+   "options": [
+    "Sriharikota / श्रीहरिकोटा",
+    "Thumba / थुंबा",
+    "Bengaluru / बेंगलुरु",
+    "Chandipur / चांदीपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar103",
+   "tag": "GK",
+   "hi": "हॉकी में मैदान पर एक टीम के कितने खिलाड़ी होते हैं?",
+   "en": "How many players of one team are on the field in hockey?",
+   "options": [
+    "11",
+    "9",
+    "7",
+    "12"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar104",
+   "tag": "GK",
+   "hi": "'ध्यानचंद' किस खेल के महान खिलाड़ी थे?",
+   "en": "Dhyan Chand was a legend of which sport?",
+   "options": [
+    "Hockey / हॉकी",
+    "Football / फुटबॉल",
+    "Cricket / क्रिकेट",
+    "Wrestling / कुश्ती"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar105",
+   "tag": "Maths",
+   "hi": "520 का 30% कितना है?",
+   "en": "What is 30% of 520?",
+   "options": [
+    "156",
+    "161",
+    "153",
+    "312"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar106",
+   "tag": "Maths",
+   "hi": "1250 का 8% कितना है?",
+   "en": "What is 8% of 1250?",
+   "options": [
+    "100",
+    "105",
+    "97",
+    "200"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar107",
+   "tag": "Maths",
+   "hi": "₹10000 पर 7% वार्षिक दर से 3 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹10000 at 7% per annum for 3 years?",
+   "options": [
+    "2100",
+    "2600",
+    "1700",
+    "4200"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar108",
+   "tag": "Maths",
+   "hi": "₹20000 पर 10% वार्षिक चक्रवृद्धि ब्याज (2 वर्ष) कितना होगा?",
+   "en": "Compound interest on ₹20000 at 10% per annum for 2 years (compounded yearly)?",
+   "options": [
+    "4200",
+    "4000",
+    "4250",
+    "4175"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar109",
+   "tag": "Maths",
+   "hi": "20 और 30 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 20 and 30?",
+   "options": [
+    "60",
+    "600",
+    "30",
+    "70"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar110",
+   "tag": "Maths",
+   "hi": "60 और 84 का HCF (महत्तम समापवर्तक) क्या है?",
+   "en": "What is the HCF of 60 and 84?",
+   "options": [
+    "12",
+    "24",
+    "6",
+    "13"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar111",
+   "tag": "Maths",
+   "hi": "18 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "18 km/h = how many m/s?",
+   "options": [
+    "5 m/s",
+    "10 m/s",
+    "64.8 m/s",
+    "3 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar112",
+   "tag": "Maths",
+   "hi": "240 मीटर लंबी ट्रेन 108 किमी/घंटा की चाल से एक खंभे को कितने समय में पार करेगी?",
+   "en": "A 240 m long train at 108 km/h crosses a pole in how much time?",
+   "options": [
+    "8 s",
+    "12 s",
+    "16 s",
+    "18 s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar113",
+   "tag": "Maths",
+   "hi": "क्रय मूल्य ₹1200 और विक्रय मूल्य ₹1500 है। लाभ प्रतिशत कितना है?",
+   "en": "Cost price ₹1200, selling price ₹1500. Profit percent?",
+   "options": [
+    "25%",
+    "20%",
+    "30%",
+    "50%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar114",
+   "tag": "Maths",
+   "hi": "पहली 50 प्राकृत संख्याओं का औसत क्या है?",
+   "en": "Average of the first 50 natural numbers?",
+   "options": [
+    "25.5",
+    "25",
+    "26.5",
+    "1275"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar115",
+   "tag": "Maths",
+   "hi": "√4096 का मान क्या है?",
+   "en": "What is the value of √4096?",
+   "options": [
+    "64",
+    "66",
+    "62",
+    "68"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar116",
+   "tag": "Maths",
+   "hi": "15 का घन (cube) क्या है?",
+   "en": "What is the cube of 15?",
+   "options": [
+    "3375",
+    "3150",
+    "3390",
+    "225"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar117",
+   "tag": "Maths",
+   "hi": "A किसी काम को 8 दिन में और B 24 दिन में करता है। दोनों मिलकर कितने दिन में करेंगे?",
+   "en": "A does a work in 8 days and B in 24 days. Together they finish it in?",
+   "options": [
+    "6 days",
+    "16 days",
+    "8 days",
+    "7 days"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar118",
+   "tag": "Maths",
+   "hi": "150 को 7:8 के अनुपात में बाँटने पर बड़ा भाग कितना होगा?",
+   "en": "150 is divided in the ratio 7:8. What is the larger part?",
+   "options": [
+    "80",
+    "70",
+    "84",
+    "78"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar119",
+   "tag": "Maths",
+   "hi": "25% और 20% की दो क्रमिक छूट के बराबर एकल छूट कितनी है?",
+   "en": "Two successive discounts of 25% and 20% equal a single discount of?",
+   "options": [
+    "40%",
+    "45%",
+    "38%",
+    "43%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar120",
+   "tag": "Maths",
+   "hi": "एक दशभुज के सभी अंतः कोणों का योग कितना होता है?",
+   "en": "Sum of all interior angles of a decagon?",
+   "options": [
+    "1440°",
+    "1260°",
+    "1620°",
+    "1800°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar121",
+   "tag": "Maths",
+   "hi": "त्रिज्या 35 सेमी वाले वृत्त का क्षेत्रफल (π = 22/7) कितना है?",
+   "en": "Area of a circle of radius 35 cm (π = 22/7)?",
+   "options": [
+    "3850 cm²",
+    "220 cm²",
+    "7700 cm²",
+    "3872 cm²"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar122",
+   "tag": "Maths",
+   "hi": "7/20 को प्रतिशत में लिखें।",
+   "en": "Express 7/20 as a percentage.",
+   "options": [
+    "35%",
+    "40%",
+    "17.5%",
+    "47.5%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar123",
+   "tag": "Maths",
+   "hi": "10 संख्याओं का औसत 40 है। एक संख्या हटाने पर औसत 38 हो जाता है। हटाई गई संख्या कौन-सी है?",
+   "en": "The average of 10 numbers is 40. Removing one number makes the average 38. The removed number is?",
+   "options": [
+    "58",
+    "68",
+    "56",
+    "78"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar124",
+   "tag": "Reasoning",
+   "hi": "9:45 बजे घड़ी की सुइयों के बीच कितना कोण होता है?",
+   "en": "What is the angle between the clock hands at 9:45?",
+   "options": [
+    "22.5°",
+    "37.5°",
+    "7.5°",
+    "270°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar125",
+   "tag": "Reasoning",
+   "hi": "आज रविवार है। 30 दिन बाद कौन-सा दिन होगा?",
+   "en": "Today is Sunday. What day will it be after 30 days?",
+   "options": [
+    "Tuesday / मंगलवार",
+    "Wednesday / बुधवार",
+    "Monday / सोमवार",
+    "Thursday / गुरुवार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar126",
+   "tag": "Reasoning",
+   "hi": "किसी कूट भाषा में GUN को HVO लिखा जाता है। उसी भाषा में TANK को कैसे लिखेंगे?",
+   "en": "In a code, GUN is written as HVO. How is TANK written?",
+   "options": [
+    "UBOL",
+    "VCPM",
+    "SZMJ",
+    "LOBU"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar127",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 1, 2, 6, 24, 120, ?",
+   "en": "Find the next number in the series: 1, 2, 6, 24, 120, ?",
+   "options": [
+    "720",
+    "600",
+    "240",
+    "480"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar128",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 10, 20, 35, 55, 80, ?",
+   "en": "Find the next number in the series: 10, 20, 35, 55, 80, ?",
+   "options": [
+    "110",
+    "105",
+    "100",
+    "115"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar129",
+   "tag": "Reasoning",
+   "hi": "अंग्रेज़ी वर्णमाला में बाएँ से 6वें अक्षर के दाएँ 14वाँ अक्षर कौन-सा है?",
+   "en": "In the English alphabet, which letter is 14th to the right of the 6th letter from the left?",
+   "options": [
+    "T",
+    "U",
+    "S",
+    "V"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar130",
+   "tag": "Reasoning",
+   "hi": "विषम (अलग) संख्या चुनें: 41, 43, 47, 49, 53",
+   "en": "Find the odd one out: 41, 43, 47, 49, 53",
+   "options": [
+    "49",
+    "41",
+    "43",
+    "47"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar131",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 0, 3, 8, 15, 24, ?",
+   "en": "Find the next number in the series: 0, 3, 8, 15, 24, ?",
+   "options": [
+    "35",
+    "33",
+    "30",
+    "36"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar132",
+   "tag": "Maths",
+   "hi": "₹25000 पर 6% वार्षिक दर से 2 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹25000 at 6% per annum for 2 years?",
+   "options": [
+    "3000",
+    "4250",
+    "2000",
+    "6000"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar133",
+   "tag": "Maths",
+   "hi": "9 और 12 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 9 and 12?",
+   "options": [
+    "36",
+    "108",
+    "18",
+    "39"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "ar134",
+   "tag": "Maths",
+   "hi": "126 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "126 km/h = how many m/s?",
+   "options": [
+    "35 m/s",
+    "40 m/s",
+    "70 m/s",
+    "453.6 m/s"
+   ],
+   "answer": 0
+  }
+ ]
+}

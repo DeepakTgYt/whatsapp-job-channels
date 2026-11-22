@@ -40,6 +40,10 @@ async function main() {
       <h1 style="font-size:48px;letter-spacing:6px">${wa.state.pairingCode || 'generating… (refreshes)'}</h1>
       <p>Phone par WhatsApp → Linked devices → Link a device → Link with phone number instead → ye code daalein.</p>`);
   });
+  // quiz admin over HTTP (same as self-chat): /quiz?key=ADMIN_KEY&cmd=now%20ssc | verify%20ssc | on | off
+  app.get('/quiz', guard, async (req, res) => {
+    try { res.type('text/plain').send(await engine.quizCommand(String(req.query.cmd || '').toLowerCase())); } catch (e) { res.status(500).type('text/plain').send('quiz error: ' + require('./health').clean(e.message)); }
+  });
   app.get('/status', guard, async (req, res) => res.send(`<pre>${await engine.command('/status')}\n\n${await engine.command('/errors')}</pre>`));
 
   app.listen(cfg.PORT, () => console.log('HTTP on', cfg.PORT));

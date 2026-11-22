@@ -1,0 +1,1631 @@
+{
+ "channel": "bihar",
+ "note": "answer = index of the correct option; options are shuffled at send time",
+ "questions": [
+  {
+   "id": "bi001",
+   "tag": "BiharGK",
+   "hi": "बिहार को बंगाल प्रेसीडेंसी से अलग कर नया प्रांत किस वर्ष बनाया गया?",
+   "en": "In which year was Bihar separated from the Bengal Presidency?",
+   "options": [
+    "1912",
+    "1905",
+    "1936",
+    "1947"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi002",
+   "tag": "BiharGK",
+   "hi": "बिहार दिवस हर साल किस तारीख को मनाया जाता है?",
+   "en": "Bihar Diwas is celebrated every year on?",
+   "options": [
+    "22 March",
+    "15 November",
+    "1 April",
+    "26 January"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi003",
+   "tag": "BiharGK",
+   "hi": "बिहार और उड़ीसा (ओडिशा) अलग-अलग प्रांत किस वर्ष बने?",
+   "en": "In which year were Bihar and Orissa made separate provinces?",
+   "options": [
+    "1936",
+    "1912",
+    "1947",
+    "1950"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi004",
+   "tag": "BiharGK",
+   "hi": "बिहार से झारखंड राज्य कब अलग हुआ?",
+   "en": "When was Jharkhand carved out of Bihar?",
+   "options": [
+    "15 November 2000",
+    "1 November 2000",
+    "22 March 2000",
+    "9 November 2000"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi005",
+   "tag": "BiharGK",
+   "hi": "प्राचीन नालंदा विश्वविद्यालय की स्थापना किसने की?",
+   "en": "Who founded the ancient Nalanda University?",
+   "options": [
+    "Kumaragupta I / कुमारगुप्त प्रथम",
+    "Dharmapala / धर्मपाल",
+    "Ashoka / अशोक",
+    "Harshavardhana / हर्षवर्धन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi006",
+   "tag": "BiharGK",
+   "hi": "विक्रमशिला विश्वविद्यालय की स्थापना किसने की?",
+   "en": "Who founded Vikramshila University?",
+   "options": [
+    "Dharmapala / धर्मपाल",
+    "Kumaragupta I / कुमारगुप्त प्रथम",
+    "Devapala / देवपाल",
+    "Chandragupta II / चंद्रगुप्त द्वितीय"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi007",
+   "tag": "BiharGK",
+   "hi": "विक्रमशिला विश्वविद्यालय के अवशेष किस जिले में हैं?",
+   "en": "Ruins of Vikramshila University are in which district?",
+   "options": [
+    "Bhagalpur / भागलपुर",
+    "Nalanda / नालंदा",
+    "Gaya / गया",
+    "Munger / मुंगेर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi008",
+   "tag": "BiharGK",
+   "hi": "गौतम बुद्ध को ज्ञान (बोधि) कहाँ प्राप्त हुआ?",
+   "en": "Where did Gautama Buddha attain enlightenment?",
+   "options": [
+    "Bodh Gaya / बोधगया",
+    "Sarnath / सारनाथ",
+    "Rajgir / राजगीर",
+    "Vaishali / वैशाली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi009",
+   "tag": "BiharGK",
+   "hi": "भगवान महावीर का जन्म कहाँ हुआ था?",
+   "en": "Where was Lord Mahavira born?",
+   "options": [
+    "Kundagram, Vaishali / कुंडग्राम, वैशाली",
+    "Pawapuri / पावापुरी",
+    "Rajgir / राजगीर",
+    "Patliputra / पाटलिपुत्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi010",
+   "tag": "BiharGK",
+   "hi": "भगवान महावीर को निर्वाण कहाँ प्राप्त हुआ?",
+   "en": "Where did Lord Mahavira attain nirvana?",
+   "options": [
+    "Pawapuri / पावापुरी",
+    "Vaishali / वैशाली",
+    "Bodh Gaya / बोधगया",
+    "Kushinagar / कुशीनगर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi011",
+   "tag": "BiharGK",
+   "hi": "प्रथम बौद्ध संगीति कहाँ हुई थी?",
+   "en": "Where was the First Buddhist Council held?",
+   "options": [
+    "Rajgir (Rajagriha) / राजगीर",
+    "Vaishali / वैशाली",
+    "Pataliputra / पाटलिपुत्र",
+    "Kashmir / कश्मीर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi012",
+   "tag": "BiharGK",
+   "hi": "द्वितीय बौद्ध संगीति कहाँ हुई थी?",
+   "en": "Where was the Second Buddhist Council held?",
+   "options": [
+    "Vaishali / वैशाली",
+    "Rajgir / राजगीर",
+    "Pataliputra / पाटलिपुत्र",
+    "Sarnath / सारनाथ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi013",
+   "tag": "BiharGK",
+   "hi": "तृतीय बौद्ध संगीति (अशोक के समय) कहाँ हुई थी?",
+   "en": "Where was the Third Buddhist Council (Ashoka's time) held?",
+   "options": [
+    "Pataliputra / पाटलिपुत्र",
+    "Vaishali / वैशाली",
+    "Rajgir / राजगीर",
+    "Bodh Gaya / बोधगया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi014",
+   "tag": "BiharGK",
+   "hi": "शेरशाह सूरी का मकबरा कहाँ है?",
+   "en": "Where is the tomb of Sher Shah Suri?",
+   "options": [
+    "Sasaram / सासाराम",
+    "Patna / पटना",
+    "Delhi / दिल्ली",
+    "Rohtasgarh / रोहतासगढ़"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi015",
+   "tag": "BiharGK",
+   "hi": "गांधीजी का चंपारण सत्याग्रह किस वर्ष हुआ?",
+   "en": "In which year did Gandhiji's Champaran Satyagraha take place?",
+   "options": [
+    "1917",
+    "1918",
+    "1920",
+    "1915"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi016",
+   "tag": "BiharGK",
+   "hi": "गांधीजी को चंपारण आने का निमंत्रण किसने दिया था?",
+   "en": "Who invited Gandhiji to Champaran?",
+   "options": [
+    "Raj Kumar Shukla / राजकुमार शुक्ल",
+    "Rajendra Prasad / राजेंद्र प्रसाद",
+    "Mazharul Haque / मज़हरुल हक",
+    "Braj Kishore Prasad / ब्रजकिशोर प्रसाद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi017",
+   "tag": "BiharGK",
+   "hi": "1857 की क्रांति में बिहार के जगदीशपुर से किसने नेतृत्व किया?",
+   "en": "Who led the 1857 revolt from Jagdishpur in Bihar?",
+   "options": [
+    "Veer Kunwar Singh / वीर कुंवर सिंह",
+    "Peer Ali / पीर अली",
+    "Tilka Manjhi / तिलका मांझी",
+    "Birsa Munda / बिरसा मुंडा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi018",
+   "tag": "BiharGK",
+   "hi": "बिहार के पहले मुख्यमंत्री कौन थे?",
+   "en": "Who was the first Chief Minister of Bihar?",
+   "options": [
+    "Shri Krishna Sinha / श्रीकृष्ण सिंह",
+    "Anugrah Narayan Sinha / अनुग्रह नारायण सिंह",
+    "Karpoori Thakur / कर्पूरी ठाकुर",
+    "Binodanand Jha / बिनोदानंद झा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi019",
+   "tag": "BiharGK",
+   "hi": "'बिहार केसरी' के नाम से कौन प्रसिद्ध हैं?",
+   "en": "Who is known as 'Bihar Kesari'?",
+   "options": [
+    "Shri Krishna Sinha / श्रीकृष्ण सिंह",
+    "Kunwar Singh / कुंवर सिंह",
+    "Rajendra Prasad / राजेंद्र प्रसाद",
+    "Jayaprakash Narayan / जयप्रकाश नारायण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi020",
+   "tag": "BiharGK",
+   "hi": "'बिहार विभूति' के नाम से कौन जाने जाते हैं?",
+   "en": "Who is known as 'Bihar Vibhuti'?",
+   "options": [
+    "Anugrah Narayan Sinha / अनुग्रह नारायण सिंह",
+    "Shri Krishna Sinha / श्रीकृष्ण सिंह",
+    "Sachchidananda Sinha / सच्चिदानंद सिन्हा",
+    "Karpoori Thakur / कर्पूरी ठाकुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi021",
+   "tag": "BiharGK",
+   "hi": "डॉ. राजेंद्र प्रसाद का जन्म कहाँ हुआ था?",
+   "en": "Where was Dr. Rajendra Prasad born?",
+   "options": [
+    "Ziradei, Siwan / जीरादेई, सीवान",
+    "Patna / पटना",
+    "Chapra / छपरा",
+    "Gopalganj / गोपालगंज"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi022",
+   "tag": "BiharGK",
+   "hi": "'देशरत्न' की उपाधि किसे दी गई?",
+   "en": "Who was given the title 'Deshratna'?",
+   "options": [
+    "Dr. Rajendra Prasad / डॉ. राजेंद्र प्रसाद",
+    "Jayaprakash Narayan / जयप्रकाश नारायण",
+    "Anugrah Narayan Sinha / अनुग्रह नारायण सिंह",
+    "Shri Krishna Sinha / श्रीकृष्ण सिंह"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi023",
+   "tag": "BiharGK",
+   "hi": "'संपूर्ण क्रांति' (1974) का नारा किसने दिया?",
+   "en": "Who gave the call for 'Total Revolution' (1974)?",
+   "options": [
+    "Jayaprakash Narayan / जयप्रकाश नारायण",
+    "Ram Manohar Lohia / राम मनोहर लोहिया",
+    "Karpoori Thakur / कर्पूरी ठाकुर",
+    "Vinoba Bhave / विनोबा भावे"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi024",
+   "tag": "BiharGK",
+   "hi": "लोकनायक जयप्रकाश नारायण का जन्म कहाँ हुआ?",
+   "en": "Where was Loknayak Jayaprakash Narayan born?",
+   "options": [
+    "Sitabdiara / सिताबदियारा",
+    "Ziradei / जीरादेई",
+    "Simaria / सिमरिया",
+    "Jagdishpur / जगदीशपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi025",
+   "tag": "BiharGK",
+   "hi": "बक्सर का युद्ध किस वर्ष हुआ?",
+   "en": "In which year was the Battle of Buxar fought?",
+   "options": [
+    "1764",
+    "1757",
+    "1761",
+    "1857"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi026",
+   "tag": "BiharGK",
+   "hi": "पटना का एक पुराना नाम क्या था?",
+   "en": "Which was an old name of Patna?",
+   "options": [
+    "Azimabad / अज़ीमाबाद",
+    "Kashi / काशी",
+    "Prayag / प्रयाग",
+    "Indraprastha / इंद्रप्रस्थ"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi027",
+   "tag": "BiharGK",
+   "hi": "लिच्छवी गणराज्य की राजधानी कौन-सी थी?",
+   "en": "What was the capital of the Lichchhavi republic?",
+   "options": [
+    "Vaishali / वैशाली",
+    "Rajgir / राजगीर",
+    "Champa / चंपा",
+    "Pataliputra / पाटलिपुत्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi028",
+   "tag": "BiharGK",
+   "hi": "प्राचीन अंग महाजनपद की राजधानी क्या थी?",
+   "en": "What was the capital of the ancient Anga Mahajanapada?",
+   "options": [
+    "Champa / चंपा",
+    "Vaishali / वैशाली",
+    "Rajgir / राजगीर",
+    "Kashi / काशी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi029",
+   "tag": "BiharGK",
+   "hi": "अजातशत्रु के पिता कौन थे?",
+   "en": "Who was the father of Ajatashatru?",
+   "options": [
+    "Bimbisara / बिम्बिसार",
+    "Udayin / उदयिन",
+    "Chandragupta / चंद्रगुप्त",
+    "Bindusara / बिंदुसार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi030",
+   "tag": "BiharGK",
+   "hi": "नंद वंश का संस्थापक कौन था?",
+   "en": "Who founded the Nanda dynasty?",
+   "options": [
+    "Mahapadma Nanda / महापद्मनंद",
+    "Dhana Nanda / धनानंद",
+    "Shishunaga / शिशुनाग",
+    "Bimbisara / बिम्बिसार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi031",
+   "tag": "BiharGK",
+   "hi": "कुम्हरार (पटना) किस काल के अवशेषों के लिए प्रसिद्ध है?",
+   "en": "Kumhrar (Patna) is famous for remains of which period?",
+   "options": [
+    "Mauryan / मौर्य",
+    "Mughal / मुगल",
+    "Pala / पाल",
+    "British / ब्रिटिश"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi032",
+   "tag": "BiharGK",
+   "hi": "बराबर की गुफाएँ (जहानाबाद) किस काल की हैं?",
+   "en": "The Barabar Caves (Jehanabad) belong to which period?",
+   "options": [
+    "Mauryan / मौर्य",
+    "Gupta / गुप्त",
+    "Mughal / मुगल",
+    "Pala / पाल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi033",
+   "tag": "BiharGK",
+   "hi": "चीनी यात्री ह्वेनसांग ने किस विश्वविद्यालय में अध्ययन किया?",
+   "en": "At which university did Chinese traveller Xuanzang study?",
+   "options": [
+    "Nalanda / नालंदा",
+    "Vikramshila / विक्रमशिला",
+    "Taxila / तक्षशिला",
+    "Odantapuri / ओदंतपुरी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi034",
+   "tag": "BiharGK",
+   "hi": "महान गणितज्ञ आर्यभट्ट किस प्राचीन नगर से जुड़े थे?",
+   "en": "Mathematician Aryabhata is associated with which ancient city?",
+   "options": [
+    "Kusumapura (Pataliputra) / कुसुमपुर",
+    "Ujjain / उज्जैन",
+    "Kashi / काशी",
+    "Kannauj / कन्नौज"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi035",
+   "tag": "BiharGK",
+   "hi": "पटना का गोलघर किसने बनवाया (1786)?",
+   "en": "Who built the Golghar of Patna (1786)?",
+   "options": [
+    "Captain John Garstin / कैप्टन जॉन गार्स्टिन",
+    "Warren Hastings / वॉरेन हेस्टिंग्स",
+    "Lord Cornwallis / लॉर्ड कॉर्नवालिस",
+    "Robert Clive / रॉबर्ट क्लाइव"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi036",
+   "tag": "BiharGK",
+   "hi": "गोलघर मूल रूप से किस उद्देश्य से बनाया गया था?",
+   "en": "The Golghar was originally built as a?",
+   "options": [
+    "Granary / अन्न भंडार",
+    "Fort / किला",
+    "Temple / मंदिर",
+    "Prison / जेल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi037",
+   "tag": "BiharGK",
+   "hi": "पटना साहिब किस सिख गुरु का जन्मस्थान है?",
+   "en": "Patna Sahib is the birthplace of which Sikh Guru?",
+   "options": [
+    "Guru Gobind Singh / गुरु गोबिंद सिंह",
+    "Guru Nanak Dev / गुरु नानक देव",
+    "Guru Tegh Bahadur / गुरु तेग बहादुर",
+    "Guru Arjan Dev / गुरु अर्जन देव"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi038",
+   "tag": "BiharGK",
+   "hi": "पटना उच्च न्यायालय की स्थापना किस वर्ष हुई?",
+   "en": "In which year was the Patna High Court established?",
+   "options": [
+    "1916",
+    "1912",
+    "1936",
+    "1950"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi039",
+   "tag": "BiharGK",
+   "hi": "पटना विश्वविद्यालय की स्थापना किस वर्ष हुई?",
+   "en": "In which year was Patna University established?",
+   "options": [
+    "1917",
+    "1912",
+    "1921",
+    "1947"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi040",
+   "tag": "BiharGK",
+   "hi": "पटना का 'सात शहीद' स्मारक किस आंदोलन से जुड़ा है?",
+   "en": "Patna's 'Saat Shaheed' memorial is linked to which movement?",
+   "options": [
+    "Quit India 1942 / भारत छोड़ो 1942",
+    "Non-Cooperation / असहयोग",
+    "Revolt of 1857 / 1857 की क्रांति",
+    "Champaran / चंपारण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi041",
+   "tag": "BiharGK",
+   "hi": "अखिल भारतीय किसान सभा (1936) के पहले अध्यक्ष कौन थे?",
+   "en": "Who was the first President of the All India Kisan Sabha (1936)?",
+   "options": [
+    "Swami Sahajanand Saraswati / स्वामी सहजानंद सरस्वती",
+    "Jayaprakash Narayan / जयप्रकाश नारायण",
+    "N. G. Ranga / एन. जी. रंगा",
+    "Karpoori Thakur / कर्पूरी ठाकुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi042",
+   "tag": "BiharGK",
+   "hi": "1857 में पटना में किस क्रांतिकारी को फाँसी दी गई?",
+   "en": "Which revolutionary was hanged in Patna in 1857?",
+   "options": [
+    "Peer Ali / पीर अली",
+    "Kunwar Singh / कुंवर सिंह",
+    "Mangal Pandey / मंगल पांडे",
+    "Tatya Tope / तात्या टोपे"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi043",
+   "tag": "BiharGK",
+   "hi": "किस नदी को 'बिहार का शोक' कहा जाता है?",
+   "en": "Which river is called the 'Sorrow of Bihar'?",
+   "options": [
+    "Kosi / कोसी",
+    "Gandak / गंडक",
+    "Son / सोन",
+    "Bagmati / बागमती"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi044",
+   "tag": "BiharGK",
+   "hi": "वाल्मीकि टाइगर रिज़र्व किस जिले में है?",
+   "en": "Valmiki Tiger Reserve is in which district?",
+   "options": [
+    "West Champaran / पश्चिम चंपारण",
+    "East Champaran / पूर्वी चंपारण",
+    "Kaimur / कैमूर",
+    "Rohtas / रोहतास"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi045",
+   "tag": "BiharGK",
+   "hi": "विक्रमशिला गंगा डॉल्फिन अभयारण्य किस जिले में है?",
+   "en": "Vikramshila Gangetic Dolphin Sanctuary is in which district?",
+   "options": [
+    "Bhagalpur / भागलपुर",
+    "Patna / पटना",
+    "Begusarai / बेगूसराय",
+    "Katihar / कटिहार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi046",
+   "tag": "BiharGK",
+   "hi": "बिहार का पहला रामसर स्थल कौन-सा है?",
+   "en": "Which is Bihar's first Ramsar site?",
+   "options": [
+    "Kanwar Lake (Kabartal) / कांवर झील",
+    "Kakolat / ककोलत",
+    "Rajgir Kund / राजगीर कुंड",
+    "Gogabil / गोगाबिल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi047",
+   "tag": "BiharGK",
+   "hi": "कांवर झील (काबरताल) किस जिले में है?",
+   "en": "Kanwar Lake (Kabartal) is in which district?",
+   "options": [
+    "Begusarai / बेगूसराय",
+    "Darbhanga / दरभंगा",
+    "Purnia / पूर्णिया",
+    "Saran / सारण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi048",
+   "tag": "BiharGK",
+   "hi": "ककोलत जलप्रपात किस जिले में है?",
+   "en": "Kakolat waterfall is in which district?",
+   "options": [
+    "Nawada / नवादा",
+    "Gaya / गया",
+    "Rohtas / रोहतास",
+    "Kaimur / कैमूर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi049",
+   "tag": "BiharGK",
+   "hi": "सोन नदी का उद्गम कहाँ से होता है?",
+   "en": "Where does the Son river originate?",
+   "options": [
+    "Amarkantak / अमरकंटक",
+    "Gangotri / गंगोत्री",
+    "Nepal Himalaya / नेपाल हिमालय",
+    "Chota Nagpur / छोटा नागपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi050",
+   "tag": "BiharGK",
+   "hi": "महात्मा गांधी सेतु गंगा पर किन दो शहरों को जोड़ता है?",
+   "en": "Mahatma Gandhi Setu over the Ganga connects?",
+   "options": [
+    "Patna - Hajipur / पटना - हाजीपुर",
+    "Patna - Sonepur / पटना - सोनपुर",
+    "Munger - Begusarai / मुंगेर - बेगूसराय",
+    "Bhagalpur - Naugachia / भागलपुर - नौगछिया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi051",
+   "tag": "BiharGK",
+   "hi": "सोनपुर मेला किसके लिए प्रसिद्ध है?",
+   "en": "The Sonepur Mela is famous for?",
+   "options": [
+    "Animal (cattle) fair / पशु मेला",
+    "Book fair / पुस्तक मेला",
+    "Boat race / नौका दौड़",
+    "Kite festival / पतंग उत्सव"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi052",
+   "tag": "BiharGK",
+   "hi": "सोनपुर मेला किन नदियों के संगम पर लगता है?",
+   "en": "The Sonepur fair is held at the confluence of?",
+   "options": [
+    "Gandak & Ganga / गंडक व गंगा",
+    "Son & Ganga / सोन व गंगा",
+    "Kosi & Ganga / कोसी व गंगा",
+    "Bagmati & Kosi / बागमती व कोसी"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi053",
+   "tag": "BiharGK",
+   "hi": "भागलपुर किस उत्पाद के लिए 'सिल्क सिटी' कहलाता है?",
+   "en": "Bhagalpur is called 'Silk City' for which silk?",
+   "options": [
+    "Tussar silk / तसर सिल्क",
+    "Muga silk / मूगा सिल्क",
+    "Mulberry only / केवल शहतूती",
+    "Eri silk / एरी सिल्क"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi054",
+   "tag": "BiharGK",
+   "hi": "मुजफ्फरपुर किस फल के लिए प्रसिद्ध है?",
+   "en": "Muzaffarpur is famous for which fruit?",
+   "options": [
+    "Shahi Litchi / शाही लीची",
+    "Mango / आम",
+    "Banana / केला",
+    "Guava / अमरूद"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi055",
+   "tag": "BiharGK",
+   "hi": "मधुबनी चित्रकला किस क्षेत्र से संबंधित है?",
+   "en": "Madhubani painting belongs to which region?",
+   "options": [
+    "Mithila / मिथिला",
+    "Magadh / मगध",
+    "Bhojpur / भोजपुर",
+    "Anga / अंग"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi056",
+   "tag": "BiharGK",
+   "hi": "छठ पर्व में किस देवता की उपासना की जाती है?",
+   "en": "Which deity is worshipped in Chhath?",
+   "options": [
+    "Sun God / सूर्य देव",
+    "Lord Shiva / भगवान शिव",
+    "Lord Vishnu / भगवान विष्णु",
+    "Goddess Durga / माँ दुर्गा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi057",
+   "tag": "BiharGK",
+   "hi": "केसरिया स्तूप किस जिले में है?",
+   "en": "Kesaria Stupa is in which district?",
+   "options": [
+    "East Champaran / पूर्वी चंपारण",
+    "Vaishali / वैशाली",
+    "Nalanda / नालंदा",
+    "Gaya / गया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi058",
+   "tag": "BiharGK",
+   "hi": "महाबोधि मंदिर (बोधगया) को यूनेस्को विश्व धरोहर कब घोषित किया गया?",
+   "en": "When was the Mahabodhi Temple (Bodh Gaya) declared a UNESCO World Heritage Site?",
+   "options": [
+    "2002",
+    "2016",
+    "1999",
+    "2010"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi059",
+   "tag": "BiharGK",
+   "hi": "नालंदा महाविहार के अवशेष यूनेस्को विश्व धरोहर कब बने?",
+   "en": "When did the Nalanda Mahavihara ruins become a UNESCO World Heritage Site?",
+   "options": [
+    "2016",
+    "2002",
+    "2012",
+    "2019"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi060",
+   "tag": "BiharGK",
+   "hi": "विष्णुपद मंदिर किस शहर में है?",
+   "en": "The Vishnupad Temple is in which city?",
+   "options": [
+    "Gaya / गया",
+    "Patna / पटना",
+    "Rajgir / राजगीर",
+    "Bhagalpur / भागलपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi061",
+   "tag": "BiharGK",
+   "hi": "गया शहर किस नदी के किनारे बसा है?",
+   "en": "Gaya city lies on the bank of which river?",
+   "options": [
+    "Falgu / फल्गु",
+    "Son / सोन",
+    "Punpun / पुनपुन",
+    "Gandak / गंडक"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi062",
+   "tag": "BiharGK",
+   "hi": "मुंडेश्वरी मंदिर किस जिले में है?",
+   "en": "Mundeshwari Temple is in which district?",
+   "options": [
+    "Kaimur / कैमूर",
+    "Rohtas / रोहतास",
+    "Aurangabad / औरंगाबाद",
+    "Gaya / गया"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi063",
+   "tag": "BiharGK",
+   "hi": "बरौनी तेल शोधनशाला किस जिले में है?",
+   "en": "Barauni Oil Refinery is in which district?",
+   "options": [
+    "Begusarai / बेगूसराय",
+    "Patna / पटना",
+    "Munger / मुंगेर",
+    "Samastipur / समस्तीपुर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi064",
+   "tag": "BiharGK",
+   "hi": "बिहार का राजकीय पशु कौन-सा है?",
+   "en": "What is the state animal of Bihar?",
+   "options": [
+    "Gaur (Indian Bison) / गौर",
+    "Tiger / बाघ",
+    "Elephant / हाथी",
+    "Blackbuck / काला हिरण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi065",
+   "tag": "BiharGK",
+   "hi": "बिहार का राजकीय पक्षी कौन-सा है?",
+   "en": "What is the state bird of Bihar?",
+   "options": [
+    "House Sparrow / गौरैया",
+    "Peacock / मोर",
+    "Koel / कोयल",
+    "Parrot / तोता"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi066",
+   "tag": "BiharGK",
+   "hi": "बिहार का राजकीय वृक्ष कौन-सा है?",
+   "en": "What is the state tree of Bihar?",
+   "options": [
+    "Peepal / पीपल",
+    "Banyan / बरगद",
+    "Neem / नीम",
+    "Mango / आम"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi067",
+   "tag": "BiharGK",
+   "hi": "बिहार की कौन-सी भाषा संविधान की 8वीं अनुसूची में शामिल है?",
+   "en": "Which language of Bihar is in the 8th Schedule of the Constitution?",
+   "options": [
+    "Maithili / मैथिली",
+    "Bhojpuri / भोजपुरी",
+    "Magahi / मगही",
+    "Angika / अंगिका"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi068",
+   "tag": "BiharGK",
+   "hi": "मैथिली के प्रसिद्ध कवि 'विद्यापति' को किस उपाधि से जाना जाता है?",
+   "en": "Maithili poet Vidyapati is known by which title?",
+   "options": [
+    "Maithil Kokil / मैथिल कोकिल",
+    "Rashtrakavi / राष्ट्रकवि",
+    "Bharatendu / भारतेंदु",
+    "Kavi Samrat / कवि सम्राट"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi069",
+   "tag": "BiharGK",
+   "hi": "'रश्मिरथी' के रचयिता कौन हैं?",
+   "en": "Who wrote 'Rashmirathi'?",
+   "options": [
+    "Ramdhari Singh 'Dinkar' / रामधारी सिंह 'दिनकर'",
+    "Phanishwar Nath 'Renu' / फणीश्वर नाथ 'रेणु'",
+    "Nagarjun / नागार्जुन",
+    "Vidyapati / विद्यापति"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi070",
+   "tag": "BiharGK",
+   "hi": "रामधारी सिंह 'दिनकर' का जन्म कहाँ हुआ?",
+   "en": "Where was Ramdhari Singh 'Dinkar' born?",
+   "options": [
+    "Simaria, Begusarai / सिमरिया, बेगूसराय",
+    "Ziradei / जीरादेई",
+    "Purnia / पूर्णिया",
+    "Darbhanga / दरभंगा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi071",
+   "tag": "BiharGK",
+   "hi": "'मैला आँचल' उपन्यास किसने लिखा?",
+   "en": "Who wrote the novel 'Maila Anchal'?",
+   "options": [
+    "Phanishwar Nath 'Renu' / फणीश्वर नाथ 'रेणु'",
+    "Ramdhari Singh 'Dinkar' / दिनकर",
+    "Premchand / प्रेमचंद",
+    "Nagarjun / नागार्जुन"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi072",
+   "tag": "BiharGK",
+   "hi": "'भोजपुरी का शेक्सपियर' किसे कहा जाता है?",
+   "en": "Who is called the 'Shakespeare of Bhojpuri'?",
+   "options": [
+    "Bhikhari Thakur / भिखारी ठाकुर",
+    "Mahendra Misir / महेंद्र मिसिर",
+    "Vidyapati / विद्यापति",
+    "Sharda Sinha / शारदा सिन्हा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi073",
+   "tag": "BiharGK",
+   "hi": "'बिदेसिया' नाटक किसकी रचना है?",
+   "en": "The play 'Bidesiya' was written by?",
+   "options": [
+    "Bhikhari Thakur / भिखारी ठाकुर",
+    "Ramdhari Singh 'Dinkar' / दिनकर",
+    "Phanishwar Nath 'Renu' / रेणु",
+    "Raja Radhika Raman / राजा राधिका रमण"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi074",
+   "tag": "GK",
+   "hi": "किस ग्रह के चारों ओर सबसे स्पष्ट वलय (रिंग) हैं?",
+   "en": "Which planet has the most prominent rings?",
+   "options": [
+    "Saturn / शनि",
+    "Jupiter / बृहस्पति",
+    "Uranus / अरुण",
+    "Mars / मंगल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi075",
+   "tag": "GK",
+   "hi": "सबसे चमकीला ग्रह कौन-सा है?",
+   "en": "Which is the brightest planet seen from Earth?",
+   "options": [
+    "Venus / शुक्र",
+    "Mars / मंगल",
+    "Jupiter / बृहस्पति",
+    "Mercury / बुध"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi076",
+   "tag": "GK",
+   "hi": "विश्व का सबसे बड़ा महाद्वीप कौन-सा है?",
+   "en": "Which is the largest continent?",
+   "options": [
+    "Asia / एशिया",
+    "Africa / अफ्रीका",
+    "North America / उत्तरी अमेरिका",
+    "Europe / यूरोप"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi077",
+   "tag": "GK",
+   "hi": "विश्व का सबसे छोटा महाद्वीप कौन-सा है?",
+   "en": "Which is the smallest continent?",
+   "options": [
+    "Australia / ऑस्ट्रेलिया",
+    "Europe / यूरोप",
+    "Antarctica / अंटार्कटिका",
+    "South America / दक्षिण अमेरिका"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi078",
+   "tag": "GK",
+   "hi": "भारत में सबसे लंबी तटरेखा किस राज्य की है?",
+   "en": "Which Indian state has the longest coastline?",
+   "options": [
+    "Gujarat / गुजरात",
+    "Andhra Pradesh / आंध्र प्रदेश",
+    "Tamil Nadu / तमिलनाडु",
+    "Maharashtra / महाराष्ट्र"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi079",
+   "tag": "GK",
+   "hi": "जापान की मुद्रा क्या है?",
+   "en": "What is the currency of Japan?",
+   "options": [
+    "Yen / येन",
+    "Yuan / युआन",
+    "Won / वॉन",
+    "Ringgit / रिंगित"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi080",
+   "tag": "GK",
+   "hi": "कनाडा की राजधानी कौन-सी है?",
+   "en": "What is the capital of Canada?",
+   "options": [
+    "Ottawa / ओटावा",
+    "Toronto / टोरंटो",
+    "Vancouver / वैंकूवर",
+    "Montreal / मॉन्ट्रियल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi081",
+   "tag": "GK",
+   "hi": "ब्राज़ील की राजधानी कौन-सी है?",
+   "en": "What is the capital of Brazil?",
+   "options": [
+    "Brasília / ब्रासीलिया",
+    "Rio de Janeiro / रियो डी जनेरियो",
+    "São Paulo / साओ पाउलो",
+    "Buenos Aires / ब्यूनस आयर्स"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi082",
+   "tag": "GK",
+   "hi": "भाखड़ा नांगल बाँध किस नदी पर है?",
+   "en": "Bhakra Nangal Dam is on which river?",
+   "options": [
+    "Sutlej / सतलुज",
+    "Beas / ब्यास",
+    "Ravi / रावी",
+    "Chenab / चिनाब"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi083",
+   "tag": "GK",
+   "hi": "हीराकुंड बाँध किस नदी पर है?",
+   "en": "Hirakud Dam is on which river?",
+   "options": [
+    "Mahanadi / महानदी",
+    "Godavari / गोदावरी",
+    "Krishna / कृष्णा",
+    "Damodar / दामोदर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi084",
+   "tag": "GK",
+   "hi": "टिहरी बाँध किस नदी पर है?",
+   "en": "Tehri Dam is on which river?",
+   "options": [
+    "Bhagirathi / भागीरथी",
+    "Alaknanda / अलकनंदा",
+    "Yamuna / यमुना",
+    "Ganga at Haridwar / हरिद्वार में गंगा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi085",
+   "tag": "GK",
+   "hi": "वायुमंडलीय दाब मापने का यंत्र कौन-सा है?",
+   "en": "Which instrument measures atmospheric pressure?",
+   "options": [
+    "Barometer / बैरोमीटर",
+    "Hygrometer / हाइग्रोमीटर",
+    "Thermometer / थर्मामीटर",
+    "Anemometer / एनीमोमीटर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi086",
+   "tag": "GK",
+   "hi": "वायु में आर्द्रता (नमी) मापने का यंत्र कौन-सा है?",
+   "en": "Which instrument measures humidity?",
+   "options": [
+    "Hygrometer / हाइग्रोमीटर",
+    "Barometer / बैरोमीटर",
+    "Lactometer / लैक्टोमीटर",
+    "Ammeter / एमीटर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi087",
+   "tag": "GK",
+   "hi": "अजंता की गुफाएँ किस राज्य में हैं?",
+   "en": "The Ajanta Caves are in which state?",
+   "options": [
+    "Maharashtra / महाराष्ट्र",
+    "Madhya Pradesh / मध्य प्रदेश",
+    "Karnataka / कर्नाटक",
+    "Odisha / ओडिशा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi088",
+   "tag": "GK",
+   "hi": "कोणार्क सूर्य मंदिर किस राज्य में है?",
+   "en": "The Konark Sun Temple is in which state?",
+   "options": [
+    "Odisha / ओडिशा",
+    "West Bengal / पश्चिम बंगाल",
+    "Gujarat / गुजरात",
+    "Andhra Pradesh / आंध्र प्रदेश"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi089",
+   "tag": "GK",
+   "hi": "खजुराहो के मंदिर किस राज्य में हैं?",
+   "en": "The Khajuraho temples are in which state?",
+   "options": [
+    "Madhya Pradesh / मध्य प्रदेश",
+    "Uttar Pradesh / उत्तर प्रदेश",
+    "Rajasthan / राजस्थान",
+    "Chhattisgarh / छत्तीसगढ़"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi090",
+   "tag": "GK",
+   "hi": "हम्पी के स्मारक किस राज्य में हैं?",
+   "en": "The monuments of Hampi are in which state?",
+   "options": [
+    "Karnataka / कर्नाटक",
+    "Tamil Nadu / तमिलनाडु",
+    "Andhra Pradesh / आंध्र प्रदेश",
+    "Kerala / केरल"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi091",
+   "tag": "GK",
+   "hi": "चारमीनार किस शहर में है?",
+   "en": "Charminar is in which city?",
+   "options": [
+    "Hyderabad / हैदराबाद",
+    "Lucknow / लखनऊ",
+    "Bhopal / भोपाल",
+    "Agra / आगरा"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi092",
+   "tag": "GK",
+   "hi": "विक्टोरिया मेमोरियल किस शहर में है?",
+   "en": "Victoria Memorial is in which city?",
+   "options": [
+    "Kolkata / कोलकाता",
+    "Mumbai / मुंबई",
+    "Chennai / चेन्नई",
+    "Delhi / दिल्ली"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi093",
+   "tag": "GK",
+   "hi": "हवा महल किस शहर में है?",
+   "en": "Hawa Mahal is in which city?",
+   "options": [
+    "Jaipur / जयपुर",
+    "Udaipur / उदयपुर",
+    "Jodhpur / जोधपुर",
+    "Bikaner / बीकानेर"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi094",
+   "tag": "GK",
+   "hi": "'स्टैच्यू ऑफ यूनिटी' किसकी प्रतिमा है?",
+   "en": "The 'Statue of Unity' depicts whom?",
+   "options": [
+    "Sardar Vallabhbhai Patel / सरदार वल्लभभाई पटेल",
+    "Mahatma Gandhi / महात्मा गांधी",
+    "B. R. Ambedkar / बी. आर. अंबेडकर",
+    "Subhas Chandra Bose / सुभाष चंद्र बोस"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi095",
+   "tag": "GK",
+   "hi": "गेटवे ऑफ इंडिया किस शहर में है?",
+   "en": "The Gateway of India is in which city?",
+   "options": [
+    "Mumbai / मुंबई",
+    "Delhi / दिल्ली",
+    "Kolkata / कोलकाता",
+    "Chennai / चेन्नई"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi096",
+   "tag": "Maths",
+   "hi": "350 का 20% कितना है?",
+   "en": "What is 20% of 350?",
+   "options": [
+    "70",
+    "75",
+    "67",
+    "140"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi097",
+   "tag": "Maths",
+   "hi": "180 का 45% कितना है?",
+   "en": "What is 45% of 180?",
+   "options": [
+    "81",
+    "86",
+    "78",
+    "162"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi098",
+   "tag": "Maths",
+   "hi": "₹6000 पर 10% वार्षिक दर से 2 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹6000 at 10% per annum for 2 years?",
+   "options": [
+    "1200",
+    "1500",
+    "960",
+    "2400"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi099",
+   "tag": "Maths",
+   "hi": "₹8000 पर 5% वार्षिक चक्रवृद्धि ब्याज (2 वर्ष) कितना होगा?",
+   "en": "Compound interest on ₹8000 at 5% per annum for 2 years (compounded yearly)?",
+   "options": [
+    "820",
+    "800",
+    "870",
+    "795"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi100",
+   "tag": "Maths",
+   "hi": "16 और 24 का LCM (लघुत्तम समापवर्त्य) क्या है?",
+   "en": "What is the LCM of 16 and 24?",
+   "options": [
+    "48",
+    "384",
+    "24",
+    "56"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi101",
+   "tag": "Maths",
+   "hi": "42 और 56 का HCF (महत्तम समापवर्तक) क्या है?",
+   "en": "What is the HCF of 42 and 56?",
+   "options": [
+    "14",
+    "28",
+    "7",
+    "15"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi102",
+   "tag": "Maths",
+   "hi": "36 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "36 km/h = how many m/s?",
+   "options": [
+    "10 m/s",
+    "15 m/s",
+    "20 m/s",
+    "129.6 m/s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi103",
+   "tag": "Maths",
+   "hi": "180 मीटर लंबी ट्रेन 36 किमी/घंटा की चाल से एक खंभे को कितने समय में पार करेगी?",
+   "en": "A 180 m long train at 36 km/h crosses a pole in how much time?",
+   "options": [
+    "18 s",
+    "22 s",
+    "36 s",
+    "28 s"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi104",
+   "tag": "Maths",
+   "hi": "क्रय मूल्य ₹600 और विक्रय मूल्य ₹750 है। लाभ प्रतिशत कितना है?",
+   "en": "Cost price ₹600, selling price ₹750. Profit percent?",
+   "options": [
+    "25%",
+    "20%",
+    "30%",
+    "50%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi105",
+   "tag": "Maths",
+   "hi": "पहली 30 प्राकृत संख्याओं का औसत क्या है?",
+   "en": "Average of the first 30 natural numbers?",
+   "options": [
+    "15.5",
+    "15",
+    "16.5",
+    "465"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi106",
+   "tag": "Maths",
+   "hi": "√2809 का मान क्या है?",
+   "en": "What is the value of √2809?",
+   "options": [
+    "53",
+    "55",
+    "51",
+    "57"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi107",
+   "tag": "Maths",
+   "hi": "11 का घन (cube) क्या है?",
+   "en": "What is the cube of 11?",
+   "options": [
+    "1331",
+    "1210",
+    "1342",
+    "121"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi108",
+   "tag": "Maths",
+   "hi": "A किसी काम को 20 दिन में और B 30 दिन में करता है। दोनों मिलकर कितने दिन में करेंगे?",
+   "en": "A does a work in 20 days and B in 30 days. Together they finish it in?",
+   "options": [
+    "12 days",
+    "25 days",
+    "14 days",
+    "13 days"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi109",
+   "tag": "Maths",
+   "hi": "72 को 5:7 के अनुपात में बाँटने पर बड़ा भाग कितना होगा?",
+   "en": "72 is divided in the ratio 5:7. What is the larger part?",
+   "options": [
+    "42",
+    "30",
+    "46",
+    "40"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi110",
+   "tag": "Maths",
+   "hi": "15% और 10% की दो क्रमिक छूट के बराबर एकल छूट कितनी है?",
+   "en": "Two successive discounts of 15% and 10% equal a single discount of?",
+   "options": [
+    "23.5%",
+    "25%",
+    "21.5%",
+    "26.5%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi111",
+   "tag": "Maths",
+   "hi": "एक अष्टभुज के सभी अंतः कोणों का योग कितना होता है?",
+   "en": "Sum of all interior angles of an octagon?",
+   "options": [
+    "1080°",
+    "900°",
+    "1260°",
+    "1440°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi112",
+   "tag": "Maths",
+   "hi": "त्रिज्या 21 सेमी वाले वृत्त का क्षेत्रफल (π = 22/7) कितना है?",
+   "en": "Area of a circle of radius 21 cm (π = 22/7)?",
+   "options": [
+    "1386 cm²",
+    "132 cm²",
+    "2772 cm²",
+    "1408 cm²"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi113",
+   "tag": "Maths",
+   "hi": "2/5 को प्रतिशत में लिखें।",
+   "en": "Express 2/5 as a percentage.",
+   "options": [
+    "40%",
+    "45%",
+    "20%",
+    "52.5%"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi114",
+   "tag": "Maths",
+   "hi": "4 संख्याओं का औसत 25 है। एक संख्या हटाने पर औसत 22 हो जाता है। हटाई गई संख्या कौन-सी है?",
+   "en": "The average of 4 numbers is 25. Removing one number makes the average 22. The removed number is?",
+   "options": [
+    "34",
+    "38",
+    "31",
+    "47"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi115",
+   "tag": "Reasoning",
+   "hi": "6:15 बजे घड़ी की सुइयों के बीच कितना कोण होता है?",
+   "en": "What is the angle between the clock hands at 6:15?",
+   "options": [
+    "97.5°",
+    "112.5°",
+    "67.5°",
+    "180°"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi116",
+   "tag": "Reasoning",
+   "hi": "आज शुक्रवार है। 100 दिन बाद कौन-सा दिन होगा?",
+   "en": "Today is Friday. What day will it be after 100 days?",
+   "options": [
+    "Sunday / रविवार",
+    "Monday / सोमवार",
+    "Saturday / शनिवार",
+    "Tuesday / मंगलवार"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi117",
+   "tag": "Reasoning",
+   "hi": "किसी कूट भाषा में PEN को SHQ लिखा जाता है। उसी भाषा में INK को कैसे लिखेंगे?",
+   "en": "In a code, PEN is written as SHQ. How is INK written?",
+   "options": [
+    "LQN",
+    "MRO",
+    "FKH",
+    "NQL"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi118",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 4, 7, 12, 19, 28, ?",
+   "en": "Find the next number in the series: 4, 7, 12, 19, 28, ?",
+   "options": [
+    "39",
+    "37",
+    "38",
+    "41"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi119",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 100, 95, 85, 70, 50, ?",
+   "en": "Find the next number in the series: 100, 95, 85, 70, 50, ?",
+   "options": [
+    "25",
+    "30",
+    "20",
+    "35"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi120",
+   "tag": "Reasoning",
+   "hi": "अंग्रेज़ी वर्णमाला में बाएँ से 8वें अक्षर के दाएँ 12वाँ अक्षर कौन-सा है?",
+   "en": "In the English alphabet, which letter is 12th to the right of the 8th letter from the left?",
+   "options": [
+    "T",
+    "U",
+    "S",
+    "V"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi121",
+   "tag": "Reasoning",
+   "hi": "विषम (अलग) संख्या चुनें: 19, 29, 31, 35, 37",
+   "en": "Find the odd one out: 19, 29, 31, 35, 37",
+   "options": [
+    "35",
+    "19",
+    "29",
+    "31"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi122",
+   "tag": "Reasoning",
+   "hi": "श्रेणी में अगली संख्या क्या होगी? 3, 6, 11, 18, 27, ?",
+   "en": "Find the next number in the series: 3, 6, 11, 18, 27, ?",
+   "options": [
+    "38",
+    "36",
+    "39",
+    "40"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi123",
+   "tag": "Maths",
+   "hi": "₹15000 पर 4% वार्षिक दर से 5 वर्ष का साधारण ब्याज कितना होगा?",
+   "en": "Simple interest on ₹15000 at 4% per annum for 5 years?",
+   "options": [
+    "3000",
+    "3750",
+    "2400",
+    "6000"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi124",
+   "tag": "Maths",
+   "hi": "90 और 120 का HCF (महत्तम समापवर्तक) क्या है?",
+   "en": "What is the HCF of 90 and 120?",
+   "options": [
+    "30",
+    "60",
+    "15",
+    "31"
+   ],
+   "answer": 0
+  },
+  {
+   "id": "bi125",
+   "tag": "Maths",
+   "hi": "108 किमी/घंटा = कितने मीटर/सेकंड?",
+   "en": "108 km/h = how many m/s?",
+   "options": [
+    "30 m/s",
+    "35 m/s",
+    "60 m/s",
+    "388.8 m/s"
+   ],
+   "answer": 0
+  }
+ ]
+}
