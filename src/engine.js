@@ -5,7 +5,8 @@ const db = require('./db');
 const { col, getKV, setKV } = db;
 const { fetchPosts } = require('./telegram');
 const { readSource, classifyOfficial, resetCache } = require('./official');
-const { buildCard, buildOfficialCard, footer, fmtDate, normTitle } = require('./format');
+const tp = require('./thirdparty');
+const { buildCard, buildOfficialCard, renderCard, footer, fmtDate, normTitle, hashTitle, parseDate } = require('./format');
 const health = require('./health');
 const wa = require('./whatsapp');
 
@@ -18,9 +19,9 @@ const isQuiet = () => {
   return cfg.QUIET_START > cfg.QUIET_END ? h >= cfg.QUIET_START || h < cfg.QUIET_END : h >= cfg.QUIET_START && h < cfg.QUIET_END;
 };
 
-const stats = { lastPoll: null, lastOfficialPoll: null, nextOfficialAt: 0, lastSend: null, errors: [] };
+const stats = { lastPoll: null, lastOfficialPoll: null, nextOfficialAt: 0, lastThirdPartyPoll: null, nextThirdPartyAt: 0, tpRound: 0, lastSend: null, errors: [] };
 const logErr = (where, e) => {
-  const msg = health.clean(e && e.message ? e.message : e);
+  const msg = health.clean(health.describe(e));
   console.error(where, msg);
   stats.errors.unshift(`${new Date().toISOString()} ${where}: ${msg}`);
   if (stats.errors.length > cfg.MAX_ERRORS) stats.errors.length = cfg.MAX_ERRORS;
@@ -34,7 +35,7 @@ async function alertSelf(key, text) {
 async function sourceFailed(name, e) {
   logErr(name, e);
   if (await health.fail(name, e)) {
-    const sent = await alertSelf(name, `Source *${name}* ${cfg.ALERT_AFTER_FAILS}+ baar lagatar fail.\nError: ${health.clean(e.message)}\nBaaki sources chal rahe hain. /status dekhein.`);
+    const sent = await alertSelf(name, `Source *${name}* ${cfg.ALERT_AFTER_FAILS}+ baar lagatar fail.\nError: ${health.clean(health.describe(e))}\nBaaki sources chal rahe hain. /status dekhein.`);
     if (sent) await health.markAlerted(name);
   }
 }
@@ -49,16 +50,27 @@ function similar(a, b) {
   for (const w of A) if (B.has(w)) inter++;
   return inter / (A.size + B.size - inter) >= 0.6 || inter / Math.min(A.size, B.size) >= 0.85;
 }
+// only specific links (PDF / deep page) identify a job; a portal home or login page is shared by many jobs
+function specificLinks(links) {
+  return (links || []).filter((u) => {
+    try {
+      const x = new URL(u);
+      const path = x.pathname.replace(/\/+$/, '');
+      return /\.pdf/i.test(path) || path.split('/').filter(Boolean).length >= 2 || path.length > 25 || /[?&](id|nid|notice|file)=/i.test(x.search);
+    } catch { return false; }
+  });
+}
 async function isDuplicate(card, channel) {
   const or = [{ _id: card.hash }];
-  if (card.links.length) or.push({ links: { $in: card.links } });
+  const links = specificLinks(card.links);
+  if (links.length) or.push({ links: { $in: links } });
   if (await col('dedup').findOne({ $or: or }, { projection: { _id: 1 } })) return true;
   const recent = await col('posts').find({ channel, type: card.type, createdAt: { $gte: new Date(Date.now() - 5 * 86400e3) } }).project({ title: 1 }).toArray();
   return recent.some((p) => similar(p.title, card.title));
 }
 async function record(card, channel, extra) {
   await col('posts').insertOne({ hash: card.hash, channel, type: card.type, title: card.title, lastDate: card.lastDate, links: card.links, createdAt: new Date(), reminded: [], ...extra });
-  await col('dedup').updateOne({ _id: card.hash }, { $set: { links: card.links, at: new Date() } }, { upsert: true });
+  await col('dedup').updateOne({ _id: card.hash }, { $set: { links: specificLinks(card.links), at: new Date() } }, { upsert: true });
 }
 async function accept(card, channel, extra) {
   if (await isDuplicate(card, channel)) return false;
@@ -75,6 +87,7 @@ async function accept(card, channel, extra) {
 
 // ---- 1a. poll Telegram (every POLL_MINUTES) ----
 async function poll() {
+  if (!cfg.TELEGRAM_ENABLED) { stats.lastPoll = new Date(); return; } // optional, secondary source
   for (const ch of cfg.CHANNELS) {
     const name = `telegram:${ch.key}`;
     try {
@@ -131,6 +144,86 @@ async function pollOfficial() {
   }
   stats.lastOfficialPoll = new Date();
   stats.nextOfficialAt = Date.now() + cfg.OFFICIAL_POLL_MINUTES * 60e3 + Math.floor(Math.random() * 90e3);
+}
+
+// ---- 1c. third-party listing sites: DETECTION only (every THIRDPARTY_POLL_MINUTES + jitter) ----
+// New listing item -> keyword classify (channel + type) -> skip junk / duplicates BEFORE any detail fetch
+// -> fetch detail page (capped per round) -> facts + official links -> our own card -> same dedup as others.
+const AGG_TEXT = /freejobalert|sarkari ?result|sarkari ?exam|sarkarinaukri|rojgar ?result/i;
+async function markSeen(id) {
+  await col('seen').updateOne({ _id: id }, { $setOnInsert: { at: new Date() } }, { upsert: true });
+}
+async function pollThirdParty() {
+  if (!cfg.THIRDPARTY_ENABLED) return;
+  let budget = cfg.TP_MAX_DETAIL_PER_ROUND;
+  const result = {};
+  const n = cfg.THIRDPARTY_SOURCES.length;
+  const start = n ? stats.tpRound++ % n : 0; // rotate the start so no site starves of the detail-fetch budget
+  const order = cfg.THIRDPARTY_SOURCES.slice(start).concat(cfg.THIRDPARTY_SOURCES.slice(0, start));
+  for (const src of order) {
+    const name = `web:${src.id}`;
+    const r = (result[src.id] = { items: 0, fresh: 0, relevant: 0, posted: 0, skipped: 0, why: {} });
+    const skip = (why) => { r.skipped++; r.why[why] = (r.why[why] || 0) + 1; };
+    try {
+      const seeded = await getKV(`seeded:${src.id}`);
+      if (!seeded) await tp.resetCache(src.url);
+      const page = await tp.get(src.url);
+      if (page.notModified) { await health.ok(name); r.notModified = true; continue; }
+      const items = src.kind === 'fja' ? tp.readFjaListing(src, page.body) : tp.readHomeListing(src, page.body);
+      r.items = items.length;
+      if (!items.length) throw new Error('no items found in listing (layout changed?)');
+      if (!seeded) { // first run: everything that is already listed counts as seen, nothing is posted
+        for (const it of items) await markSeen(`tp:${it.uid}`);
+        await setKV(`seeded:${src.id}`, true);
+        await health.ok(name);
+        r.seeded = true;
+        continue;
+      }
+      let detailsLeft = cfg.TP_MAX_DETAIL_PER_SOURCE;
+      const maxAge = Date.now() - cfg.TP_MAX_AGE_DAYS * 86400e3;
+      for (const it of items) {
+        const sid = `tp:${it.uid}`;
+        if (await col('seen').findOne({ _id: sid }, { projection: { _id: 1 } })) continue;
+        r.fresh++;
+        const cls = tp.classifyItem(it.rawTitle, src.hint, !!it.main);
+        if (!cls || (it.date && it.date.getTime() < maxAge)) { await markSeen(sid); skip(cls ? 'old' : 'irrelevant'); continue; } // irrelevant / old
+        r.relevant++;
+        // cheap duplicate check on the title before spending a detail fetch
+        const pre = tp.ownTitle(it.rawTitle, cls.type);
+        if (await isDuplicate({ hash: hashTitle(pre), links: [], type: cls.type, title: pre }, cls.channel)) { await markSeen(sid); skip('duplicate'); continue; }
+        if (detailsLeft <= 0 || budget <= 0) continue; // left unseen -> handled next round
+        detailsLeft--; budget--;
+        let detail = null;
+        try {
+          detail = tp.parseDetail((await tp.get(it.link, { conditional: false })).body);
+        } catch (e) {
+          logErr(`${name} detail`, e); // listing facts alone are still useful; fall through
+        }
+        await new Promise((res) => setTimeout(res, 1200)); // polite gap
+        const data = tp.buildData(it, cls, detail, src);
+        if (cls.type === 'vacancy') {
+          const last = data.facts.last ? parseDate(data.facts.last) : null;
+          if (last && last.getTime() < Date.now() - 86400e3) { await markSeen(sid); skip('closed'); continue; } // already closed
+          const n = Number(String(data.facts.posts || '').replace(/,/g, ''));
+          if (n && n < 5 && !tp.CORE.test(`${it.rawTitle} ${data.org || ''}`)) { await markSeen(sid); skip('tiny'); continue; } // tiny local hiring
+        }
+        if (!data.links.length && !data.home) { await markSeen(sid); skip('no-official-link'); continue; } // no official link and unknown body -> never post
+        const text = renderCard(data, cls.channel);
+        if (AGG_TEXT.test(text)) { await markSeen(sid); skip('aggregator-text'); logErr(name, new Error('card mentioned a listing site, dropped')); continue; }
+        const card = { type: cls.type, title: data.title, lastDate: data.facts.last ? parseDate(data.facts.last) : null, links: data.links.map((l) => l.url), text, hash: hashTitle(data.title) };
+        if (await accept(card, cls.channel, { src: name })) r.posted++; else skip('duplicate');
+        await markSeen(sid);
+      }
+      await health.ok(name);
+    } catch (e) {
+      r.error = health.clean(health.describe(e));
+      await sourceFailed(name, e);
+    }
+    await new Promise((res) => setTimeout(res, 1500)); // polite gap between sites
+  }
+  stats.lastThirdPartyPoll = new Date();
+  stats.nextThirdPartyAt = Date.now() + cfg.THIRDPARTY_POLL_MINUTES * 60e3 + Math.floor(Math.random() * 120e3);
+  return result;
 }
 
 // ---- 2. send queue with anti-spam (sends immediately when possible, never closer than MIN_GAP) ----
@@ -269,6 +362,7 @@ async function tick() {
     const h = now.getUTCHours(), day = istDayKey();
     if (!stats.lastPoll || Date.now() - stats.lastPoll >= cfg.POLL_MINUTES * 60e3 - 5e3) await poll();
     if (Date.now() >= stats.nextOfficialAt) await pollOfficial();
+    if (Date.now() >= stats.nextThirdPartyAt) await pollThirdParty();
     if (h === cfg.DIGEST_HOUR) await onceFor(`digest:${day}`, digest);
     if (h === cfg.REMINDER_HOUR) await onceFor(`remind:${day}`, reminders);
     if (now.getUTCDay() === cfg.WEEKLY_DAY && h === cfg.WEEKLY_HOUR) await onceFor(`weekly:${day}`, weekly);
@@ -286,9 +380,14 @@ async function healthReport() {
   const [paused, queueLength, lastPostAt, dbSizeMB, list] = await Promise.all([
     getKV('paused', false), col('queue').countDocuments({ status: 'pending' }), getKV('lastPostAt'), db.dbSizeMB().catch(() => null), health.list(),
   ]);
-  const sources = list.map((s) => ({ name: s._id, lastSuccessAt: s.lastSuccessAt || null, consecutiveFails: s.consecutiveFails || 0 }));
+  const sources = list.map((s) => ({ name: s._id, lastSuccessAt: s.lastSuccessAt || null, consecutiveFails: s.consecutiveFails || 0, lastError: s.consecutiveFails ? s.lastError || null : null }));
+  // Telegram is optional/secondary: a channel is healthy when ANY of its non-Telegram sources works
+  const healthy = (s) => s.consecutiveFails < cfg.ALERT_AFTER_FAILS && s.lastSuccessAt;
+  const tpOk = sources.filter((s) => s.name.startsWith('web:')).some(healthy);
+  const offOk = sources.filter((s) => s.name.startsWith('official:')).some(healthy);
   return {
-    ok: !!wa.state.ready && !paused && sources.every((s) => s.consecutiveFails < cfg.ALERT_AFTER_FAILS),
+    ok: !!wa.state.ready && !paused && (tpOk || offOk || !sources.length),
+    sourcesOk: sources.filter((s) => !s.name.startsWith('telegram:')).every((s) => s.consecutiveFails < cfg.ALERT_AFTER_FAILS),
     waConnected: !!wa.state.ready, paused, lastPostAt, queueLength, dbSizeMB, sources,
     lastError: stats.errors[0] ? health.clean(stats.errors[0].replace(/^\S+\s/, '')) : null,
   };
@@ -304,12 +403,12 @@ async function command(text) {
       const today = await col('queue').countDocuments({ status: 'sent', sentAt: { $gte: new Date(Date.now() - 86400e3) } });
       const hs = await health.list();
       const t = (d) => (d ? new Date(d).toLocaleString('en-IN', { timeZone: cfg.TZ, day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-');
-      const src = hs.map((x) => `${(x.consecutiveFails || 0) >= cfg.ALERT_AFTER_FAILS ? '🔴' : x.consecutiveFails ? '🟠' : '🟢'} ${x._id} | ok ${t(x.lastSuccessAt)} | fail x${x.consecutiveFails || 0}`).join('\n');
-      return `✅ Bot chal raha hai\nPaused: ${(await getKV('paused', false)) ? 'haan' : 'nahi'}\nQueue: ${pend}\nPichhle 24 ghante mein post: ${today}\nTelegram check: ${t(stats.lastPoll)} (har ${cfg.POLL_MINUTES} min)\nOfficial check: ${t(stats.lastOfficialPoll)} (har ${cfg.OFFICIAL_POLL_MINUTES} min)\nQuiet: ${isQuiet() ? 'haan' : 'nahi'}\nDB: ${await db.dbSizeMB().catch(() => '?')} MB / 512 MB\n\n*Sources:*\n${src || '-'}`;
+      const src = hs.map((x) => `${(x.consecutiveFails || 0) >= cfg.ALERT_AFTER_FAILS ? '🔴' : x.consecutiveFails ? '🟠' : '🟢'} ${x._id} | ok ${t(x.lastSuccessAt)} | fail x${x.consecutiveFails || 0}${x.consecutiveFails && x.lastError ? ` | ${x.lastError}` : ''}`).join('\n');
+      return `✅ Bot chal raha hai\nPaused: ${(await getKV('paused', false)) ? 'haan' : 'nahi'}\nQueue: ${pend}\nPichhle 24 ghante mein post: ${today}\nTelegram check: ${t(stats.lastPoll)} (har ${cfg.POLL_MINUTES} min)\nOfficial check: ${t(stats.lastOfficialPoll)} (har ${cfg.OFFICIAL_POLL_MINUTES} min)\nWeb sources check: ${cfg.THIRDPARTY_ENABLED ? `${t(stats.lastThirdPartyPoll)} (har ${cfg.THIRDPARTY_POLL_MINUTES} min)` : 'off'}\nTelegram: ${cfg.TELEGRAM_ENABLED ? 'on (optional)' : 'off'}\nQuiet: ${isQuiet() ? 'haan' : 'nahi'}\nDB: ${await db.dbSizeMB().catch(() => '?')} MB / 512 MB\n\n*Sources:*\n${src || '-'}`;
     }
     case '/pause': await setKV('paused', true); return '⏸️ Posting ruk gayi. /resume se chalu karein.';
     case '/resume': await setKV('paused', false); return '▶️ Posting chalu.';
-    case '/check': await poll(); await pollOfficial(); return '🔄 Telegram + official sites check ho gaye.';
+    case '/check': await poll(); await pollOfficial(); await pollThirdParty(); return '🔄 Telegram + official + web sources check ho gaye.';
     case '/digest': await digest(); return '☀️ Digest queue mein.';
     case '/remind': await reminders(); return '⏰ Reminders queue mein.';
     case '/clearqueue': { const r = await col('queue').deleteMany({ status: 'pending' }); return `🗑️ ${r.deletedCount} hata diye.`; }
@@ -325,4 +424,4 @@ async function command(text) {
   }
 }
 
-module.exports = { tick, command, stats, isQuiet, poll, pollOfficial, healthReport, sendNext, kick, isDuplicate, similar };
+module.exports = { tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };

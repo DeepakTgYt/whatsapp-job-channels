@@ -3,6 +3,11 @@
 Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notifications** utha kar 4 WhatsApp Channels par khud post karta hai. Quiz kabhi WhatsApp par nahi jata.
 
 ## Features
+- **Teen source, Telegram optional:** (1) official sarkari sites, (2) job-listing websites sirf *detection* ke liye (naya job pata chalte hi uske detail page se sirf facts: org, post, vacancy, dates, fee, age, qualification + **official links** (gov.in / nic.in / board ki apni site) lekar apna card banata hai; un sites ka link ya naam kabhi post mein nahi jata, unka text copy nahi hota), (3) Telegram (optional, `TELEGRAM_ENABLED=false` se band). Posting kisi ek source par depend nahi.
+- Web sources (har 10 min + jitter, `THIRDPARTY_POLL_MINUTES`): freejobalert (railway / police-defence / ssc / bihar / new-updates pages) + sarkariresult homepage (primary), sarkariexam homepage (extra fallback). Pehli baar sab "seen" (flood nahi), har round max 3 detail page per site / 8 total, ETag / If-Modified-Since, 1.5 MB size cap. Quiz / PYQ / mock test / tender / cut-off / senior PSU posts / chhoti local bharti (<5 post, badi body nahi) skip. Official link na mile to recognised body ki official website; wo bhi na ho to post nahi.
+- Channel keyword se: RRB/RRC/RPF/Railway → Railway; Agniveer/Army/Navy/Air Force/Coast Guard/NDA/CDS → Army; Bihar/BPSC/BSSC/CSBC/BPSSC/BTSC → Bihar; SSC → SSC.
+- `/health` mein har source (`web:*`, `official:*`, `telegram:*`) ka lastSuccessAt, consecutiveFails, lastError (asli wajah jaise `fetch failed [UND_ERR_CONNECT_TIMEOUT]`). `ok` = WhatsApp connected + koi official/web source chal raha ho (Telegram fail hone se `ok:false` nahi hota).
+- Render par IPv4 pehle (`dns.setDefaultResultOrder('ipv4first')`), kyunki "fetch failed" aksar IPv6 route na hone se aata hai.
 - **Do source (backup):** Telegram har 3 min (`POLL_MINUTES`) + official sarkari sites har 10 min (`OFFICIAL_POLL_MINUTES`, thoda random jitter). Telegram band ho jaye to bhi official sites se post chalte rahenge.
 - Official sources (plain HTTP se test kiye, 2026-11-21):
   - SSC: ssc.gov.in ka apna JSON API (Notice Board, Results, Answer Key, Admit Card) — 4 alag endpoints

@@ -101,9 +101,10 @@ function labelLinks(links, type) {
     seen.add(k);
     let lab, rank;
     const L = `${label} ${url}`;
-    if (/apply|registration|applicationIndex|login|form/i.test(L) && type !== 'admit') { lab = '✍️ Apply Online'; rank = 1; }
+    if (/login|candidate portal/i.test(url) && (type === 'result' || type === 'answerkey')) { lab = type === 'result' ? '🏆 Check Result (Login)' : '🔑 Check Answer Key (Login)'; rank = 1; }
+    else if (/apply|registration|applicationIndex|login|form/i.test(L) && type !== 'admit') { lab = '✍️ Apply Online'; rank = 1; }
     else if (/admit|hall ?ticket|call letter/i.test(L) || (type === 'admit' && /applicationIndex|login/i.test(url))) { lab = '🎫 Download Admit Card'; rank = 1; }
-    else if (/\.pdf($|\?)/i.test(url) || /notification|advt|pdf/i.test(label)) {
+    else if (/\.pdf($|\?|\/)/i.test(url) || /notification|advt|pdf/i.test(label)) {
       lab = { result: '🏆 Result PDF', answerkey: '🔑 Answer Key / Notice PDF', admit: '📄 Admit Card Notice PDF', examdate: '📄 Schedule Notice PDF', syllabus: '📚 Syllabus PDF' }[type] || '📄 Notification PDF';
       rank = 2;
     } else if (/official|website|home/i.test(label) || /^https?:\/\/[^/]+\/?$/.test(url)) { lab = '🌐 Official Website'; rank = 4; }
@@ -132,7 +133,7 @@ function renderCard(data, channelKey) {
   const f = data.facts || {};
   const parts = [HEAD[data.type] || '📢 *UPDATE*', '━━━━━━━━━━━━━━', `*${cut(stripMd(data.title), 220)}*`];
   if (data.org) parts.push(`🏛️ _${data.org}_`);
-  const advt = (data.title.match(/Advt\.?\s*No\.?\s*[-:]?\s*[\w/.-]+\d/i) || [])[0];
+  const advt = (data.title.match(/Advt\.?\s*No\.?\s*[-:]?\s*[\w/.-]+\d/i) || [])[0] || (data.advt ? `Advt No. ${cut(stripMd(data.advt), 40)}` : null);
   if (advt) parts.push(`🔖 \`${advt.replace(/\s+/g, ' ')}\``);
   const q = [];
   const add = (icon, k, v) => { if (v) q.push(`> ${icon} *${k}:* ${cut(stripMd(v), 90)}`); };
@@ -142,6 +143,7 @@ function renderCard(data, channelKey) {
   add('📝', 'Exam Date', data.type === 'examdate' || data.type === 'admit' ? f.exam : null);
   add('💳', 'Fee', f.fee);
   add('🎂', 'Age', f.age);
+  add('🎓', 'Qualification', f.qual);
   add('🗓️', 'Notice Date', f.notice);
   if (q.length) parts.push('', ...q);
   if (f.status) parts.push('', `_${cut(stripMd(f.status), 80)}_`);
@@ -154,7 +156,7 @@ function renderCard(data, channelKey) {
   parts.push('', '⚠️ _Apply se pehle official notification zaroor padhein._', `${ch.tags} #${data.type === 'vacancy' ? 'NewVacancy' : { admit: 'AdmitCard', result: 'Result', answerkey: 'AnswerKey', examdate: 'ExamDate', syllabus: 'Syllabus' }[data.type] || 'Update'}`);
   let text = `${parts.join('\n')}\n${footer(channelKey)}`;
   if (text.length > 1500) { // trim the optional bits first
-    text = text.replace(/\n> 🎂[^\n]*/, '').replace(/\n> 💳[^\n]*/, '').replace(/\n\n_[^\n]*_\n/, '\n');
+    text = text.replace(/\n> 🎓[^\n]*/, '').replace(/\n> 🎂[^\n]*/, '').replace(/\n> 💳[^\n]*/, '').replace(/\n\n_[^\n]*_\n/, '\n');
   }
   return text;
 }

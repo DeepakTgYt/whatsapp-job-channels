@@ -1,3 +1,5 @@
+// Render has no IPv6 egress: Node may try AAAA first and fail with "fetch failed". Prefer IPv4.
+require('dns').setDefaultResultOrder('ipv4first');
 const express = require('express');
 const cfg = require('./config');
 const db = require('./db');

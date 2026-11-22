@@ -97,21 +97,50 @@ module.exports = {
     'joinindianarmy.nic.in, indianarmy.nic.in, agnipathvayu.cdac.in, joinindiannavy.gov.in, indiannavy.nic.in, indianairforce.nic.in, territorialarmy.in: connection timeout',
     'bssc.bihar.gov.in, onlinebssc.com, state.bihar.gov.in: connection timeout',
     'employmentnews.gov.in, mod.gov.in: JS-rendered, no notice list in HTML',
+    'third-party (2026-11-22): rojgarresult.com home 301->403 for non-browser UA, feed 290 KB/4 s; sarkariexam.com/feed 900 KB full-text RSS (too heavy; homepage used instead); sarkarinaukriblog.com feed is not in date order (old posts re-surface); freejobalert.com/feed 403',
   ],
-  // Official site per organisation, used as "Official Website" link on Telegram-derived cards when the title names it
+  // Official site (+ full name) per organisation. Used as "Official Website" link when a post names the body
+  // and as the fallback link on third-party-detected cards when no official link was found on the detail page.
   ORG_SITES: [
-    { re: /\bSSC\b|Staff Selection/i, url: 'https://ssc.gov.in/' },
-    { re: /\bRRB\b|Railway Recruitment|\bNTPC\b|Group D|\bALP\b/i, url: 'https://www.rrbapply.gov.in/' },
-    { re: /\bRPF\b/i, url: 'https://www.rrbapply.gov.in/' },
-    { re: /\bBPSC\b/i, url: 'https://bpsc.bihar.gov.in/' },
-    { re: /\bBSSC\b/i, url: 'https://bssc.bihar.gov.in/' },
-    { re: /\bCSBC\b|Bihar Police Constable/i, url: 'https://csbc.bihar.gov.in/' },
-    { re: /\bBPSSC\b|Bihar Police SI|Daroga/i, url: 'https://bpssc.bihar.gov.in/' },
-    { re: /\bBTSC\b/i, url: 'https://btsc.bihar.gov.in/' },
-    { re: /Agniveer Vayu|Air ?Force/i, url: 'https://agnipathvayu.cdac.in/' },
-    { re: /Navy/i, url: 'https://www.joinindiannavy.gov.in/' },
-    { re: /Army|Agniveer/i, url: 'https://joinindianarmy.nic.in/' },
+    { re: /\bBSSC\b|Bihar Staff Selection/i, url: 'https://bssc.bihar.gov.in/', name: 'Bihar Staff Selection Commission (BSSC)' },
+    { re: /\bSSC\b|Staff Selection/i, url: 'https://ssc.gov.in/', name: 'Staff Selection Commission (SSC)' },
+    { re: /\bRPF\b|Railway Protection Force/i, url: 'https://www.rrbapply.gov.in/', name: 'Railway Protection Force (RPF)' },
+    { re: /\bRRC\b|Railway Recruitment Cell/i, url: 'https://indianrailways.gov.in/', name: 'Railway Recruitment Cell (RRC), Indian Railways' },
+    { re: /\bRRB\b|Railway Recruitment Board|Railway NTPC|RRB NTPC|Group D|\bALP\b/i, url: 'https://www.rrbapply.gov.in/', name: 'Railway Recruitment Board (RRB)' },
+    { re: /\bBPSC\b|Bihar Public Service/i, url: 'https://bpsc.bihar.gov.in/', name: 'Bihar Public Service Commission (BPSC)' },
+    { re: /\bCSBC\b|Bihar Police Constable/i, url: 'https://csbc.bihar.gov.in/', name: 'Central Selection Board of Constable (CSBC), Bihar' },
+    { re: /\bBPSSC\b|Bihar Police SI|Daroga/i, url: 'https://bpssc.bihar.gov.in/', name: 'Bihar Police Subordinate Services Commission (BPSSC)' },
+    { re: /\bBTSC\b|Bihar Technical Service/i, url: 'https://btsc.bihar.gov.in/', name: 'Bihar Technical Service Commission (BTSC)' },
+    { re: /Coast Guard|\bICG\b/i, url: 'https://joinindiancoastguard.cdac.in/', name: 'Indian Coast Guard' },
+    { re: /Territorial Army/i, url: 'https://territorialarmy.in/', name: 'Territorial Army' },
+    { re: /Agniveer Vayu|Air ?Force|\bIAF\b|AFCAT|Airmen/i, url: 'https://agnipathvayu.cdac.in/', name: 'Indian Air Force' },
+    { re: /Navy|Naval/i, url: 'https://www.joinindiannavy.gov.in/', name: 'Indian Navy' },
+    { re: /Army|Agniveer|\bTGC\b|\bTES\b/i, url: 'https://joinindianarmy.nic.in/', name: 'Indian Army' },
+    { re: /\bUPSC\b.*\b(NDA|CDS)\b|\b(NDA|CDS)\b/i, url: 'https://upsc.gov.in/', name: 'Union Public Service Commission (UPSC)' },
   ],
+
+  // ---- Third-party job-listing sites: DETECTION ONLY (3rd, independent source) ----
+  // Facts + official links are read from the detail page; our own card is written; the site is never linked
+  // or named in a post. Tested with plain HTTP 2026-11-22. Note: the UA must not contain a URL (Cloudflare
+  // on one site blocks UAs with "+http..." / "bot" words), so it is a short honest product token.
+  THIRDPARTY_ENABLED: env('THIRDPARTY_ENABLED', 'true') !== 'false',
+  THIRDPARTY_POLL_MINUTES: Number(env('THIRDPARTY_POLL_MINUTES', 10)), // + up to 2 min random jitter
+  TP_USER_AGENT: 'Mozilla/5.0 (compatible; JobAlertsWA/1.1)',
+  TP_MAX_DETAIL_PER_SOURCE: Number(env('TP_MAX_DETAIL_PER_SOURCE', 3)), // detail pages per source per round
+  TP_MAX_DETAIL_PER_ROUND: Number(env('TP_MAX_DETAIL_PER_ROUND', 8)),   // all sources together
+  TP_MAX_AGE_DAYS: 20,                                                  // listing rows dated older than this are ignored
+  // kind 'fja' = listing with article ids + tables; 'home' = homepage section lists (same page re-titled = new update)
+  // channel = hint for listings that only carry one state's jobs; every item is still classified by keywords.
+  THIRDPARTY_SOURCES: [
+    { id: 'fja-railway', kind: 'fja', url: 'https://www.freejobalert.com/railway-jobs/', primary: true },
+    { id: 'fja-defence', kind: 'fja', url: 'https://www.freejobalert.com/police-defence-jobs/', primary: true },
+    { id: 'fja-ssc', kind: 'fja', url: 'https://www.freejobalert.com/exams/ssc-jobs/', primary: true },
+    { id: 'fja-bihar', kind: 'fja', url: 'https://www.freejobalert.com/bihar-government-jobs/', hint: 'bihar', primary: true },
+    { id: 'fja-updates', kind: 'fja', url: 'https://www.freejobalert.com/new-updates/', primary: true },
+    { id: 'sr-home', kind: 'home', url: 'https://www.sarkariresult.com/', minDepth: 2, primary: true },
+    { id: 'se-home', kind: 'home', url: 'https://www.sarkariexam.com/', minDepth: 1 }, // extra fallback
+  ],
+  TELEGRAM_ENABLED: env('TELEGRAM_ENABLED', 'true') !== 'false', // optional, secondary; posting never depends on it
   // Domains treated as official (government or the boards' own application portals)
   OFFICIAL_DOMAIN: /(\.gov\.in|\.nic\.in|\.gov|cdac\.in|apply-csbc\.com|apply-bpssc\.com|onlinebssc\.com|digialm\.com|ibps\.in)$/i,
   // Third-party aggregators: never linked, never copied
