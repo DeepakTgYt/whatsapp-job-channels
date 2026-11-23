@@ -63,6 +63,8 @@ module.exports = {
   MIN_GAP_SECONDS: Number(env('MIN_GAP_SECONDS', 90)),  // gap between any two sends
   DIGEST_HOUR: Number(env('DIGEST_HOUR', 8)),           // morning digest 08:00
   REMINDER_HOUR: Number(env('REMINDER_HOUR', 18)),      // last-date reminders 18:00
+  TOP_HOUR: Number(env('TOP_HOUR', 20)),                // evening "Aaj ki Top Bharti" 20:00 (only if >=2 posts that day)
+  TOP_MAX_ITEMS: 5,
   REMINDER_DAYS: [3, 1],                                // remind 3 days and 1 day before last date
   WEEKLY_DAY: 0,                                        // Sunday
   WEEKLY_HOUR: Number(env('WEEKLY_HOUR', 19)),          // weekly roundup 19:00
@@ -113,7 +115,7 @@ module.exports = {
     { re: /\bSSC\b|Staff Selection/i, url: 'https://ssc.gov.in/', name: 'Staff Selection Commission (SSC)' },
     { re: /\bRPF\b|Railway Protection Force/i, url: 'https://www.rrbapply.gov.in/', name: 'Railway Protection Force (RPF)' },
     { re: /\bRRC\b|Railway Recruitment Cell/i, url: 'https://indianrailways.gov.in/', name: 'Railway Recruitment Cell (RRC), Indian Railways' },
-    { re: /\bRRB\b|Railway Recruitment Board|Railway NTPC|RRB NTPC|Group D|\bALP\b/i, url: 'https://www.rrbapply.gov.in/', name: 'Railway Recruitment Board (RRB)' },
+    { re: /\bRRB\b|Railway Recruitment Board|Railway NTPC|RRB NTPC|Railway Group D|\bALP\b/i, url: 'https://www.rrbapply.gov.in/', name: 'Railway Recruitment Board (RRB)' },
     { re: /\bBPSC\b|Bihar Public Service/i, url: 'https://bpsc.bihar.gov.in/', name: 'Bihar Public Service Commission (BPSC)' },
     { re: /\bCSBC\b|Bihar Police Constable/i, url: 'https://csbc.bihar.gov.in/', name: 'Central Selection Board of Constable (CSBC), Bihar' },
     { re: /\bBPSSC\b|Bihar Police SI|Daroga/i, url: 'https://bpssc.bihar.gov.in/', name: 'Bihar Police Subordinate Services Commission (BPSSC)' },
@@ -147,6 +149,9 @@ module.exports = {
     { id: 'sr-home', kind: 'home', url: 'https://www.sarkariresult.com/', minDepth: 2, primary: true },
     { id: 'se-home', kind: 'home', url: 'https://www.sarkariexam.com/', minDepth: 1 }, // extra fallback
   ],
+  // NEW VACANCY cards with an official notification PDF: post page 1 as an image with the card as caption.
+  // Falls back to the text card in the same slot on any failure. Override at runtime: /image on|off.
+  NOTIF_IMAGE: String(env('NOTIF_IMAGE', 'off')).toLowerCase() === 'on',
   TELEGRAM_ENABLED: env('TELEGRAM_ENABLED', 'true') !== 'false', // optional, secondary; posting never depends on it
   // Domains treated as official (government or the boards' own application portals)
   OFFICIAL_DOMAIN: /(\.gov\.in|\.nic\.in|\.gov|cdac\.in|apply-csbc\.com|apply-bpssc\.com|onlinebssc\.com|digialm\.com|ibps\.in)$/i,

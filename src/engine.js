@@ -6,10 +6,11 @@ const { col, getKV, setKV } = db;
 const { fetchPosts } = require('./telegram');
 const { readSource, classifyOfficial, resetCache } = require('./official');
 const tp = require('./thirdparty');
-const { buildCard, buildOfficialCard, renderCard, footer, fmtDate, normTitle, hashTitle, parseDate } = require('./format');
+const { buildCard, buildOfficialCard, renderCard, footer, fmtDate, normTitle, hashTitle, parseDate, SHARE_LINE } = require('./format');
 const health = require('./health');
 const wa = require('./whatsapp');
 const quiz = require('./quiz');
+const notif = require('./notifimage');
 
 // ---- time helpers (IST) ----
 const ist = (d = new Date()) => new Date(d.getTime() + 5.5 * 3600e3); // shifted clock, read with getUTC*
@@ -41,6 +42,7 @@ async function sourceFailed(name, e) {
   }
 }
 
+const AGG_TEXT = /freejobalert|sarkari ?result|sarkari ?exam|sarkarinaukri|rojgar ?result/i;
 // ---- dedup across Telegram + official (same job never posted twice; first one wins) ----
 const STOP = new Set('the and for of in to on a an by with from regarding notice important candidates post posts exam examination 2024 2025 2026 2027 ke ki ka se'.split(' '));
 const tokens = (t) => new Set(String(t).toLowerCase().replace(/[^a-z0-9\u0900-\u097f ]/g, ' ').split(/\s+/).filter((w) => w.length > 1 && !STOP.has(w)));
@@ -74,6 +76,8 @@ async function record(card, channel, extra) {
   await col('dedup').updateOne({ _id: card.hash }, { $set: { links: specificLinks(card.links), at: new Date() } }, { upsert: true });
 }
 async function accept(card, channel, extra) {
+  if (!cfg.CHANNELS.some((c) => c.key === channel)) return false;
+  if (AGG_TEXT.test(card.text)) { logErr('accept', new Error('card mentioned a listing site, dropped')); return false; } // never name/link listing sites
   if (await isDuplicate(card, channel)) return false;
   try {
     await record(card, channel, extra);
@@ -81,7 +85,8 @@ async function accept(card, channel, extra) {
     if (e.code === 11000) return false;
     throw e;
   }
-  await col('queue').insertOne({ channel, text: card.text, kind: 'post', status: 'pending', createdAt: new Date() });
+  const pdf = notif.pickPdf(card.type, card.links); // NEW VACANCY with an official notification PDF -> may go as image post
+  await col('queue').insertOne({ channel, text: card.text, kind: 'post', status: 'pending', createdAt: new Date(), ...(pdf ? { pdf } : {}) });
   kick();
   return true;
 }
@@ -102,9 +107,13 @@ async function poll() {
         continue;
       }
       for (const p of posts.filter((p) => p.id > last)) {
-        const card = buildCard(p, ch);
+        let card = buildCard(p, ch);
         if (!card) continue; // quiz / poll / non-job post
-        await accept(card, ch.key, { src: 'telegram', tgId: p.id });
+        // same channel rules as web sources: a local/other-state job posted in our SSC/Railway/Army source is skipped or re-routed
+        const dest = tp.routeChannel(card.title, ch.key === 'bihar' ? 'bihar' : null);
+        if (!dest) continue; // unsure -> skip rather than misroute
+        if (dest !== ch.key) card = buildCard(p, cfg.CHANNELS.find((c) => c.key === dest));
+        await accept(card, dest, { src: 'telegram', tgId: p.id, from: ch.key });
       }
       await setKV(`tg:${ch.key}`, maxId);
     } catch (e) {
@@ -150,7 +159,6 @@ async function pollOfficial() {
 // ---- 1c. third-party listing sites: DETECTION only (every THIRDPARTY_POLL_MINUTES + jitter) ----
 // New listing item -> keyword classify (channel + type) -> skip junk / duplicates BEFORE any detail fetch
 // -> fetch detail page (capped per round) -> facts + official links -> our own card -> same dedup as others.
-const AGG_TEXT = /freejobalert|sarkari ?result|sarkari ?exam|sarkarinaukri|rojgar ?result/i;
 async function markSeen(id) {
   await col('seen').updateOne({ _id: id }, { $setOnInsert: { at: new Date() } }, { upsert: true });
 }
@@ -252,6 +260,7 @@ async function sendNext() {
         if (await quiz.isOff()) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'skipped' } }); continue; }
         if (Date.now() - new Date(item.createdAt).getTime() > quiz.QUIZ_EXPIRE_MS()) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'expired' } }); continue; }
       }
+      if (item.kind === 'top' && Date.now() - new Date(item.createdAt).getTime() > 2 * 3600e3) { await col('queue').updateOne({ _id: item._id }, { $set: { status: 'expired' } }); continue; } // "aaj ki" post is stale next morning
       const sentLastHour = await col('queue').countDocuments({ channel: item.channel, status: 'sent', sentAt: { $gte: hourAgo } });
       if (sentLastHour >= cfg.MAX_POSTS_PER_HOUR) continue;
       try {
@@ -262,8 +271,19 @@ async function sendNext() {
           await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date(), serverId: r.serverId, acked: r.acked } });
           await quiz.recordResult(true, { channel: item.channel, ...r });
         } else {
-          await wa.sendToChannel(item.channel, item.text);
-          await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date() } });
+          let asImage = null;
+          if (item.pdf && !item.imgFailed && (await notif.enabled())) {
+            try {
+              const img = await notif.imageForPdf(item.pdf);
+              const r = await wa.sendChannelImage(item.channel, img, item.text);
+              asImage = r.serverId || true;
+            } catch (e) {
+              logErr(`image ${item.channel} (text card sent instead)`, e); // never lose the post: same slot, plain text card
+              await col('queue').updateOne({ _id: item._id }, { $set: { imgFailed: health.clean(e.message) } });
+            }
+          }
+          if (!asImage) await wa.sendToChannel(item.channel, item.text);
+          await col('queue').updateOne({ _id: item._id }, { $set: { status: 'sent', sentAt: new Date(), ...(asImage ? { asImage: true } : {}) } });
           await setKV('lastPostAt', new Date());
         }
         stats.lastSend = Date.now();
@@ -311,6 +331,30 @@ async function digest() {
     t += `👆 पूरी जानकारी ऊपर के पोस्ट में।\n${footer(ch.key)}`;
     await enqueue(ch.key, t, 'digest');
   }
+}
+
+// ---- 3b. evening "Aaj ki Top Bharti" (20:00 IST): up to 5 of today's posts, only if the channel had >= 2 today ----
+async function topBharti() {
+  const dayStart = new Date(Date.parse(`${istDayKey()}T00:00:00+05:30`));
+  const rank = { vacancy: 0, admit: 1, result: 2, answerkey: 3, examdate: 4, syllabus: 5 };
+  const out = [];
+  for (const ch of cfg.CHANNELS) {
+    const items = await col('posts').find({ channel: ch.key, createdAt: { $gte: dayStart } }).sort({ createdAt: 1 }).toArray();
+    if (items.length < 2) continue;
+    const now = Date.now();
+    const top = items
+      .filter((p) => !(p.type === 'vacancy' && p.lastDate && new Date(p.lastDate).getTime() < now - 86400e3)) // already closed
+      .sort((a, b) => (rank[a.type] ?? 9) - (rank[b.type] ?? 9) || (a.lastDate ? new Date(a.lastDate).getTime() : 9e15) - (b.lastDate ? new Date(b.lastDate).getTime() : 9e15))
+      .slice(0, cfg.TOP_MAX_ITEMS);
+    if (top.length < 2) continue;
+    const lines = top.map((p, i) => `${i + 1}. ${LABEL[p.type] || '▫️'} *${p.title}*${p.lastDate ? `\n    ⏳ Last Date: ${fmtDate(new Date(p.lastDate))}` : ''}`);
+    const t = `🌙 *Aaj ki Top Bharti | आज की टॉप भर्ती*\n📅 ${fmtDate(new Date())}\n━━━━━━━━━━━━━━\n${lines.join('\n')}\n\n👆 Poori jaankari upar ke posts mein.\n${SHARE_LINE}\n${footer(ch.key)}`;
+    if (AGG_TEXT.test(t)) continue;
+    await enqueue(ch.key, t, 'top');
+    out.push(`${ch.key}:${top.length}`);
+  }
+  if (out.length) kick();
+  return out;
 }
 
 // ---- 4. last-date reminders (3 days and 1 day before) ----
@@ -395,6 +439,7 @@ async function tick() {
     if (Date.now() >= stats.nextOfficialAt) await pollOfficial();
     if (Date.now() >= stats.nextThirdPartyAt) await pollThirdParty();
     if (h === cfg.DIGEST_HOUR) await onceFor(`digest:${day}`, digest);
+    if (h === cfg.TOP_HOUR && !isQuiet()) await onceFor(`top:${day}`, topBharti);
     if (h === cfg.REMINDER_HOUR) await onceFor(`remind:${day}`, reminders);
     if (now.getUTCDay() === cfg.WEEKLY_DAY && h === cfg.WEEKLY_HOUR) await onceFor(`weekly:${day}`, weekly);
     if (h === 3) await onceFor(`housekeeping:${day}`, housekeeping);
@@ -435,7 +480,9 @@ async function quizLine() {
   return `Quiz: ${q.enabled ? 'ON' : q.autoDisabled ? 'OFF (auto, WhatsApp ne reject kiya)' : 'OFF'} | ${q.hoursIST.map((h) => `${h}:00`).join(', ')} IST | 24h: ${q.sent24h} | last: ${t(q.lastSentAt)} ${q.lastChannel || ''}${q.consecutiveFails ? ` | fail x${q.consecutiveFails}: ${q.lastError}` : ''}\nQuiz bank (used/total): ${q.banks.map((b) => `${b.channel} ${b.used}/${b.bank}`).join(', ')}`;
 }
 async function quizCommand(arg) {
-  const [sub, key] = arg.split(/\s+/);
+  const parts = String(arg || '').trim().split(/\s+/);
+  const sub = (parts[0] || '').toLowerCase(), key = (parts[1] || '').toLowerCase();
+  if (sub === 'image') return imageCommand(parts.slice(1).join(' ')); // HTTP admin: /quiz?key=..&cmd=image%20test%20<url>
   const keys = cfg.CHANNELS.map((c) => c.key);
   if (sub === 'off') { await setKV('quizOff', true); return '⏸️ Quiz band. Job posts normal chalenge. /quiz on se chalu.'; }
   if (sub === 'on') {
@@ -463,6 +510,27 @@ async function quizCommand(arg) {
   return quizLine();
 }
 
+// ---- notification-PDF image posts: status / on / off / test (test renders + uploads only, posts NOTHING) ----
+async function imageCommand(arg) {
+  const [sub0, url] = String(arg || '').trim().split(/\s+/);
+  const sub = (sub0 || '').toLowerCase();
+  if (sub === 'on') { await setKV('notifImage', true); return '🖼️ Notification image posts ON (fail hone par text card jata hai).'; }
+  if (sub === 'off') { await setKV('notifImage', false); return '⏸️ Notification image posts OFF (sirf text card).'; }
+  if (sub === 'test') {
+    if (!url || !notif.pickPdf('vacancy', [url])) return 'Format: /image test <official .pdf url>';
+    const t0 = Date.now();
+    const img = await notif.imageForPdf(url);
+    const t1 = Date.now();
+    let up = 'skipped (WhatsApp not connected)';
+    if (wa.state.ready) { const u = await wa.uploadNewsletterImage(img.jpeg); up = `ok (${u.directPath ? 'direct_path' : 'url'}${u.thumb ? ', server thumb' : ''})`; }
+    return `🖼️ render ok ${img.width}x${img.height} ${Math.round(img.jpeg.length / 1024)} KB in ${t1 - t0} ms | upload: ${up} | rss ${Math.round(process.memoryUsage().rss / 1e6)} MB (kuch post nahi hua)`;
+  }
+  const on = await notif.enabled();
+  const since = new Date(Date.now() - 86400e3);
+  const [img, fail] = await Promise.all([col('queue').countDocuments({ asImage: true, sentAt: { $gte: since } }), col('queue').countDocuments({ imgFailed: { $exists: true }, createdAt: { $gte: since } })]);
+  return `Image posts: ${on ? 'ON' : 'OFF'} (env NOTIF_IMAGE=${cfg.NOTIF_IMAGE ? 'on' : 'off'}) | 24h: ${img} image, ${fail} fallback-to-text`;
+}
+
 // ---- owner commands (typed in the bot number's own "Message yourself" chat) ----
 async function command(text) {
   const [cmd, ...rest] = text.split(' ');
@@ -481,6 +549,7 @@ async function command(text) {
     case '/check': await poll(); await pollOfficial(); await pollThirdParty(); return '🔄 Telegram + official + web sources check ho gaye.';
     case '/digest': await digest(); return '☀️ Digest queue mein.';
     case '/remind': await reminders(); return '⏰ Reminders queue mein.';
+    case '/top': { const r = await topBharti(); return r.length ? `🌙 Top Bharti queue mein: ${r.join(', ')}` : 'Aaj kisi channel mein 2+ post nahi, Top Bharti skip.'; }
     case '/clearqueue': { const r = await col('queue').deleteMany({ status: 'pending' }); return `🗑️ ${r.deletedCount} hata diye.`; }
     case '/post': { // /post ssc Your message
       const [key, ...msg] = arg.split(' ');
@@ -488,11 +557,12 @@ async function command(text) {
       await enqueue(key, msg.join(' '), 'manual');
       return '📝 Queue mein daal diya.';
     }
-    case '/quiz': return quizCommand(arg.trim().toLowerCase());
+    case '/quiz': return quizCommand(arg.trim());
+    case '/image': return imageCommand(arg.trim());
     case '/errors': return stats.errors.length ? stats.errors.slice(0, 15).join('\n') : 'Koi error nahi.';
     default:
-      return 'Commands: /status /pause /resume /check /digest /remind /post <channel> <msg> /clearqueue /errors /quiz [on|off|now <channel|all>|verify <channel>]';
+      return 'Commands: /status /pause /resume /check /digest /remind /top /post <channel> <msg> /clearqueue /errors /quiz [on|off|now <channel|all>|verify <channel>] /image [on|off|test <pdf-url>]';
   }
 }
 
-module.exports = { quizCommand, tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };
+module.exports = { imageCommand, topBharti, accept, quizCommand, tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };

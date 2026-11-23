@@ -36,6 +36,13 @@ Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notific
 - Baileys 6.7.24 khud quiz nahi banata, isliye `src/quiz.js` stanza khud banata hai: `<message type="poll"><meta polltype="quiz_creation" contenttype="text"/><plaintext>` + Message field 111 (pollCreationMessageV5: pollType QUIZ + correctAnswer). WhatsApp 2 quiz lagatar reject kare to quiz auto-OFF + self-chat alert; job posting par koi asar nahi.
 - Commands: `/quiz` (status) `/quiz on` `/quiz off` `/quiz now <ssc|railway|bihar|army|all>` `/quiz verify <channel>` (channel ka last quiz WhatsApp se padh kar check). HTTP: `/quiz?key=ADMIN_KEY&cmd=verify%20ssc`. Server-level band: env `QUIZ_ENABLED=false`.
 
+## v4 (2026-11-23): card accuracy, routing, Top Bharti, image posts
+- **Status line = title:** title/detail "Apply Offline" -> `📮 Offline aavedan`, "Walk-in/Walkin" -> `🚶 Walk-in interview` (kabhi "Online aavedan chalu hai" nahi); apply link label `📝 Application Form`.
+- **Channel routing** (`thirdparty.routeChannel`, web + Telegram dono par): Railway > SSC (sirf central SSC recruiter) > Army (Army/Navy/Airforce/Agniveer/NDA/CDS/defence/paramilitary) > Bihar (Bihar bodies + Bihar districts). Doosre states / municipal / generic institute -> skip. Shak ho to skip, galat channel nahi. Tests: `npm test`.
+- Har card par `📲 Forward karein, kisi ka form na chhoote`; footer + quiz header mein `🤖 Auto update` label (WhatsApp India AI/auto content label).
+- **Aaj ki Top Bharti** 20:00 IST (`TOP_HOUR`): channel mein us din 2+ post hon to top 3-5 (title + last date). Quiet hours/MIN_GAP follow; 2 ghante purana ho to expire. Command `/top`.
+- **Notification image post** (`src/notifimage.js`): NEW VACANCY + official PDF (gov.in/nic.in/recruiting body) -> PDF (max 5 MB, 20 s) ka page 1 JPEG (mupdf WASM, no native packages) channel par image + poora card caption. Upload `/newsletter/newsletter-image`, stanza `type=media` + `mediatype=image` (Baileys 6.7.24 ka built-in channel media path purana hai). Kuch bhi fail -> usi slot mein text card. Env `NOTIF_IMAGE=on|off` (default off); runtime `/image on|off`, `/image test <pdf-url>` (render + upload only, post nahi). HTTP: `/quiz?key=ADMIN_KEY&cmd=image%20test%20<url>`.
+
 ## Privacy lock (code mein)
 - Purani chats sync nahi, contacts save nahi, kisi ki chat nahi padhta
 - Sirf apne 4 channels par bhej sakta hai; kisi insaan/group ko message block
@@ -53,7 +60,7 @@ Telegram job channels (SSC, Railway, Bihar, Army/Agniveer) se sirf **job notific
 - **Bandwidth:** official sites par ETag / If-Modified-Since (badla nahi to 304, kuch download nahi), 15s timeout, SSC API se sirf 15 items. Telegram preview ~100 KB x 4 channels har 3 min ≈ 6 GB/month (Render free 100 GB ke andar).
 
 ## Commands (bot number ki self-chat mein likhein)
-/status /pause /resume /check /digest /remind /post <ssc|railway|bihar|army> <msg> /clearqueue /errors /quiz [on|off|now <channel|all>|verify <channel>]
+/status /pause /resume /check /digest /remind /post <ssc|railway|bihar|army> <msg> /clearqueue /errors /top /quiz [on|off|now <channel|all>|verify <channel>] /image [on|off|test <pdf-url>]
 
 ## Deploy (Render free)
 1. Render → New → Blueprint → is repo ko chunein (render.yaml)

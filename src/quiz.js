@@ -49,7 +49,7 @@ function shuffle(a) {
 function buildPoll(q, channel) {
   const ch = cfg.CHANNELS.find((c) => c.key === channel);
   const tags = [ch ? ch.tags : '', q.tag ? `#${q.tag}` : ''].filter(Boolean).join(' ');
-  const name = `🧠 Daily Quiz | ${HEAD[channel] || channel}   ${tags}\n\n${q.hi}\n${q.en}`;
+  const name = `🧠 Daily Quiz | ${HEAD[channel] || channel}  🤖 Auto update   ${tags}\n\n${q.hi}\n${q.en}`;
   const values = shuffle(q.options);
   return validate({ name, values, correct: q.options[q.answer] });
 }

@@ -8,7 +8,7 @@
 const crypto = require('crypto');
 const cfg = require('./config');
 const { getKV, setKV, col } = require('./db');
-const { parseDate } = require('./format');
+const { parseDate, applyMode } = require('./format');
 
 const sha = (s) => crypto.createHash('sha1').update(String(s)).digest('hex').slice(0, 24);
 const decode = (s) =>
@@ -70,12 +70,25 @@ const resetCache = (url) => setKV(`http:${url}`, {});
 // ---- classification: which channel, which type, skip junk ----
 const SKIP = /quiz|\bPYQ\b|mock test|previous (year )?paper|question paper|practice set|tender|quotation|auction|e-?procurement|scholarship|admission(?! certificate)|counselling|certificate download|e certificate|migration certificate|\bdegree\b.*\bresult\b|board (time table|result|exam)|class 1[02]|10th result|12th result|\bCBSE\b|\bICSE\b|time ?table 20\d\d.*board|voter|aadhaar|pan card|ration card|yojana|tools|resizer|calculator|study material|book|\bnews\b|exam analysis|cut ?off|salary|\bpay scale\b|how to/i;
 const SENIOR = /general manager|\bAGM\b|\bJGM\b|\bDGM\b|\bCGM\b|chairman|managing director|\bdirector\b|chief (engineer|controller|general)|retired|re-?engage|consultant|advisor|\bintern\b|research associate|\bJRF\b|young professional|deputation|principal\b|\bPGT\b|\bTGT\b|\bPRT\b|kendriya vidyalaya|\bKVS?\b|sainik (school|shiksha)|army public school|\bAWES\b|medical officer|specialist|professor|faculty|\bresident\b|tutor|para ?legal|volunteer|\bdealer\b|project (assistant|associate|scientist)/i;
-const CHANNEL_RULES = [
-  { key: 'railway', re: /\bRRB\b|\bRRC\b|\bRPF\b|railway|indian rail|\bRCF\b|\bICF\b|\bDLW\b|\bCLW\b|\bBLW\b|\bDMW\b|\bRWF\b|\bIRCTC\b|\bRITES\b|\bIRCON\b|\bRVNL\b|\bDFCCIL\b|konkan rail|metro rail|\bRRB NTPC\b|railway ntpc/i },
-  { key: 'army', re: /agniveer|agnipath|\bindian army\b|\barmy\b|\bnavy\b|naval|air ?force|\bIAF\b|airmen|\bAFCAT\b|territorial army|coast guard|\bICG\b|\bNDA\b|\bCDS\b|\bTES\b|\bTGC\b|\bSSB\b interview|bharti rally|rally bharti|\bMNS\b|military nursing|\bNCC\b special entry/i },
-  { key: 'bihar', re: /bihar|\bBPSC\b|\bBSSC\b|\bCSBC\b|\bBPSSC\b|\bBTSC\b|\bBCECE|\bBSPHCL\b|\bBELTRON\b|\bSHSB\b|\bBSEB\b|patna high court|\bOFSS\b/i },
-  { key: 'ssc', re: /\bSSC\b|staff selection commission/i },
-];
+// ---- channel routing (shared by web sources and Telegram posts). When unsure -> null (skip, never misroute) ----
+// Army channel = Army/Navy/Airforce/Agniveer/NDA/CDS/defence/paramilitary only (plain "SSB" is ambiguous: Staff Selection Board of a state).
+const RAILWAY_RE = /\bRRB\b|\bRRC\b|\bRPF\b|railway|indian rail|\bRCF\b|\bICF\b|\bDLW\b|\bCLW\b|\bBLW\b|\bDMW\b|\bRWF\b|\bIRCTC\b|\bRITES\b|\bIRCON\b|\bRVNL\b|\bDFCCIL\b|konkan rail|metro rail/i;
+const ARMY_RE = /agniveer|agnipath|\bindian army\b|\barmy\b|\bnavy\b|naval|air ?force|\bIAF\b|airmen|\bAFCAT\b|territorial army|coast guard|\bICG\b|\bNDA\b|\bCDS\b|\bTES\b|\bTGC\b|bharti rally|rally bharti|army rally|\bMNS\b|military|\bNCC\b special entry|\bdefen[cs]e\b|\bBSF\b|\bCRPF\b|\bCISF\b|\bITBP\b|assam rifles|sashastra seema bal|\bSSB\b\s+(constable|head constable|\bHC\b|\bSI\b|\bASI\b|tradesman|\bGD\b)|\bCAPF\b|\bNSG\b|paramilitary/i;
+const SSC_RE = /\bSSC\b|staff selection commission/i;
+const BIHAR_RE = /bihar|\bBPSC\b|\bBSSC\b|\bCSBC\b|\bBPSSC\b|\bBTSC\b|\bBCECE|\bBSPHCL\b|\bBELTRON\b|\bSHSB\b|\bBSEB\b|patna|\bOFSS\b|muzaffarpur|darbhanga|bhagalpur|\bgaya\b|purnea|purnia|begusarai|samastipur|madhubani|motihari|bettiah|sitamarhi|siwan|chapra|\bsaran\b|hajipur|vaishali|nalanda|nawada|jehanabad|\barwal\b|rohtas|sasaram|buxar|bhojpur|\barrah\b|kaimur|munger|jamui|lakhisarai|sheikhpura|khagaria|katihar|kishanganj|araria|supaul|saharsa|madhepura|\bbanka\b|gopalganj|sheohar/i;
+// other states / their bodies: a job there is a state job -> never SSC/Army(unless a real force)/Railway by accident
+const OTHER_STATE = /odisha|orissa|\bOSSC\b|\bOSSSC\b|rajasthan|\bRSMSSB\b|uttar pradesh|\bUPSSSC\b|madhya pradesh|\bMPESB\b|haryana|\bHSSC\b|punjab|\bPSSSB\b|gujarat|\bGSSSB\b|maharashtra|karnataka|\bKEA\b|tamil ?nadu|\bTNPSC\b|kerala|telangana|andhra|west bengal|\bWBSSC\b|jharkhand|\bJSSC\b|chhattisgarh|\bCGVYAPAM\b|uttarakhand|\bUKSSSC\b|himachal|\bHPSSC\b|jammu|kashmir|\bJKSSB\b|\bgoa\b|manipur|meghalaya|mizoram|nagaland|tripura|sikkim|arunachal|\bDSSSB\b|akola|\bGMC\b|municipal|nagar (nigam|palika)|zilla parishad|\bZP\b/i;
+function routeChannel(title, hintChannel = null) {
+  const t = String(title || '');
+  if (RAILWAY_RE.test(t)) return 'railway';
+  const bihar = BIHAR_RE.test(t);
+  const other = OTHER_STATE.test(t) || /\b(UP|MP)\b/.test(t); // case-sensitive: UP / MP state jobs
+  if (SSC_RE.test(t) && !bihar && !other) return 'ssc'; // recruiter is the central SSC (incl. SSC CPO / GD for CAPF)
+  if (ARMY_RE.test(t)) return 'army';
+  if (bihar) return 'bihar'; // Bihar bodies and Bihar-located jobs (incl. Bihar SSC)
+  if (hintChannel === 'bihar' && !other) return 'bihar'; // source only lists Bihar jobs
+  return null;
+}
 // organisations whose posts are always relevant even when the vacancy count is small
 const CORE = /\bIAF\b|\bRRB\b|\bRRC\b|\bRPF\b|railway recruitment|agniveer|agnipath|indian army|\bnavy\b|air ?force|\bAFCAT\b|coast guard|territorial army|\bNDA\b|\bCDS\b|\bSSC\b|staff selection|\bBPSC\b|\bBSSC\b|\bCSBC\b|\bBPSSC\b|\bBTSC\b|bihar police/i;
 const TYPE_RULES = [
@@ -88,9 +101,7 @@ const TYPE_RULES = [
 ];
 function classifyItem(title, hintChannel, isMain = true) {
   if (!title || title.length < 12 || SKIP.test(title) || cfg.QUIZ_BLOCK.test(title)) return null;
-  let channel = null;
-  for (const r of CHANNEL_RULES) if (r.re.test(title)) { channel = r.key; break; }
-  if (!channel && hintChannel === 'bihar' && isMain) channel = 'bihar'; // the Bihar listing only lists Bihar jobs
+  const channel = routeChannel(title, isMain ? hintChannel : null);
   if (!channel) return null;
   let type = null;
   for (const r of TYPE_RULES) if (r.re.test(title)) { type = r.type; break; }
@@ -288,6 +299,7 @@ function buildData(item, cls, detail, src) {
   if (!facts.posts) { const m = `${row.post || ''} ${item.rawTitle}`.match(/([\d,]{1,7})\s*(posts?|vacanc)/i); if (m && m[1] !== '0') facts.posts = m[1]; }
   if (item.date) facts.notice = item.date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', timeZone: cfg.TZ });
   if (cls.type !== 'vacancy') { for (const k of ['fee', 'age', 'qual', 'posts', 'start', 'last']) delete facts[k]; } // those are application facts
+  const mode = cls.type === 'vacancy' ? applyMode(`${item.rawTitle} ${row.post || ''} ${detail && detail.head ? (detail.head.match(/mode of (apply|application)[^.]{0,40}/i) || [''])[0] : ''}`) : null;
   if (/extended/i.test(item.rawTitle)) facts.status = 'Last date extended';
   if (/re-?open/i.test(item.rawTitle)) facts.status = 'Application re-opened';
   const ctx = `${row.board || ''} ${item.rawTitle} ${row.post || ''}`;
@@ -300,7 +312,7 @@ function buildData(item, cls, detail, src) {
   const links = pickLinks((detail ? detail.links : []).filter((l) => isOfficialUrl(l.url)), cls.type, item.rawTitle);
   const isRoot = (u) => { try { return new URL(u).pathname.replace(/\/+$/, '') === ''; } catch { return false; } };
   const home = links.some((l) => isRoot(l.url)) ? null : org ? org.url : null;
-  return { type: cls.type, title, org: org && org.name ? org.name : (row.board && row.board.length < 60 ? row.board : null), facts, links, home, advt: cls.type === 'vacancy' ? row.advt : null };
+  return { type: cls.type, title, org: org && org.name ? org.name : (row.board && row.board.length < 60 ? row.board : null), facts, links, home, advt: cls.type === 'vacancy' ? row.advt : null, mode };
 }
 
 // keep the links that fit this update: an answer-key post gets the answer-key link first, never "apply online"
@@ -334,4 +346,4 @@ function pickLinks(links, type, rawTitle) {
   return out;
 }
 
-module.exports = { CORE, get, resetCache, readFjaListing, readHomeListing, parseDetail, buildData, classifyItem, ownTitle, isOfficialUrl, sha };
+module.exports = { routeChannel, applyMode, CORE, get, resetCache, readFjaListing, readHomeListing, parseDetail, buildData, classifyItem, ownTitle, isOfficialUrl, sha };

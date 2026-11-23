@@ -144,6 +144,53 @@ async function sendQuiz(key, bytes) {
   return { id, acked: !!ack, serverId: (ack && ack.server_id) || null };
 }
 
+// ---- Native channel IMAGE post (Baileys 6.7.24 uploads channel media to /mms/image and sends type="text" without
+// mediatype, which WhatsApp rejects/breaks). Same flow as WhatsApp Web / maintained forks: raw (unencrypted) upload to
+// /newsletter/newsletter-image, then <message type="media"><plaintext mediatype="image">Message{imageMessage}</plaintext>.
+// Hard lock: only the 4 resolved channel JIDs (@newsletter).
+const b64url = (buf) => buf.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+async function uploadNewsletterImage(jpeg) {
+  const sha = require('crypto').createHash('sha256').update(jpeg).digest();
+  const token = b64url(sha);
+  let lastErr;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const conn = await state.sock.refreshMediaConn(attempt > 0);
+    for (const { hostname } of conn.hosts || []) {
+      try {
+        const url = `https://${hostname}/newsletter/newsletter-image/${token}?auth=${encodeURIComponent(conn.auth)}&token=${token}&server_thumb_gen=1`;
+        const res = await fetch(url, { method: 'POST', body: jpeg, headers: { 'Content-Type': 'application/octet-stream', Origin: 'https://web.whatsapp.com' }, signal: AbortSignal.timeout(30000) });
+        const j = await res.json().catch(() => null);
+        if (j && (j.url || j.direct_path)) {
+          return { url: j.url || j.direct_path, directPath: j.direct_path, sha, thumb: j.thumbnail_info || null };
+        }
+        lastErr = new Error(`upload ${res.status} ${JSON.stringify(j || {}).slice(0, 80)}`);
+      } catch (e) { lastErr = e; }
+    }
+  }
+  throw lastErr || new Error('upload: no media hosts');
+}
+async function sendChannelImage(key, img, caption) {
+  const jid = state.channelJids[key];
+  if (!jid || !allowed.has(jid) || !/@newsletter$/.test(jid)) throw new Error('BLOCKED: image allowed only to own channels');
+  if (!state.ready) throw new Error('WhatsApp not connected');
+  const up = await uploadNewsletterImage(img.jpeg);
+  const { proto } = require('@whiskeysockets/baileys');
+  const msg = proto.Message.encode({
+    imageMessage: {
+      url: up.url, directPath: up.directPath, mimetype: 'image/jpeg', fileSha256: up.sha, fileLength: img.jpeg.length,
+      width: img.width, height: img.height, caption, jpegThumbnail: img.thumb,
+      ...(up.thumb && up.thumb.thumbnail_direct_path ? { thumbnailDirectPath: up.thumb.thumbnail_direct_path, thumbnailSha256: up.thumb.thumbnail_sha256 ? Buffer.from(up.thumb.thumbnail_sha256, 'base64') : undefined } : {}),
+    },
+  }).finish();
+  const id = generateMessageIDV2(state.sock.user && state.sock.user.id);
+  const ackP = waitAck(id, 20000);
+  await state.sock.sendNode({ tag: 'message', attrs: { to: jid, id, type: 'media' }, content: [{ tag: 'plaintext', attrs: { mediatype: 'image' }, content: Buffer.from(msg) }] });
+  const ack = await ackP;
+  if (ack && ack.error) throw new Error(`image rejected by WhatsApp (ack error ${ack.error})`);
+  if (!ack) throw new Error('image: no server ack in 20 s');
+  return { id, serverId: ack.server_id || null };
+}
+
 // read back the latest posts of OUR channel (channel content only) -> raw plaintext bytes per post
 async function fetchChannelPosts(key, count = 5) {
   const jid = state.channelJids[key];
@@ -160,4 +207,4 @@ async function fetchChannelPosts(key, count = 5) {
 // owner alerts go ONLY to the bot number's own self-chat
 const sendSelf = (text) => send(state.selfJid, text);
 
-module.exports = { start, state, sendToChannel, sendSelf, sendQuiz, fetchChannelPosts, resolveChannels };
+module.exports = { start, state, sendToChannel, sendSelf, sendQuiz, sendChannelImage, uploadNewsletterImage, fetchChannelPosts, resolveChannels };

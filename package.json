@@ -4,7 +4,8 @@
   "description": "Auto job notifications to WhatsApp Channels",
   "main": "src/index.js",
   "scripts": {
-    "start": "node --max-old-space-size=380 src/index.js"
+    "start": "node --max-old-space-size=380 src/index.js",
+    "test": "node test/route.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "@whiskeysockets/baileys": "6.7.24",
     "express": "^5.3.0",
     "mongodb": "^7.9.1",
+    "mupdf": "1.28.6",
     "pino": "^10.4.0"
   },
   "engines": {

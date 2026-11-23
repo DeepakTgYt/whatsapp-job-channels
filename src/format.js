@@ -92,7 +92,7 @@ function extract(text) {
 }
 
 // label every link; official ones first, then by usefulness
-function labelLinks(links, type) {
+function labelLinks(links, type, mode = null) {
   const out = [];
   const seen = new Set();
   for (const { url, label = '' } of links) {
@@ -102,7 +102,7 @@ function labelLinks(links, type) {
     let lab, rank;
     const L = `${label} ${url}`;
     if (/login|candidate portal/i.test(url) && (type === 'result' || type === 'answerkey')) { lab = type === 'result' ? '🏆 Check Result (Login)' : '🔑 Check Answer Key (Login)'; rank = 1; }
-    else if (/apply|registration|applicationIndex|login|form/i.test(L) && type !== 'admit') { lab = '✍️ Apply Online'; rank = 1; }
+    else if (/apply|registration|applicationIndex|login|form/i.test(L) && type !== 'admit') { lab = mode === 'offline' || mode === 'walkin' ? '📝 Application Form' : '✍️ Apply Online'; rank = 1; }
     else if (/admit|hall ?ticket|call letter/i.test(L) || (type === 'admit' && /applicationIndex|login/i.test(url))) { lab = '🎫 Download Admit Card'; rank = 1; }
     else if (/\.pdf($|\?|\/)/i.test(url) || /notification|advt|pdf/i.test(label)) {
       lab = { result: '🏆 Result PDF', answerkey: '🔑 Answer Key / Notice PDF', admit: '📄 Admit Card Notice PDF', examdate: '📄 Schedule Notice PDF', syllabus: '📚 Syllabus PDF' }[type] || '📄 Notification PDF';
@@ -114,12 +114,33 @@ function labelLinks(links, type) {
   return out.sort((a, b) => a.rank - b.rank).slice(0, 4);
 }
 
+const AUTO_LABEL = '🤖 _Auto update_'; // WhatsApp India AI/auto-content label
+const SHARE_LINE = '📲 Forward karein, kisi ka form na chhoote';
+
+// how to apply: 'walkin' | 'offline' | 'online' | null (title words win over a copied status line)
+function applyMode(text) {
+  const t = String(text || '');
+  if (/walk-?\s?in/i.test(t)) return 'walkin';
+  if (/apply offline|offline (form|aavedan|application|mode)|mode of (apply|application)\W{0,5}offline|by (speed )?post\b|through post\b/i.test(t)) return 'offline';
+  if (/apply online|online (form|aavedan|application)|mode of (apply|application)\W{0,5}online/i.test(t)) return 'online';
+  return null;
+}
+const MODE_STATUS = { offline: '📮 Offline aavedan', walkin: '🚶 Walk-in interview' };
+// status line must agree with the title: never "Online aavedan chalu hai" on an offline / walk-in job
+function fixStatus(status, mode, type) {
+  if (type !== 'vacancy') return status || null;
+  if (mode === 'offline' || mode === 'walkin') {
+    if (!status || /online|aavedan|apply|chalu|open|start|शुरू|ऑनलाइन/i.test(status)) return MODE_STATUS[mode];
+  }
+  return status || null;
+}
+
 function footer(channelKey) {
   const me = cfg.CHANNELS.find((c) => c.key === channelKey);
   const others = cfg.CHANNELS.filter((c) => c.key !== channelKey)
     .map((c) => `- ${c.name}: https://whatsapp.com/channel/${c.waInvite}`)
     .join('\n');
-  return `━━━━━━━━━━━━━━\n📲 *Aur WhatsApp channels:*\n${others}\n✈️ Telegram: https://t.me/${me.telegram}\n🔔 _Bell icon dabayein, koi update miss na ho._`;
+  return `━━━━━━━━━━━━━━\n📲 *Aur WhatsApp channels:*\n${others}\n✈️ Telegram: https://t.me/${me.telegram}\n🔔 _Bell icon dabayein, koi update miss na ho._\n${AUTO_LABEL}`;
 }
 
 const fmtDate = (d) =>
@@ -146,17 +167,19 @@ function renderCard(data, channelKey) {
   add('🎓', 'Qualification', f.qual);
   add('🗓️', 'Notice Date', f.notice);
   if (q.length) parts.push('', ...q);
-  if (f.status) parts.push('', `_${cut(stripMd(f.status), 80)}_`);
-  let links = labelLinks(data.links || [], data.type);
+  const mode = data.mode || (data.type === 'vacancy' ? applyMode(`${data.title} ${f.status && !/online/i.test(f.status) ? f.status : ''}`) : null);
+  const status = fixStatus(f.status, mode, data.type);
+  if (status) parts.push('', `_${cut(stripMd(status), 80)}_`);
+  let links = labelLinks(data.links || [], data.type, mode);
   if (data.home && !links.some((l) => l.url.replace(/\/$/, '') === data.home.replace(/\/$/, ''))) {
     links.push({ url: data.home, label: '🌐 Official Website', rank: isOfficial(data.home) ? 4 : 14 });
     links = links.sort((a, b) => a.rank - b.rank).slice(0, 4);
   }
   if (links.length) parts.push('', '🔗 *Official Links*', ...links.map((l) => `- ${l.label}: ${l.url}`));
-  parts.push('', '⚠️ _Apply se pehle official notification zaroor padhein._', `${ch.tags} #${data.type === 'vacancy' ? 'NewVacancy' : { admit: 'AdmitCard', result: 'Result', answerkey: 'AnswerKey', examdate: 'ExamDate', syllabus: 'Syllabus' }[data.type] || 'Update'}`);
+  parts.push('', '⚠️ _Apply se pehle official notification zaroor padhein._', SHARE_LINE, `${ch.tags} #${data.type === 'vacancy' ? 'NewVacancy' : { admit: 'AdmitCard', result: 'Result', answerkey: 'AnswerKey', examdate: 'ExamDate', syllabus: 'Syllabus' }[data.type] || 'Update'}`);
   let text = `${parts.join('\n')}\n${footer(channelKey)}`;
   if (text.length > 1500) { // trim the optional bits first
-    text = text.replace(/\n> 🎓[^\n]*/, '').replace(/\n> 🎂[^\n]*/, '').replace(/\n> 💳[^\n]*/, '').replace(/\n\n_[^\n]*_\n/, '\n');
+    text = text.replace(/\n> 🎓[^\n]*/, '').replace(/\n> 🎂[^\n]*/, '').replace(/\n> 💳[^\n]*/, '');
   }
   return text;
 }
@@ -192,4 +215,4 @@ function buildOfficialCard(item, type) {
   return { type, title: item.title, lastDate: lastM ? parseDate(lastM[1]) : null, links: [item.link], text, hash: hashTitle(item.title) };
 }
 
-module.exports = { buildCard, buildOfficialCard, renderCard, classify, extract, parseDate, footer, fmtDate, hashTitle, normTitle, isOfficial };
+module.exports = { AUTO_LABEL, SHARE_LINE, applyMode, fixStatus, buildCard, buildOfficialCard, renderCard, classify, extract, parseDate, footer, fmtDate, hashTitle, normTitle, isOfficial };
