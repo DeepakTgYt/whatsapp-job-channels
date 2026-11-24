@@ -382,10 +382,17 @@ async function weekly() {
   const since = new Date(Date.now() - 7 * 86400e3);
   for (const ch of cfg.CHANNELS) {
     const items = await col('posts').find({ channel: ch.key, createdAt: { $gte: since } }).toArray();
-    if (!items.length) continue;
-    const by = (t) => items.filter((p) => p.type === t);
+    // upgrade 2026-11-24: forms closing in the next 7 days (any post, old or new), soonest first
+    const now = new Date();
+    const closing = (await col('posts').find({ channel: ch.key, lastDate: { $gt: now, $lte: new Date(now.getTime() + 7 * 86400e3) } }).toArray())
+      .sort((a, b) => new Date(a.lastDate) - new Date(b.lastDate))
+      .filter((p) => p.title && p.lastDate)
+      .filter((p, i, arr) => arr.findIndex((q) => normTitle(q.title) === normTitle(p.title)) === i);
+    if (!items.length && !closing.length) continue;
+    const by = (t) => items.filter((p) => p.type === t && p.title).filter((p, i, arr) => arr.findIndex((q) => normTitle(q.title) === normTitle(p.title)) === i);
     const sec = (title, arr) => (arr.length ? `*${title} (${arr.length})*\n` + arr.slice(0, 8).map((p) => `▫️ ${p.title}`).join('\n') + '\n\n' : '');
-    const t = `📊 *इस हफ्ते का Roundup*\n━━━━━━━━━━━━━━\n` +
+    const closeSec = closing.length ? `*⏳ अगले 7 दिन में फॉर्म बंद (${closing.length})*\n` + closing.slice(0, 8).map((p) => `🔸 ${p.title}\n    अंतिम तिथि: *${fmtDate(p.lastDate)}*`).join('\n') + '\n\n' : '';
+    const t = `📊 *इस हफ्ते का Roundup*\n━━━━━━━━━━━━━━\n` + closeSec +
       sec('🆕 नई भर्ती', by('vacancy')) + sec('🎫 एडमिट कार्ड', by('admit')) + sec('🏆 रिजल्ट', by('result')) +
       sec('🔑 आंसर की', by('answerkey')) + sec('🗓️ परीक्षा तिथि', by('examdate')) +
       `📢 दोस्तों से शेयर करें, जिससे किसी का फॉर्म न छूटे।\n${footer(ch.key)}`;
@@ -565,4 +572,4 @@ async function command(text) {
   }
 }
 
-module.exports = { imageCommand, topBharti, accept, quizCommand, tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };
+module.exports = { weekly, imageCommand, topBharti, accept, quizCommand, tick, command, stats, isQuiet, poll, pollOfficial, pollThirdParty, healthReport, sendNext, kick, isDuplicate, similar, specificLinks };
