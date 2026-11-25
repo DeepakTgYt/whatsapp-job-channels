@@ -135,12 +135,8 @@ function fixStatus(status, mode, type) {
   return status || null;
 }
 
-function footer(channelKey) {
-  const me = cfg.CHANNELS.find((c) => c.key === channelKey);
-  const others = cfg.CHANNELS.filter((c) => c.key !== channelKey)
-    .map((c) => `- ${c.name}: https://whatsapp.com/channel/${c.waInvite}`)
-    .join('\n');
-  return `━━━━━━━━━━━━━━\n📲 *Aur WhatsApp channels:*\n${others}\n✈️ Telegram: https://t.me/${me.telegram}\n🔔 _Bell icon dabayein, koi update miss na ho._\n${AUTO_LABEL}`;
+function footer(channelKey) { // links only in channel descriptions (user, 2026-11-25)
+  return `━━━━━━━━━━━━━━\n${AUTO_LABEL}`;
 }
 
 const fmtDate = (d) =>

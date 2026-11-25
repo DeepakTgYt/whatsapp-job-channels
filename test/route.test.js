@@ -59,10 +59,10 @@ t('online title keeps online status', () => {
 t('non-vacancy status untouched', () => assert.strictEqual(fmt.fixStatus('Result out', 'walkin', 'result'), 'Result out'));
 
 // ---- 3 + 5. share line once, auto label in footer, no aggregator names ----
-t('share line exactly once + auto label + footer intact', () => {
+t('share line exactly once + auto label + no channel links in post', () => {
   const c = card('SSC GD Constable Recruitment 2026', null);
   assert.strictEqual(c.split('📲 Forward karein, kisi ka form na chhoote').length - 1, 1);
-  assert(c.includes('🤖 _Auto update_')); assert(c.includes('📲 *Aur WhatsApp channels:*')); assert(c.includes('🔔 _Bell icon'));
+  assert(c.includes('🤖 _Auto update_')); assert(!c.includes('whatsapp.com/channel')); assert(!c.includes('t.me/'));
 });
 t('footer has auto label once', () => assert.strictEqual(fmt.footer('ssc').split('Auto update').length - 1, 1));
 t('aggregator links never on card', () => {
