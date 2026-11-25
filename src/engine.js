@@ -490,6 +490,23 @@ async function quizCommand(arg) {
   const parts = String(arg || '').trim().split(/\s+/);
   const sub = (parts[0] || '').toLowerCase(), key = (parts[1] || '').toLowerCase();
   if (sub === 'image') return imageCommand(parts.slice(1).join(' ')); // HTTP admin: /quiz?key=..&cmd=image%20test%20<url>
+  if (sub === 'desc') { // HTTP admin: cmd=desc get <key|all> | desc set <key|all> <text, \n for newline>
+    const keys0 = cfg.CHANNELS.map((c) => c.key);
+    const mode = sub2(arg);
+    function sub2(a) { const m = String(a).trim().match(/^desc\s+(get|set)\s+(\S+)\s*([\s\S]*)$/i); return m ? { op: m[1].toLowerCase(), k: m[2].toLowerCase(), text: m[3].replace(/\\n/g, '\n') } : null; }
+    if (!mode) return 'Format: desc get <ssc|railway|bihar|army|all> | desc set <key|all> <text>';
+    const ks = mode.k === 'all' ? keys0 : keys0.includes(mode.k) ? [mode.k] : null;
+    if (!ks) return 'Channel galat.';
+    if (!wa.state.ready) return 'WhatsApp connected nahi.';
+    const out = [];
+    for (const k of ks) {
+      try {
+        if (mode.op === 'get') out.push(`=== ${k} ===\n${await wa.getChannelDesc(k)}`);
+        else { if (!mode.text) return 'Text khaali.'; await wa.setChannelDesc(k, mode.text); out.push(`✅ ${k} updated`); }
+      } catch (e) { out.push(`❌ ${k}: ${e.message}`); }
+    }
+    return out.join('\n\n');
+  }
   const keys = cfg.CHANNELS.map((c) => c.key);
   if (sub === 'off') { await setKV('quizOff', true); return '⏸️ Quiz band. Job posts normal chalenge. /quiz on se chalu.'; }
   if (sub === 'on') {

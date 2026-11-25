@@ -207,4 +207,19 @@ async function fetchChannelPosts(key, count = 5) {
 // owner alerts go ONLY to the bot number's own self-chat
 const sendSelf = (text) => send(state.selfJid, text);
 
-module.exports = { start, state, sendToChannel, sendSelf, sendQuiz, sendChannelImage, uploadNewsletterImage, fetchChannelPosts, resolveChannels };
+
+// Channel description (bio): read / update. Hard lock: only our own resolved channel JIDs.
+async function getChannelDesc(key) {
+  const jid = state.channelJids[key];
+  if (!jid || !allowed.has(jid)) throw new Error('not one of our channels');
+  const meta = await state.sock.newsletterMetadata('jid', jid);
+  return (meta && meta.description) || '';
+}
+async function setChannelDesc(key, text) {
+  const jid = state.channelJids[key];
+  if (!jid || !allowed.has(jid) || !/@newsletter$/.test(jid)) throw new Error('BLOCKED: description only for own channels');
+  await state.sock.newsletterUpdateDescription(jid, text);
+  return true;
+}
+
+module.exports = { getChannelDesc, setChannelDesc, start, state, sendToChannel, sendSelf, sendQuiz, sendChannelImage, uploadNewsletterImage, fetchChannelPosts, resolveChannels };
